@@ -48,7 +48,9 @@ C is designed for portability, performance, and minimal resource usage, making i
 Programming languages timeline:
 
 <dl>
+  
   <dt><h3>1950s</h3></dt>
+  
    <dt>1957 - Fortran (Formula Translation):</dt>
 <ul>
   <li>Developed by IBM and led by John Backus.</li>
@@ -86,6 +88,7 @@ Programming languages timeline:
   </ul>
 
   <dt><h3>1970s</h3></dt>
+  
   <dt>1970 - Pascal:</dt>
   <ul>
     <li>Developed by Niklaus Wirth.</li>
@@ -98,5 +101,5 @@ Programming languages timeline:
    <li>Evolved from B (a derivative of BCPL) and included features like structured programming, efficient low-level memory manipulation, and portability.</li>
    <li>Became the foundation for many modern programming languages and operating systems, including UNIX.</li>
 </ul>
-   
+
 </dl>
