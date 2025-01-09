@@ -25,7 +25,7 @@ Notes are based on following source material:
 * [Introduction](#introduction)
   - [Why C?](#why-c)
   - [History](#history)
-* [Item](#item)
+* [First program](#first-program)
   - [sub-item](#sub-item)
   - [sub-item](#sub-item)
 * [Item](#item)
@@ -103,3 +103,14 @@ Programming languages timeline:
 </ul>
 
 </dl>
+
+### First Program
+File extension for programs written in C: eg.: **hello.c**
+<code>
+#include <stdio.h>
+int main(void)
+{
+printf("Hello, World!\n");
+return 0;
+}
+</code>
