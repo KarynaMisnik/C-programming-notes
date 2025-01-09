@@ -44,3 +44,59 @@ C is compiled language, it is small: a C statement usually translates to a few a
 C is designed for portability, performance, and minimal resource usage, making it ideal for systems like operating systems and embedded systems. Its explicit coding style helps programmers understand what each line does. Known for its efficiency and low-level capabilities, C is the native language of UNIX, highly portable, stable, and widely used. It allows direct memory manipulation through constructs like pointers and arrays, giving programmers control over memory layout and dynamic allocation, though deallocation must be managed manually.
 
 ### History
+
+Programming languages timeline:
+
+<dl>
+  <dt><h3>1950s</h3></dt>
+   <dt>1957 - Fortran (Formula Translation):</dt>
+<ul>
+  <li>Developed by IBM and led by John Backus.</li>
+  <li>The first high-level programming language designed for scientific and engineering computations.</li>
+</ul>
+   <dt>1958 - Algol (Algorithmic Language):</dt>
+ <ul>
+   <li>Created by an international committee.</li>
+   <li>Introduced structured programming and was influential in the development of many future languages.</li>
+ </ul>
+
+   <dt><h3>1960s</h3></dt>
+  <dt>1960 - COBOL (Common Business-Oriented Language):</dt>
+<ul>
+  <li>Developed for business, finance, and administrative systems.</li>
+<li>Known for its readability and use in enterprise applications.</li>
+</ul>
+
+   <dt>1964 - BASIC (Beginner's All-purpose Symbolic Instruction Code):</dt>
+  <ul>
+    <li>Created by John G. Kemeny and Thomas E. Kurtz.</li>
+    <li>Aimed to simplify programming for students and beginners.</li>
+  </ul>
+  
+  <dt>1967 - BCPL (Basic Combined Programming Language):</dt>
+  <ul>
+    <li>Designed by Martin Richards.</li>
+    <li>A precursor to the C language, focusing on simplicity and portability.</li>
+  </ul>
+
+   <dt>1968 - Algol 68:</dt>
+  <ul>
+    <li>A successor to Algol, introducing more advanced features but criticized for its complexity.</li>
+    <li>Influenced languages like Pascal and C.</li>
+  </ul>
+
+  <dt><h3>1970s</h3></dt>
+  <dt>1970 - Pascal:</dt>
+  <ul>
+    <li>Developed by Niklaus Wirth.</li>
+    <li>Designed for teaching structured programming and data structuring.</li>
+  </ul>
+
+  <dt>1972 - C:</dt>
+<ul>
+  <li>Developed by Dennis Ritchie at Bell Labs.</li>
+   <li>Evolved from B (a derivative of BCPL) and included features like structured programming, efficient low-level memory manipulation, and portability.</li>
+   <li>Became the foundation for many modern programming languages and operating systems, including UNIX.</li>
+</ul>
+   
+</dl>
