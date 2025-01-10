@@ -114,7 +114,7 @@ return 0;
 }
 </code>
 
-What does each line mean?
+What does each line mean?<br><br>
 
 <code>
   #include <stdio.h>
