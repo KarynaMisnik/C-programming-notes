@@ -115,9 +115,7 @@ return 0;
 </code>
 
 What does each line mean?<br><br>
-
-<code>
-  #include <stdio.h>
+<code>#include <stdio.h>
 </code>
 
 This is a preprocessor directive. Preprocessor directives gives instructions to a part of the compiler to modify the code before it is compiled. 
