@@ -105,9 +105,8 @@ Programming languages timeline:
 </dl>
 
 ### First Program
-File extension for programs written in C: eg.: **hello.c**
-<code>
-#include <stdio.h>
+File extension for programs written in C: eg.: **hello.c**<br>
+<code>#include <stdio.h>
 int main(void)
 {
 printf("Hello, World!\n");
