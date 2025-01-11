@@ -27,7 +27,7 @@ Notes are based on following source material:
   - [History](#history)
 * [First program](#first-program)
   - ["Hello World!"](#hello-world)
-  - [compiling](#compiling)
+  - [Compiling](#compiling)
 * [Item](#item)
 
 
@@ -108,7 +108,7 @@ Programming languages timeline:
 
 ### "Hello world!"
 
-File extension for programs written in C: eg.: **hello.c**<br><br>
+File extension for programs written in C: eg.: **hello.c**<br>
 <code>#include <stdio.h>
 int main(void)
 {
@@ -117,20 +117,20 @@ return 0;
 }
 </code>
 
-What does each line mean?<br><br>
+What does each line mean?<br>
 <code>#include <stdio.h>
 </code>
 
 This is a preprocessor directive. Preprocessor directives gives instructions to a part of the compiler to modify the code before it is compiled. 
-**#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. <br><br>
+**#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. <br>
 
 <code>int main(void)</code>
 
-It could be only one **main()** function because it acts as the starting point of all C programs.<br><br>
+It could be only one **main()** function because it acts as the starting point of all C programs.<br>
 
 <code>printf("Hello World!\n");</code>
 
-This line produces the actual output on the console(terminal in UNIX environment).<br><br>
+This line produces the actual output on the console(terminal in UNIX environment).<br>
 
 <code>return 0;</code>
 
@@ -138,4 +138,31 @@ When ending a program, we use an exit status to inform the operating system whet
 
 ### Compiling
 
+For compiling in UNIX environment(GCC must be installed) the command is: <br>
+
+<code>gcc example.c</code>
+
+To run the program:<br>
+
+<code>./a.out</code>
+
+The result will be **Hello, World!**. 
+To show the exit status of the last program, run:<br>
+
+<code>echo $</code>
+This shows the value the main function has returned, which is 0 in the above example.
+
+One more way to compile and run the program is:<br>
+
+<code>gcc -o Wall testing example.c</code>
+
+<code>-o</code>
+
+If you want the output to have a name other than **./a.out**. In this case it will get a new name **testing**. So, for runninng the program command will be: <br>
+
+<code>./testing.out</code><br>
+
+<code>-Wall</code>
+
+It indicates that gcc should generate warnings about various types of suspicious code that are likely to be incorrect. These warnings help identify potential issues in your code, such as logical errors, bad practices, or possible bugs, even if the code compiles successfully.
 
