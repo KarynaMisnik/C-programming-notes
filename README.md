@@ -26,8 +26,8 @@ Notes are based on following source material:
   - [Why C?](#why-c)
   - [History](#history)
 * [First program](#first-program)
-  - [sub-item](#sub-item)
-  - [sub-item](#sub-item)
+  - ["Hello World!"](#hello-world)
+  - [compiling](#compiling)
 * [Item](#item)
 
 
@@ -104,7 +104,10 @@ Programming languages timeline:
 
 </dl>
 
-### First Program
+# First Program
+
+### "Hello world!"
+
 File extension for programs written in C: eg.: **hello.c**<br><br>
 <code>#include <stdio.h>
 int main(void)
@@ -119,4 +122,20 @@ What does each line mean?<br><br>
 </code>
 
 This is a preprocessor directive. Preprocessor directives gives instructions to a part of the compiler to modify the code before it is compiled. 
-**#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. 
+**#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. <br><br>
+
+<code>int main(void)</code>
+
+It could be only one **main()** function because it acts as the starting point of all C programs.<br><br>
+
+<code>printf("Hello World!\n");</code>
+
+This line produces the actual output on the console(terminal in UNIX environment).<br><br>
+
+<code>return 0;</code>
+
+When ending a program, we use an exit status to inform the operating system whether the program ran successfully. An exit status of <code>0</code> signals success, while other integers can represent different types of errors. This practice of using exit codes is a long-standing convention.
+
+### Compiling
+
+
