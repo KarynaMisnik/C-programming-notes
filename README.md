@@ -28,7 +28,9 @@ Notes are based on following source material:
 * [First program](#first-program)
   - ["Hello World!"](#hello-world)
   - [Compiling](#compiling)
-* [Item](#item)
+* [Basic Program Structure](#basic-program-structure)
+  - [Block, Statement, Whitespace and Scope](#block-statement-whitespace-scope)
+  - [item](#item)
 
 
 # Introduction
@@ -154,15 +156,20 @@ This shows the value the main function has returned, which is 0 in the above exa
 
 One more way to compile and run the program is:<br>
 
-<code>gcc -o Wall testing example.c</code>
+<code>gcc -o -Wall testing example.c</code>
 
 <code>-o</code>
 
 If you want the output to have a name other than **./a.out**. In this case it will get a new name **testing**. So, for runninng the program command will be: <br>
 
-<code>./testing.out</code><br>
+<code>./testing</code><br>
 
 <code>-Wall</code>
 
 It indicates that gcc should generate warnings about various types of suspicious code that are likely to be incorrect. These warnings help identify potential issues in your code, such as logical errors, bad practices, or possible bugs, even if the code compiles successfully.
+
+# Basic Program Structure
+
+### Block, Statement, Whitespace and Scope
+
 
