@@ -30,7 +30,8 @@ Notes are based on following source material:
   - [Compiling](#compiling)
 * [Basic Program Structure](#basic-program-structure)
   - [Block, Statement, Whitespace and Scope](#block-statement-whitespace-scope)
-  - [item](#item)
+  - [Basic Functions](#basic-functions)
+  - [Standard Library](#standard-library)
 
 
 # Introduction
@@ -207,3 +208,51 @@ int num = 6; /* 'num' now equals 6 */
 printf("%d\n", num); /* prints a '6' instead of the global variable of 'num',5 */
 return 0;
 }</code>
+
+### Basic Functions
+
+A **function** is a block of reusable code that performs a specific task. 
+
+Advantages of Using Functions:
+<ul>
+  <li><ins>Code Reusability:</ins> Write once, reuse multiple times.</li>
+   <li><ins>Modularity:</ins> Breaks down complex programs into smaller, manageable chunks.</li>
+   <li><ins>Improved Debugging:</ins> Easier to test and debug individual parts.</li>
+   <li><ins>Ease of Maintenance:</ins> Simplifies updating and maintaining the code.</li>
+</ul>
+
+Requesting a function to perform its task is called a **function call**. Functions often need data from the caller to work; these are called **arguments**. After completing its task, a function may send a result back to the caller, known as the return value.
+
+**Before calling a function:**
+
+<ul>
+  <li>What the function does;</li>
+  <li>The data type of the arguments and what they mean;</li>
+  <li>The data type of the return value and what it means;</li>
+</ul>
+
+Return value could be a result of computatyion or indication whether a function successfuly completed its work. 
+
+### Standard Library
+
+In **1983**, as C was being standardized, the **American National Standards Institute (ANSI)** created a committee to define a standard version of C, known as **ANSI C**. This standard included a basic set of common functions, called the **Standard Library**, which provides tools for tasks like input/output, string manipulation, math, file handling, and memory management. However, it excludes hardware- or OS-specific functions, such as those for graphics, sound, or networking. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
