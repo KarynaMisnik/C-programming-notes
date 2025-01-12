@@ -254,8 +254,10 @@ Compilation in C programming is the process of converting your written code into
 
 6. **Executable File:** The result is an executable file (e.g., <code>program.exe</code> or <code>./program</code>), which you can run on your computer.
 
-<img src='https://github.com/user-attachments/assets/4f75d0ca-59e9-4483-b71e-3c961016b048' alt="c compiler process scheme">
 
+|<img src='https://github.com/user-attachments/assets/4f75d0ca-59e9-4483-b71e-3c961016b048' alt="c compiler process scheme">|
+|:--:|
+| *C Compilation Scheme* |
 
 
 
