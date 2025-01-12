@@ -33,6 +33,9 @@ Notes are based on following source material:
   - [Basic Functions](#basic-functions)
   - [Standard Library](#standard-library)
 * [C Compilation](#c-compilation)
+* [Variables](#variables)
+  - [Declaring, Initializing and Assigning Variables](#declaring-initializing-and-assigning-variables)
+  - [Data Types](#data-types)
 
 
 # Introduction
@@ -260,17 +263,105 @@ Compilation in C programming is the process of converting your written code into
 | *C Compilation Scheme* |
 
 
+# Variables
 
+In C, variables are names that refer to memory locations where values are stored. We can think of a variable as a placeholder for a value. For example, if a variable i is set to *4*, then *i + 1* equals *5*.
 
+Before using a variable in C, you must <ins>declare</ins> it. Declaring a variable tells the program how many variables you need, their names, and how much memory they require.
 
+Each variable has a <ins>type</ins>, which defines what kind of data it can hold (e.g., integer, float, etc.) and how much memory it needs. The size of a type depends on the hardware and compiler being used, as C is a low-level language.
 
+In C, all variables <ins>*must be assigned*<ins> a specific type when they are declared.
 
+### Declaring, Initializing and Assigning Variables
 
+<dl>
+  <dt><h3>Step 1:</h3> Declare the variable</dt>
+  Define the variable by specifying its type and name. 
+</dl>
+<code>int number;</code>
+<br>
 
+> At this point, memory is reserved for the variable, but no value is assigned to it.
 
+<dl>
+  <dt><h3>Step 2:</h3> Initialize the variable</dt>
+  Assign an initial value to the variable when you declare it.
+</dl>
+<code>int number = 10;</code>
+<br>
 
+>This combines declaration and initialization, giving the variable a value of <code>10</code>.
 
+<dl>
+  <dt><h3>Step 3:</h3> Assign a new value to the variable</dt>
+  If needed, you can change the value of the variable later in the program.
+</dl>
+<code>number = 20;</code>
+<br>
 
+>Now, the value of number is updated to 20.
+
+**Summary:** <br>
+
+<code>#include <stdio.h>
+int main() {
+    int number;       // Step 1: Declare
+    number = 10;      // Step 2: Initialize
+    number = 20;      // Step 3: Assign a new value
+    printf("The value of number is: %d\n", number); // Output: 20
+    return 0;}
+</code>
+
+### Data Types
+
+They are four basic data types: **int**, **char**, **float**, and **double**.
+
+**int (Integer):**
+<ul>
+  <li>Stores whole numbers (no decimal point).</li>
+  <li>Size: Typically 4 bytes (varies by system).</li>
+  <li>Range: Usually -2,147,483,648 to 2,147,483,647.</li>
+</ul>
+  Example:<br>
+
+  <code>int age = 25;</code>
+
+  **char (Character):**
+
+  <ul>
+    <li>Stores a single character or ASCII value.</li>
+    <li>Size: 1 byte.</li>
+    <li>Range: -128 to 127 or 0 to 255 (depending on system).</li>
+  </ul>
+Example:<br>
+
+<code>char grade = 'A';</code>
+
+>**Note:** For characters **' '** are used. 
+
+**float (Floating Point):**
+
+<ul>
+    <li>Stores decimal numbers with single precision</li>
+    <li>Size: Typically 4 bytes.</li>
+    <li>Range: Approximately ±3.4e−38 to ±3.4e38.</li>
+  </ul>
+
+  Example<br>
+
+  <code>float temperature = 36.5;</code>
+
+**double (Double Precision Floating Point):**
+
+<ul>
+    <li>Stores decimal numbers with double precision (more accuracy than float).</li>
+    <li>Size: Typically 8 bytes.</li>
+    <li>Range: Approximately ±1.7e−308 to ±1.7e308.</li>
+  </ul>
+Example:<br>
+
+<code>double pi = 3.141592653589;</code>
 
 
 
