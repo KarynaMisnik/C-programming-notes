@@ -29,9 +29,10 @@ Notes are based on following source material:
   - ["Hello World!"](#hello-world)
   - [Compiling](#compiling)
 * [Basic Program Structure](#basic-program-structure)
-  - [Block, Statement, Whitespace and Scope](#block-statement-whitespace-scope)
+  - [Block, Statement, Whitespace and Scope](#block-statement-whitespace-and-scope)
   - [Basic Functions](#basic-functions)
   - [Standard Library](#standard-library)
+* [C Compilation](#c-compilation)
 
 
 # Introduction
@@ -237,7 +238,23 @@ Return value could be a result of computatyion or indication whether a function 
 
 In **1983**, as C was being standardized, the **American National Standards Institute (ANSI)** created a committee to define a standard version of C, known as **ANSI C**. This standard included a basic set of common functions, called the **Standard Library**, which provides tools for tasks like input/output, string manipulation, math, file handling, and memory management. However, it excludes hardware- or OS-specific functions, such as those for graphics, sound, or networking. 
 
+# C Compilation
 
+Compilation in C programming is the process of converting your written code into a program that the computer can run. Here's how it works, step by step:
+
+1. **Writing the Code:** You write your program in a text file with a **.c** extension (e.g., <code>program.c</code>).
+
+2.  **Preprocessing:** The compiler processes your code to handle things like **#include** and **#define**. This step prepares the code for compilation by expanding macros and including header files.
+
+3. **Compiling:** The compiler translates your C code into assembly code, which is a low-level language that the computer can understand.
+
+4. **Assembling:** The assembler converts the assembly code into machine code (binary instructions), creating an object file (<code>.o</code> or <code>.obj</code>).
+
+5. **Linking:** The linker combines your object file with necessary libraries (e.g., the Standard Library) to create the final executable program.
+
+6. **Executable File:** The result is an executable file (e.g., <code>program.exe</code> or <code>./program</code>), which you can run on your computer.
+
+<img src='https://github.com/user-attachments/assets/4f75d0ca-59e9-4483-b71e-3c961016b048' alt="c compiler process scheme">
 
 
 
