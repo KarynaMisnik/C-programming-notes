@@ -36,6 +36,7 @@ Notes are based on following source material:
 * [Variables](#variables)
   - [Declaring, Initializing and Assigning Variables](#declaring-initializing-and-assigning-variables)
   - [Data Types](#data-types)
+  - [Data Type Modifiers](#data-type-modifiers)
 
 
 # Introduction
@@ -389,12 +390,40 @@ printf("%zu\n", sizeof(a));       // Size of variable a</code>
   <li>The result depends on the system architecture (e.g., 32-bit vs 64-bit).</li>
 </ul>
    
+### Data Type Modifiers
+
+In C, long and short are modifiers that adjust the memory size of a data type:
+
+<ul>
+  <li><b>short:</b> Uses less memory than int (typically 2 bytes, range: -32,768 to 32,767).</li>
+  <li><b>long:</b> Uses more memory than int (typically 4 or 8 bytes).</li>
+  <li>Memory sizes are not fixed but follow the rule:
+    <code>sizeof(short) <= sizeof(int) <= sizeof(long).</code></li>
+</ul>
+  
+Modern compilers also support **long long**, which is typically 8 bytes.
 
 
+**Unsigned and Signed Modifiers:**
+<ul>
+  <li><b>unsigned:</b> Makes a variable store only <i>positive</i> values, doubling its range.</li>
+</ul>
 
+Example: For unsigned short, the range is <code>0</code> to <code>65,535</code>.
 
+<ul>
+  <li><b>signed:</b> Allows both <i>positive</i> and <i>negative</i> values (default for most types except char).</li>
+</ul>
 
+Example: For signed int, the range is <code>-2,147,483,648</code> to <code>2,147,483,647</code>.
 
+**Key Points:**
+
+<ul>
+  <li>unsigned and signed can be used with any integer type.</li>
+  <li>If the type is omitted, <coe>int</coe> is assumed (e.g., unsigned means <code>unsigned int</code>).</li>
+</ul>
+    
 
 
 
