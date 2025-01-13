@@ -38,6 +38,7 @@ Notes are based on following source material:
   - [Data Types](#data-types)
   - [Data Type Modifiers](#data-type-modifiers)
   - [Const Qualiﬁer](#const-qualiﬁer)
+  - [#define](#define)
 
 
 # Introduction
@@ -454,13 +455,70 @@ int main() {
 }</code>
     
     
+### #define
 
+What is <code>#define</code> in C?
 
+**#define** is a <ins>preprocessor directive</ins> in C used to define *constants* or *macros*. It allows you to assign a name to a value or code snippet, which the compiler replaces throughout the program during preprocessing (before compilation).
 
+Syntax:<br>
 
+<code>#define NAME value</code>
 
+**NAME:** The identifier (constant or macro name).
+**value:** The value or code snippet that NAME represents.
 
+How to Use <code>#define</code>
 
+Defining Constants: Use **#define** to create symbolic constants to make your code more readable and maintainable.
+
+Example:<br>
+
+<code>#include <stdio.h>
+
+#define PI 3.14159
+
+int main() {
+    double area, radius = 5.0;
+    area = PI * radius * radius;  // PI is replaced with 3.14159
+    printf("Area of the circle: %.2f\n", area);
+    return 0;
+}</code>
+
+Creating Macros: Use **#define** to create macros, which are code snippets or expressions.
+
+Example:<br>
+
+<code>#include <stdio.h>
+
+#define SQUARE(x) ((x) * (x))  // Macro to calculate the square
+
+int main() {
+    int num = 4;
+    printf("Square of %d is %d\n", num, SQUARE(num));
+    return 0;
+}</code>
+
+Key Points:
+<ul>
+  <li>No memory usage: #define values are replaced at compile time, so they do not use memory.</li>
+  <li>No type checking: Unlike const, #define does not have a data type, and it doesn't follow scope rules.</li>
+  <li>Parentheses are important for macros: Always wrap macro parameters and expressions in parentheses to avoid precedence issues.</li>
+</ul>
+    
+**Pros:**
+<ul>
+  <li>Makes the code more readable.</li>
+  <li>Easy to change values in one place without searching throughout the code.</li>
+</ul>
+
+**Cons:**
+<ul>
+  <li>No type checking (prone to errors in complex macros).</li>
+  <li>Harder to debug as they are replaced during preprocessing.</li>
+</ul>
+    
+    
 
 
 
