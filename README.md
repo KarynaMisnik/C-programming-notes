@@ -364,5 +364,54 @@ Example:<br>
 <code>double pi = 3.141592653589;</code>
 
 
+The **sizeof** ~~function~~ operator in C is used to determine the size (in bytes) of a data type or a variable in memory. It is a compile-time operator that returns an unsigned integer representing the size.
+
+Syntax:<br>
+
+<code>sizeof(type);
+sizeof(variable);</code>
+
+Example:<br>
+
+<code>int a = 10;
+printf("%zu\n", sizeof(int));     // Size of int type
+printf("%zu\n", sizeof(a));       // Size of variable a</code>
+
+>Note: In C, **%zu** is a format specifier used with printf to print values of type **size_t**, which is an unsigned integer type used to represent the size of objects in bytes.
+>The sizeof operator returns a value of type **size_t**, so **%zu** is the correct way to print it.
+**%zu** ensures portability and avoids warnings or errors when printing the result of sizeof on different platforms.
+
+**Key Points:**
+
+<ul>
+  <li>Useful for portability across systems.</li>
+  <li>Works with all data types, arrays, pointers, and structures.</li>
+  <li>The result depends on the system architecture (e.g., 32-bit vs 64-bit).</li>
+</ul>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
