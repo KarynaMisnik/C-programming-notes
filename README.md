@@ -37,6 +37,7 @@ Notes are based on following source material:
   - [Declaring, Initializing and Assigning Variables](#declaring-initializing-and-assigning-variables)
   - [Data Types](#data-types)
   - [Data Type Modifiers](#data-type-modifiers)
+  - [Const Qualiﬁer](#const-qualiﬁer)
 
 
 # Introduction
@@ -424,11 +425,35 @@ Example: For signed int, the range is <code>-2,147,483,648</code> to <code>2,147
   <li>If the type is omitted, <coe>int</coe> is assumed (e.g., unsigned means <code>unsigned int</code>).</li>
 </ul>
     
+### Const Qualiﬁer
 
 
+The **const qualifier** in C is used to declare variables whose values <ins>cannot be changed</ins> after they are initialized. This ensures the variable remains constant throughout the program.
 
+**Why use const?**
 
+<ul>
+  <li>Prevent accidental modification of important values.</li>
+  <li>Enable small optimizations by the compiler, as it knows the value won't change.</li>
+  <li>Improve code clarity and safety by clearly indicating which values are constant.</li>
+</ul>
 
+   Example:<br>
+   
+<code>#include <stdio.h>
+
+int main() {
+    const double pi = 3.14159;  // Declare and initialize a constant variable
+
+    printf("The value of pi is: %f\n", pi);
+
+    // Attempting to modify the value will cause a warning or error
+    // pi = 3.14;  // Uncommenting this line will cause a compilation error or warning
+
+    return 0;
+}</code>
+    
+    
 
 
 
