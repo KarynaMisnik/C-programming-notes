@@ -39,6 +39,7 @@ Notes are based on following source material:
   - [Data Type Modifiers](#data-type-modifiers)
   - [Const Qualiﬁer](#const-qualiﬁer)
   - [#define](#define)
+  - [static](#static)
 
 
 # Introduction
@@ -517,7 +518,67 @@ Key Points:
   <li>No type checking (prone to errors in complex macros).</li>
   <li>Harder to debug as they are replaced during preprocessing.</li>
 </ul>
-    
+
+   ### static
+
+The static keyword has two main purposes:
+
+**Static Linkage** (for global variables and functions):
+<ul>
+  <li>When a global variable or function is declared as static, it can only be accessed within the file where it is defined.</li>
+  <li>This means it is "hidden" from other files in the project, making it private to that file.</li>
+</ul>
+        
+**Static Storage Duration** (for local variables):
+<ul>
+  <li>When a local variable is declared as static, it is created only once and retains its value even after the function or block ends.
+  </li>
+  <li>Unlike global variables, it can only be accessed within its defined scope.</li>
+</ul>
+        
+Example:<br>
+
+<code>#include <stdio.h>
+void increment() {
+    static int value = 0;  // Retains its value between calls
+    value++;
+    printf("Value: %d\n", value);
+}
+int main() {
+    increment();  // Output: Value: 1
+    increment();  // Output: Value: 2
+    increment();  // Output: Value: 3
+    return 0;
+}
+</code>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
     
 
 
