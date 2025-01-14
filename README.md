@@ -41,6 +41,7 @@ Notes are based on following source material:
   - [#define](#define)
   - [static](#static)
   - [extern](#extern)
+  - [volatile](#volatile)
 
 
 # Introduction
@@ -577,10 +578,38 @@ How It Works:
 This approach allows variables to be shared across multiple files without duplication.
 
 
+### Volatile
 
+The <code>volatile</code> keyword tells the compiler that a variable's value can change at any time, even outside the program's control (e.g., by hardware or another thread). Without volatile, the compiler might optimize code by assuming the variable doesn't change, leading to incorrect behavior.
 
+When to Use volatile:
+<ul>
+  <li><b>Embedded Systems:</b> When a variable is updated by hardware (e.g., reading sensor data).</li>
+  <li><b>Multi-threaded Programs:</b> When a variable is shared between threads.</li>
+  <li><b>Interrupt Handlers:</b> When a variable is modified inside an interrupt routine.</li>
+</ul>
+    
+ Example:<br>
 
-
+ <code>#include <stdio.h>
+#include <stdbool.h>
+// Simulated hardware flag
+volatile bool flag = false;
+void hardwareInterrupt() {
+    // Simulate hardware changing the flag
+    flag = true;
+}
+int main() {
+    printf("Waiting for flag...\n");
+    // Simulate checking for a hardware flag
+    while (!flag) {
+        // Without volatile, this loop might be optimized into an infinite loop
+    }
+    printf("Flag is set! Exiting.\n");
+    return 0;
+}
+</code>
+    
 
 
 
