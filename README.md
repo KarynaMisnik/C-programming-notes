@@ -42,6 +42,9 @@ Notes are based on following source material:
   - [static](#static)
   - [extern](#extern)
   - [volatile](#volatile)
+  - [auto](#auto)
+  - [register](#register)
+  - [Modifiers summary](#modifiers-summary)
 
 
 # Introduction
@@ -578,7 +581,7 @@ How It Works:
 This approach allows variables to be shared across multiple files without duplication.
 
 
-### Volatile
+### volatile
 
 The <code>volatile</code> keyword tells the compiler that a variable's value can change at any time, even outside the program's control (e.g., by hardware or another thread). Without volatile, the compiler might optimize code by assuming the variable doesn't change, leading to incorrect behavior.
 
@@ -610,15 +613,38 @@ int main() {
 }
 </code>
     
+### auto
+
+The <code>auto</code> (redundant)keyword is used to declare automatic (local) variables. These variables are created when the program enters their scope and destroyed when it exits. However, since all variables declared inside a block are automatically treated as auto, the keyword is rarely used and is considered unnecessary.
+
+Example:<br>
+
+<code>#include <stdio.h>
+int main() {
+    auto int x = 10;  // Same as int x = 10;
+    printf("Value of x: %d\n", x);
+    return 0;
+}
+</code>
+
+### register
+
+The <code>register</code> (redundant)keyword suggests to the compiler that a variable should be stored in the CPU's register instead of RAM for faster access. However, modern compilers optimize this automatically, making the use of register unnecessary in most cases.
+
+Example:<br>
+
+<code>#include <stdio.h>
+int main() {
+    register int counter;  // Suggest storing in a CPU register
+    for (counter = 0; counter < 5; counter++) {
+        printf("Counter: %d\n", counter);
+    }
+    return 0;
+}
+</code>
 
 
-
-
-
-
-
-
-
+### Modifiers summary
 
 
 
