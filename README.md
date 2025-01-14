@@ -40,6 +40,7 @@ Notes are based on following source material:
   - [Const Qualiﬁer](#const-qualiﬁer)
   - [#define](#define)
   - [static](#static)
+  - [extern](#extern)
 
 
 # Introduction
@@ -552,11 +553,28 @@ int main() {
 }
 </code>
 
+### extern
+
+The <code>extern</code> keyword is used to declare a variable that is defined in another file. It does not allocate memory for the variable but tells the compiler that the variable exists somewhere else in the program.
 
 
+Example:<br>
 
+|file 1: <code>main.c</code>|file 2: <code>data.c</code>|
+|----|----|
+|#include <stdio.h><br> // Declare the external variable<br> extern int sharedVar;<br> int main() {<br> printf("Value of sharedVar: %d\n", sharedVar);<br> return 0;<br>}|// Define the variable<br> int sharedVar = 42;<br>  // Actual memory is allocated here|
 
+|bash|yaml|
+|----|----|
+|gcc main.c data.c -o program<br>./program|Value of sharedVar: 42|
 
+How It Works:
+<ul>
+  <li><b>data.c</b> defines sharedVar and allocates memory for it.</li>
+   <li><b>main.c</b> uses extern to declare the same variable so the compiler knows it exists and can use it.</li>
+   <li>The linker connects the declaration in <b>main.c</b> with the definition in <b>data.c</b>.</li>
+</ul>
+This approach allows variables to be shared across multiple files without duplication.
 
 
 
