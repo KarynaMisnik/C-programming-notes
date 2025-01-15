@@ -649,12 +649,14 @@ int main() {
 <table>
 
 <th>
-  <td>static</td>
-  <td>extern</td>
+  <td><code>static</code></td>
+  <td><code>extern</code></td>
+  <td><code>auto</code></td>
 </th>
   
   <tr>
     <th>Storage</th>
+    <td>Memory</td>
     <td>Memory</td>
     <td>Memory</td>
   </tr>
@@ -663,16 +665,19 @@ int main() {
     <th>Default value</th>
     <td>Zero</td>
      <td>Zero</td>
+    <td>Garbage value (random value)</td>
   </tr>
 
   <tr>
     <th>Scope</th>
     <td>Local to the block in which it is declared</td>
     <td>Global</td>
+    <td>Local to the block in which it is declared</td>
   </tr>
 
   <tr>
     <th>Lifetime</th>
+    <td>Value persists between diﬀerent function calls</td>
     <td>Value persists between diﬀerent function calls</td>
     <td>Value persists between diﬀerent function calls</td>
   </tr>
@@ -680,6 +685,7 @@ int main() {
   <tr>
     <th>Keyword optionality</th>
     <td>Mandatory</td>
+    <td>Optional</td>
     <td>Optional</td>
   </tr>
   
