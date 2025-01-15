@@ -650,35 +650,37 @@ int main() {
 
 <th>
   <td>static</td>
-</th>
-
-<th>
   <td>extern</td>
 </th>
   
   <tr>
     <th>Storage</th>
     <td>Memory</td>
+    <td>Memory</td>
   </tr>
 
   <tr>
     <th>Default value</th>
     <td>Zero</td>
+     <td>Zero</td>
   </tr>
 
   <tr>
     <th>Scope</th>
     <td>Local to the block in which it is declared</td>
+    <td>Global</td>
   </tr>
 
   <tr>
     <th>Lifetime</th>
+    <td>Value persists between diﬀerent function calls</td>
     <td>Value persists between diﬀerent function calls</td>
   </tr>
 
   <tr>
     <th>Keyword optionality</th>
     <td>Mandatory</td>
+    <td>Optional</td>
   </tr>
   
 </table>
