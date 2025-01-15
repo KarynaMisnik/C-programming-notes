@@ -652,6 +652,7 @@ int main() {
   <td><code>static</code></td>
   <td><code>extern</code></td>
   <td><code>auto</code></td>
+  <td><code>register</code></td>
 </th>
   
   <tr>
@@ -659,6 +660,7 @@ int main() {
     <td>Memory</td>
     <td>Memory</td>
     <td>Memory</td>
+    <td>CPU registers</td>
   </tr>
 
   <tr>
@@ -666,6 +668,7 @@ int main() {
     <td>Zero</td>
      <td>Zero</td>
     <td>Garbage value (random value)</td>
+     <td>Garbage value</td>
   </tr>
 
   <tr>
@@ -673,10 +676,12 @@ int main() {
     <td>Local to the block in which it is declared</td>
     <td>Global</td>
     <td>Local to the block in which it is declared</td>
+    <td>Local to the block in which it is declared</td>
   </tr>
 
   <tr>
     <th>Lifetime</th>
+    <td>Value persists between diﬀerent function calls</td>
     <td>Value persists between diﬀerent function calls</td>
     <td>Value persists between diﬀerent function calls</td>
     <td>Value persists between diﬀerent function calls</td>
@@ -687,6 +692,7 @@ int main() {
     <td>Mandatory</td>
     <td>Optional</td>
     <td>Optional</td>
+    <td>Mandatory</td>
   </tr>
   
 </table>
