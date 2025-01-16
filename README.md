@@ -45,6 +45,10 @@ Notes are based on following source material:
   - [auto](#auto)
   - [register](#register)
   - [Modifiers summary](#modifiers-summary)
+* [Error handling](#error-handling)
+  - [Division by zero](#division-by-zero)
+  - [Signals](#signals)
+  - [setjmp](#setjmp)
 
 
 # Introduction
