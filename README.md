@@ -46,7 +46,7 @@ Notes are based on following source material:
   - [register](#register)
   - [Modifiers summary](#modifiers-summary)
 * [Error handling](#error-handling)
-  - [errno, malloc, -Wall](#errno-malloc-wall)
+  - [errno, malloc, -Wall](#errno-malloc--wall)
   - [Division by zero](#division-by-zero)
   - [Signals](#signals)
   - [setjmp](#setjmp)
@@ -763,7 +763,77 @@ int main() {
     
 ### Division by zero
 
+You must ensure that a divisor is never zero to avoid errors like division by zero, which can crash your program. Alternatively, in Unix-like systems, you can prevent the operating system from terminating your process by blocking the SIGFPE signal, which is triggered by floating-point exceptions like division by zero.
+
+Instead of letting your program crash when dividing by zero, you can check the divisor before performing the operation:<br>
+
+<code>
+  #include <stdio.h>
+#include <signal.h>
+#include <unistd.h>
+void signal_handler(int signum) {
+    printf("Caught SIGFPE: Division by zero!\n");
+}
+int main() {
+    // Set up a signal handler for SIGFPE
+    signal(SIGFPE, signal_handler);
+    int numerator = 10;
+    int divisor = 0;
+    // This will trigger SIGFPE, but the handler will manage it
+    int result = numerator / divisor;
+    printf("Result: %d\n", result);
+    return 0;
+}
+</code>
+
+Check if a divisor is not zero using <code>if-statement</code>:<br>
+
+<code>
+  #include <stdio.h>
+int main() {
+    int numerator = 10;
+    int divisor = 0; // Example of a zero divisor
+    if (divisor == 0) {
+        printf("Error: Division by zero is not allowed.\n");
+    } else {
+        printf("Result: %d\n", numerator / divisor);
+    }
+    return 0;
+}
+</code>
+
 ### Signals
+
+In C, when certain critical errors or events occur (like division by zero or an interrupt), the operating system can raise a signal to notify the program. Signals are system-level alerts that indicate something serious has happened and may disrupt normal program execution.
+
+Signals are not meant to catch errors like exceptions in other languages. Instead, they’re used to handle critical events, such as cleaning up resources before a program exits.
+
+To handle signals, include the **<signal.h>** header, define a signal handler function, and use the <code>signal()</code> function to specify how the program should respond to specific signals.
+
+Example:<br>
+
+<code>
+  #include <stdio.h>
+#include <signal.h>
+#include <stdlib.h>
+// Signal handler function
+void handle_signal(int signal) {
+    if (signal == SIGFPE) {
+        printf("Caught signal: Division by zero occurred!\n");
+        exit(EXIT_FAILURE); // Cleanly terminate the program
+    }
+}
+int main() {
+    // Set up the signal handler for SIGFPE (Floating Point Exception)
+    signal(SIGFPE, handle_signal);
+    int numerator = 10;
+    int divisor = 0;
+    // This will trigger the SIGFPE signal
+    int result = numerator / divisor;
+    printf("Result: %d\n", result); // This line will not be reached
+    return 0;
+}
+</code>
 
 ### setjmp
 
