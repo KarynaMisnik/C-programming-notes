@@ -852,9 +852,60 @@ They are commonly used for:
 
 ⚠️ Caution: These functions can make code harder to read and debug. Use them sparingly and only when necessary.
 
+Example:<br>
+
+<code>
+#include <stdio.h>
+#include <setjmp.h>
+jmp_buf env; // Declare a buffer to hold the environment
+void risky_function(int value) {
+    if (value == 0) {
+        printf("Error: Division by zero detected!\n");
+        longjmp(env, 1); // Jump back to the point where setjmp was called
+    }
+    printf("Result: %d\n", 10 / value);
+}
+int main() {
+    int val = 0;
+    if (setjmp(env) == 0) {
+        // First time setjmp is called, it returns 0
+        printf("Enter a non-zero value: ");
+        scanf("%d", &val);
+        // Call a function that might fail
+        risky_function(val);
+    } else {
+        // After longjmp, setjmp returns the second argument of longjmp
+        printf("Recovered from an error. Please fix your input.\n");
+    }
+    printf("Program continues...\n");
+    return 0;
+}
+</code>
+
+**How It Works**
+
+1. setjmp(env) saves the current program state (like a checkpoint).
+
+2. If no error occurs, the program runs normally.
+
+3. If an error is detected, longjmp(env, 1) jumps back to the setjmp call, skipping the rest of the execution in the risky function.
+
+4. The second call to setjmp returns 1, allowing the program to handle the error and continue.
+
+Output Example: 
+
+Input <code>0</code><br>
+
+<code>Enter a non-zero value: 0
+Error: Division by zero detected!
+Recovered from an error. Please fix your input.
+Program continues...
+</code>
 
 
+Input <code>2</code><br>
 
-
-
-
+<code>Enter a non-zero value: 2
+Result: 5
+Program continues...
+</code>
