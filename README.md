@@ -46,6 +46,7 @@ Notes are based on following source material:
   - [register](#register)
   - [Modifiers summary](#modifiers-summary)
 * [Error handling](#error-handling)
+  - [errno, malloc, -Wall](#errno-malloc-wall)
   - [Division by zero](#division-by-zero)
   - [Signals](#signals)
   - [setjmp](#setjmp)
@@ -703,6 +704,63 @@ int main() {
 
 # Error handling
 
+C does not have built-in support for error handling (like exceptions). Instead, programmers are responsible for preventing errors and checking function return values. For instance, <code>-1</code> or <code>NULL</code> are returned by functions like <code>socket()</code> or <code>malloc()</code> to indicate errors. If an error cannot be avoided or recovered, the programmer typically logs the error and terminates the program.
+
+C provides an external variable, <code>errno</code>, which is available after including **<errno.h>**. This variable stores error codes defined by the operating system (e.g., Linux) when resources cannot be allocated. These error codes can be converted to readable messages using the strerror(errno) function.
+
+### errno, malloc, -Wall
+
+ <code>errno</code> Runtime Error Handling
+<ul>
+  <li><b>What it does:</b> Tracks errors from system calls or library functions during program execution.</li>
+  <li><b>How it works:</b> Functions like malloc or socket set errno to an error code if they fail. You can use strerror(errno) to get a human-readable error message.</li>
+  <li><b>Use case:</b> Diagnosing runtime errors (e.g., memory allocation failure, file not found).</li>
+</ul>
+
+<code>malloc</code> Dynamic Memory Allocation
+<ul>
+  <li><b>What it does:</b> Allocates memory dynamically from the heap during runtime. Returns a pointer to the allocated memory or NULL if it fails.</li>
+  <li><b>How it interacts with errno:</b> If malloc fails, it sets errno to indicate the reason (e.g., ENOMEM for "out of memory").</li>
+  <li><b>Use case:</b> Allocating memory when the size isn’t known at compile time or for large data structures.</li>
+</ul>
+
+<code>-Wall:</code> Compiler Warnings
+
+<ul>
+  <li><b>What it does:</b> A GCC compiler flag that enables warnings about potential issues in your code.</li>
+  <li><b>Purpose:</b> Helps catch errors early (before runtime) by identifying problems like uninitialized variables, unused functions, or missing return statements.</li>
+  <li><b>Use case:</b> Ensuring code quality and preventing bugs during the compilation stage.</li>
+</ul>
+
+Example:<br>
+
+<code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <string.h>
+int main() {
+    // Request a huge amount of memory to simulate a failure
+    size_t size = 1024L * 1024L * 1024L * 1024L; // 1 TB
+    void *ptr = malloc(size);
+    if (ptr == NULL) {
+        // malloc failed, errno is set to ENOMEM (Out of memory)
+        printf("Memory allocation failed: %s\n", strerror(errno));
+        return 1; // Exit the program with an error code
+    }
+    printf("Memory allocation successful!\n");
+    // Use the allocated memory...
+    // Free the memory when done
+    free(ptr);
+    return 0;
+}
+</code>
+
+>Note:
+>Use <code>malloc</code> for dynamic memory allocation.
+>Check <code>errno</code> if <code>malloc</code> (or other functions) fail to diagnose and handle runtime errors.
+>Use <code>-Wall</code> to detect and fix issues during <ins>compilation</ins>, improving code quality and reducing runtime errors.  
+    
 ### Division by zero
 
 ### Signals
