@@ -837,9 +837,20 @@ int main() {
 
 ### setjmp
 
+The <code>setjmp</code> and <code>longjmp</code> functions in C are used to perform <ins>non-local</ins> jumps—jumping from one part of a program to another, bypassing the normal function call and return mechanism. These functions are typically used for implementing custom error handling mechanisms.
 
-    
+**setjmp:** Saves the current environment (program state) in a jmp_buf structure for later use by longjmp.
 
+**longjmp:** Restores the saved environment, effectively jumping back to the point where setjmp was called.
+
+
+They are commonly used for:
+
+1. **Error recovery:** Jumping out of deeply nested function calls when an error occurs.
+
+2.Implementing exception-like mechanisms in C.
+
+⚠️ Caution: These functions can make code harder to read and debug. Use them sparingly and only when necessary.
 
 
 
