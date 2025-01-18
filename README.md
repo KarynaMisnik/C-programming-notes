@@ -1013,13 +1013,27 @@ int main() {
 }
 </code>
 
+### scanf function
 
+The <code>scanf()</code> function in C is used for formatted input. It reads data from the standard input (usually the keyboard) and stores it in the variables specified by the arguments.
 
+Example:<br>
 
+<code>int scanf(const char *format, ...);</code>
 
+<ins>Key Limitations</ins>
 
+**Input Validation:**
+Does not handle invalid input well (e.g., entering letters instead of numbers).
+    
+**Whitespace Sensitivity:**
+<code>%s</code> stops reading at whitespace. Use <code>gets()</code> or <code>fgets()</code> for multi-word strings.
+    
+**Buffer Overflow:**
+Can lead to undefined behavior if the input exceeds the buffer size.
 
-
+>Notes: Use **fgets()** for strings to handle spaces and prevent overflow.
+>Always validate the return value of **scanf()** to ensure input was correctly read.
 
 
 
