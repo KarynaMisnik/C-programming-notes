@@ -50,6 +50,9 @@ Notes are based on following source material:
   - [Division by zero](#division-by-zero)
   - [Signals](#signals)
   - [setjmp](#setjmp)
+* [Input and Output](#input-and-output)
+  - [Format specifiers](#format-specifiers)
+  - [Escape characters](#escape-characters)
 
 
 # Introduction
@@ -909,3 +912,122 @@ Input <code>2</code><br>
 Result: 5
 Program continues...
 </code>
+
+# Input and Output
+
+### Format specifiers
+
+<ins>Format specifiers</ins> in C are used to define the type of data being input or output when working with formatted input/output functions like <code>printf()</code> and <code>scanf()</code>. They act as **placeholders** within strings and indicate the type of variable that should be inserted or interpreted at that point.
+Commonly Used Format Specifiers
+
+Here are the most commonly used format specifiers in C:
+<ins>Integer Types</ins>
+
+| Modifier          | Description                                   |                       
+|-------------------|-----------------------------------------------|
+|   %d or %i        |Signed decimal integer                         |                              
+|%u                 |Unsigned decimal integer                       |                              
+|%o                 |Unsigned octal integer                         |                             
+|%x or %X           |Unsigned hexadecimal integer                   |                            
+
+
+<ins>Floating-point Types</ins>
+
+
+| Modifier          | Description                                   | Example                      |
+|-------------------|-----------------------------------------------|------------------------------|
+|                   |                                               |                              |
+|                   |                                               |                              |
+|                   |                                               |                              |
+|                   |                                               |                              |
+
+
+    %f: Floating-point number (e.g., 3.14159)
+    %e or %E: Scientific notation (e.g., 3.14e+00 or 3.14E+00)
+    %g or %G: Uses %f or %e/%E based on precision
+    %a or %A: Hexadecimal floating-point number (C99 and later)
+
+<ins>Character and String Types</ins>
+| Modifier          | Description                                   | Example                      |
+|-------------------|-----------------------------------------------|------------------------------|
+|                   |                                               |                              |
+|                   |                                               |                              |
+|                   |                                               |                              |
+|                   |                                               |                              |
+
+
+    %c: Single character
+    %s: String of characters
+
+<ins>Pointer</ins>
+| Modifier          | Description                                   | Example                      |
+|-------------------|-----------------------------------------------|------------------------------|
+|                   |                                               |                              |
+|                   |                                               |                              |
+|                   |                                               |                              |
+|                   |                                               |                              |
+
+
+    %p: Memory address (pointer)
+
+<ins>Modifiers for Size</ins>
+
+To handle specific sizes, you can use modifiers before the format specifier:
+
+| Modifier          | Description                                   | Example                      |
+|-------------------|-----------------------------------------------|------------------------------|
+|                   |                                               |                              |
+|                   |                                               |                              |
+|                   |                                               |                              |
+|                   |                                               |                              |
+
+    %h: Short (e.g., %hd for short integers)
+    %l: Long (e.g., %ld for long integers, %lf for double)
+    %ll: Long long (e.g., %lld for long long integers)
+    %z: Size type (used for size_t)
+
+<ins>Special Formats</ins>
+
+    %%: Prints a literal % character.
+
+### Escape characters
+
+<ins>Escape characters</ins> in C are special sequences of characters used within strings or character literals to represent characters that cannot be typed directly or have special meaning in a program. They start with a backslash (\) followed by a specific character.
+
+| Escape Character | Description                                   | Example                      |
+|-------------------|-----------------------------------------------|------------------------------|
+| `\n`             | Newline (line break)                         | `printf("Hello\nWorld");`   |
+| `\t`             | Horizontal tab                               | `printf("Hello\tWorld");`   |
+| `\\`             | Backslash                                    | `printf("C:\\Path\\File");` |
+| `\'`             | Single quote                                 | `printf("It\'s fine.");`    |
+| `\"`             | Double quote                                 | `printf("He said, \"Hi!\"");` |
+| `\?`             | Question mark                                | `printf("What\?");`         |
+| `\a`             | Alert (produces a beep sound)                | `printf("\a");`             |
+| `\b`             | Backspace                                    | `printf("ABC\b");`          |
+| `\r`             | Carriage return (moves to the beginning of the current line) | `printf("Hello\rWorld");`   |
+| `\f`             | Form feed                                    | Rarely used in modern code. |
+| `\v`             | Vertical tab                                 | Rarely used in modern code. |
+| `\0`             | Null character (indicates end of a string)   | Used in C strings.          |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
