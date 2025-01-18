@@ -53,6 +53,8 @@ Notes are based on following source material:
 * [Input and Output](#input-and-output)
   - [Format specifiers](#format-specifiers)
   - [Escape characters](#escape-characters)
+  - [puts function](#puts-function)
+  - [scanf function](#scanf-function)
 
 
 # Introduction
@@ -994,13 +996,22 @@ To handle specific sizes, you can use modifiers before the format specifier:
 | `\v`             | Vertical tab                                 | Rarely used in modern code. |
 | `\0`             | Null character (indicates end of a string)   | Used in C strings.          |
 
+### puts function
 
+The <code>uts()</code> function in C is used to output a string to the standard output (usually the console) followed by a newline character <code>(\n)</code>.
 
+1. **Input:** Takes a <ins>single</ins> argument, a pointer to a null-terminated string (char *str).
+2. **Output:** Prints the string followed by a newline.
+3. **Return Value:** Returns a <ins>non-negative</ins> value on success or **EOF** on <ins>failure.</ins>
 
+Example: <br>
 
-
-
-
+<code>#include <stdio.h>
+int main() {
+    puts("Hello, World!");  // Outputs: Hello, World!
+    return 0;
+}
+</code>
 
 
 
