@@ -936,39 +936,26 @@ Here are the most commonly used format specifiers in C:
 
 | Modifier          | Description                                   | Example                      |
 |-------------------|-----------------------------------------------|------------------------------|
-|                   |                                               |                              |
-|                   |                                               |                              |
-|                   |                                               |                              |
-|                   |                                               |                              |
+| %f                |Floating-point number                          | 3.14159                      |
+| %e or %E          |Scientific notation                            |3.14e+00 or 3.14E+00          |
+| %g or %G          |Uses %f or %e/%E based on precision            |                              |
+|%a or %A           |Hexadecimal floating-point number              |                              |
 
-
-    %f: Floating-point number (e.g., 3.14159)
-    %e or %E: Scientific notation (e.g., 3.14e+00 or 3.14E+00)
-    %g or %G: Uses %f or %e/%E based on precision
-    %a or %A: Hexadecimal floating-point number (C99 and later)
 
 <ins>Character and String Types</ins>
-| Modifier          | Description                                   | Example                      |
-|-------------------|-----------------------------------------------|------------------------------|
-|                   |                                               |                              |
-|                   |                                               |                              |
-|                   |                                               |                              |
-|                   |                                               |                              |
 
+| Modifier          | Description                                   | 
+|-------------------|-----------------------------------------------|
+| %c                |Single character                               |                             
+| %s                |String of characters                                               
 
-    %c: Single character
-    %s: String of characters
 
 <ins>Pointer</ins>
-| Modifier          | Description                                   | Example                      |
-|-------------------|-----------------------------------------------|------------------------------|
-|                   |                                               |                              |
-|                   |                                               |                              |
-|                   |                                               |                              |
-|                   |                                               |                              |
 
+| Modifier          | Description                                   | 
+|-------------------|-----------------------------------------------|
+| %p                | Memory address (pointer)                      |                              
 
-    %p: Memory address (pointer)
 
 <ins>Modifiers for Size</ins>
 
@@ -976,20 +963,18 @@ To handle specific sizes, you can use modifiers before the format specifier:
 
 | Modifier          | Description                                   | Example                      |
 |-------------------|-----------------------------------------------|------------------------------|
-|                   |                                               |                              |
-|                   |                                               |                              |
-|                   |                                               |                              |
-|                   |                                               |                              |
+|%h                 |Short                                          |%hd for short integers        |
+|%l                 |Long                                           |%ld for long integers, %lf for double|
+|%ll                |Long long                                      |%lld for long long integers   |
+|%z                 |Size type (used for size_t)                    |                              |
 
-    %h: Short (e.g., %hd for short integers)
-    %l: Long (e.g., %ld for long integers, %lf for double)
-    %ll: Long long (e.g., %lld for long long integers)
-    %z: Size type (used for size_t)
-
+ 
 <ins>Special Formats</ins>
 
-    %%: Prints a literal % character.
-
+| Modifier          | Description                                   | 
+|-------------------|-----------------------------------------------|
+|%%                 |Prints a literal % character                   |                                             
+  
 ### Escape characters
 
 <ins>Escape characters</ins> in C are special sequences of characters used within strings or character literals to represent characters that cannot be typed directly or have special meaning in a program. They start with a backslash (\) followed by a specific character.
