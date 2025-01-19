@@ -1075,6 +1075,19 @@ printf("%d", a % b); // Output: 1 (10 divided by 3 leaves a remainder of 1)
 
 >Note: For negative numbers, the sign of the result depends on the implementation (often follows the dividend).
 
+### Assignment Operators
+
+Assignment operators in C are used to assign values to variables. They can also combine assignment with other operations.
+
+| Operator | Description                        | Example         | Equivalent To   |
+|----------|------------------------------------|-----------------|-----------------|
+| `=`      | Assigns a value to a variable      | `a = 10`        | N/A             |
+| `+=`     | Adds and assigns                   | `a += 5`        | `a = a + 5`     |
+| `-=`     | Subtracts and assigns              | `a -= 3`        | `a = a - 3`     |
+| `*=`     | Multiplies and assigns             | `a *= 2`        | `a = a * 2`     |
+| `/=`     | Divides and assigns                | `a /= 4`        | `a = a / 4`     |
+| `%=`     | Calculates modulus and assigns     | `a %= 3`        | `a = a % 3`     |
+
 
 
 
