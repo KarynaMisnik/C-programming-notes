@@ -1088,6 +1088,50 @@ Assignment operators in C are used to assign values to variables. They can also 
 | `/=`     | Divides and assigns                | `a /= 4`        | `a = a / 4`     |
 | `%=`     | Calculates modulus and assigns     | `a %= 3`        | `a = a % 3`     |
 
+### Logical Operators
+
+Logical operators are used to perform logical operations, often in decision-making and conditional expressions.
+
+| Operator | Description                               | Example (`a = 1, b = 0`) | Result      |
+|----------|-------------------------------------------|--------------------------|-------------|
+| `&&`     | Logical AND (true if both are true)       | `a && b`                 | `0` (false) |
+| `||`     | Logical OR (true if at least one is true) | `a || b`                 | `1` (true)  |
+| `!`      | Logical NOT (negates a condition)         | `!a`                     | `0` (false) |
+
+Example:<br>
+
+<code>int a = 1, b = 0;
+if (a && b) printf("Both true\n");  // Doesn't print
+if (a || b) printf("At least one true\n");  // Prints
+if (!a) printf("Not true\n");  // Doesn't print
+</code>
+
+>Logical operators return 1 (true) or 0 (false) based on the evaluation of conditions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
