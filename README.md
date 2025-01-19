@@ -1092,11 +1092,12 @@ Assignment operators in C are used to assign values to variables. They can also 
 
 Logical operators are used to perform logical operations, often in decision-making and conditional expressions.
 
-| Operator | Description                               | Example (`a = 1, b = 0`) | Result      |
-|----------|-------------------------------------------|--------------------------|-------------|
-| `&&`     | Logical AND (true if both are true)       | `a && b`                 | `0` (false) |
-| `||`     | Logical OR (true if at least one is true) | `a || b`                 | `1` (true)  |
-| `!`      | Logical NOT (negates a condition)         | `!a`                     | `0` (false) |
+| Operator | Description                       | Example (`a = 1, b = 0`) | Result  |
+|----------|-----------------------------------|--------------------------|---------|
+| `&&`   | Logical AND (true if both are true) | `a && b`                 | `0` (false) |
+| `ll`    | Logical OR (true if at least one is true) | `a ll b`          | `1` (true)  |
+| `!`      | Logical NOT (negates a condition)  | `!a`                     | `0` (false) |
+
 
 Example:<br>
 
@@ -1133,10 +1134,8 @@ It is shorter way to write <code>if-statement</code>. Compare:
 
 |if-statement|ternary|
 |------------|-------|
-|if (a > b)  |max = (a > b) ? a : b;|
-    max = a;
-else
-    max = b;
+|if (a > b)<br> max = a;<br> else<br>max = b; |max = (a > b) ? a : b;|
+  
 
 
 
