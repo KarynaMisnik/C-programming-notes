@@ -55,6 +55,15 @@ Notes are based on following source material:
   - [Escape characters](#escape-characters)
   - [puts function](#puts-function)
   - [scanf function](#scanf-function)
+* [Math](#math)
+  - [Arithmetic Operators](#arithmetic-operators)
+  - [Assignment Operators](#assignment-operators)
+  - [Logical Operators](#logical-operators)
+  - [Relation and Equality Operators](#relation-and-equality-operators)
+  - [Type Casting](#type-casting)
+  - [Shift Operators](#shift-operators)
+  - [Bitwise Operators](#bitwise-operators)
+  - [Comma Operator](#comma-operator)
 
 
 # Introduction
@@ -1035,8 +1044,36 @@ Can lead to undefined behavior if the input exceeds the buffer size.
 >Notes: Use **fgets()** for strings to handle spaces and prevent overflow.
 >Always validate the return value of **scanf()** to ensure input was correctly read.
 
+# Math
+
+### Arithmetic Operators
+
+Arithmetic operators perform basic mathematical operations. Here are the key operators:
+
+| Operator | Description               | Example (`a = 10, b = 3`) |
+|----------|---------------------------|---------------------------|
+| `+`      | Addition                  | `a + b = 13`              |
+| `-`      | Subtraction               | `a - b = 7`               |
+| `*`      | Multiplication            | `a * b = 30`              |
+| `/`      | Division                  | `a / b = 3` (integer division) |
+| `%`      | Modulus (remainder)       | `a % b = 1`               |
 
 
+<ins>Modulus Operator (%)</ins>
+
+ The modulus operator returns the remainder of a division. It's not the equivalent of the ~~mathematical
+modulus~~ and works only with integer operands. Division of integers will return an integer, and the division
+of a negative integer by a positive integer((-5) / 3 = -1 [not -2]) will round towards zero instead of rounding down
+
+>Note: Modulus is not deﬁned for ﬂoating-point numbers, but the **math.h** library has an **fmod** function.
+
+ Example:<br>
+
+<code>int a = 10, b = 3;
+printf("%d", a % b); // Output: 1 (10 divided by 3 leaves a remainder of 1)
+</code>
+
+>Note: For negative numbers, the sign of the result depends on the implementation (often follows the dividend).
 
 
 
