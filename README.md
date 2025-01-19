@@ -1108,15 +1108,35 @@ if (!a) printf("Not true\n");  // Doesn't print
 
 >Logical operators return 1 (true) or 0 (false) based on the evaluation of conditions.
 
+The **conditional operator**, also known as the **ternary operator**, is a shorthand for an **if-else** statement in C. It evaluates a condition and returns one of two values based on the result.
 
+<code>condition ? value_if_true : value_if_false;</code>
 
+condition: An expression that evaluates to <code>true</code> (non-zero) or <code>false</code> (zero).
+<code>value_if_true</code>: The value returned if the condition is <ins>true</ins>.
+<code>value_if_false</code>: The value returned if the condition is <ins>false</ins>.
 
+Example:<br>
 
+<code>#include <stdio.h>
+int main() {
+    int a = 10, b = 20;
+    int max = (a > b) ? a : b; // Checks which value is greater
+    printf("The maximum is: %d\n", max); // Outputs: The maximum is: 20
+    return 0;
+}
+</code>
 
+>Note: It's called "ternary" because it involves three operands: condition, true value, false value.
 
+It is shorter way to write <code>if-statement</code>. Compare:
 
-
-
+|if-statement|ternary|
+|------------|-------|
+|if (a > b)  |max = (a > b) ? a : b;|
+    max = a;
+else
+    max = b;
 
 
 
