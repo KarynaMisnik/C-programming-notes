@@ -1205,10 +1205,8 @@ Example of Type Casting:<br>
 int main() {
     int a = 5, b = 2;
     float result;
-
     result = (float)a / b;  // Explicit casting to float
     printf("Result: %.2f\n", result);  // Output: 2.50
-
     return 0;
 }
 </code>
@@ -1219,6 +1217,91 @@ int main() {
 >Casting <ins>does not change</ins> the original data type, only how the value is interpreted in the expression.
 
 ### Shift Operators
+
+<ins>Shift operators</ins> in C are used to shift the bits of a variable to the left or right. They are primarily used for efficient mathematical operations, bit manipulation, and low-level programming.
+
+Types of Shift Operators:
+
+| Operator  | Description                 | Example (if `a = 8`) | Result in Binary | Decimal Result |
+|-----------|-----------------------------|----------------------|-----------------|----------------|
+| `<<`      | Left shift                    | `a << 2`              | `00100000`       | `32`            |
+| `>>`      | Right shift                    | `a >> 2`              | `00000010`       | `2`             |
+
+
+**Left Shift Operator (<<)**
+
+Shifts bits to the **left**, filling with **zeros** on the **right**.
+Each shift left **multiplies** the number by 2^n (where n is the shift count).
+    
+Example:<br>
+
+<code>int a = 8;       // Binary: 00001000
+int result = a << 2;  // Shift left by 2 (00001000 -> 00100000)
+printf("%d", result); // Output: 32
+</code>
+
+
+**Right Shift Operator (>>)**
+
+Shifts bits to the right, discarding bits on the right.
+The behavior depends on the <ins>type of the number:</ins>
+For <ins>unsigned</ins> numbers, zeroes are shifted in.
+For <ins>signed numbers</ins>, it depends on the compiler (could fill with zeros or sign bits).
+Each shift right divides the number by **2^n**.
+
+Example:<br>
+
+<code>int a = 8;       // Binary: 00001000
+int result = a >> 2;  // Shift right by 2 (00001000 -> 00000010)
+printf("%d", result); // Output: 2
+</code>
+
+Example Program:<br>
+
+<code>#include <stdio.h>
+int main() {
+    int num = 16; // Binary: 00010000
+    printf("Left Shift by 1: %d\n", num << 1);  // Output: 32
+    printf("Right Shift by 1: %d\n", num >> 1); // Output: 8
+    return 0;
+}</code>
+
+‼️Important Notes:
+
+1. Shifting Beyond Limits:
+
+Shifting by more than the number of bits in the type (e.g., int has 32 bits) leads to undefined behavior.
+
+2. Arithmetic vs Logical Right Shift:
+
+Arithmetic shift (signed int): Preserves sign bit in **negative** numbers.
+Logical shift (unsigned int): Fills with **zeros**.
+
+3. Efficiency:
+
+Bitwise shifts are faster than multiplication and division by powers of 2.
+
+### Bitwise Operators
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
