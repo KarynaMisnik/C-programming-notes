@@ -59,7 +59,7 @@ Notes are based on following source material:
   - [Arithmetic Operators](#arithmetic-operators)
   - [Assignment Operators](#assignment-operators)
   - [Logical Operators](#logical-operators)
-  - [Relation and Equality Operators](#relation-and-equality-operators)
+  - [Relational and Equality Operators](#relational-and-equality-operators)
   - [Type Casting](#type-casting)
   - [Shift Operators](#shift-operators)
   - [Bitwise Operators](#bitwise-operators)
@@ -1136,7 +1136,7 @@ It is shorter way to write <code>if-statement</code>. Compare:
 |------------|-------|
 |if (a > b)<br> max = a;<br> else<br>max = b; |max = (a > b) ? a : b;|
   
-### Relational Operators
+### Relational and Equality Operators
 
 Relational operators in C are used to compare two values. They return a boolean result: <code>1 (true)</code> if the condition is <ins>satisfied</ins>, and <code>0 (false)</code> otherwise.
 
@@ -1161,12 +1161,83 @@ int main() {
         printf("a is equal to b\n");
     else 
         printf("a is not equal to b\n");
+    return 0;
+}</code>
+
+>a is not equal to b
+
+### Type Casting
+
+Type casting in C is the process of converting a variable from one data type to another. It can be done explicitly by the programmer or implicitly by the compiler.
+
+**Types of Type Casting**
+
+**1.** Implicit Type Casting (Type Promotion)
+
+Automatically performed by the compiler when assigning values of smaller data types to larger ones:
+
+<code>int</code> → <code>float</code><br>
+<code>char</code> → <code>t</code><br>
+
+Example:<br>
+
+<code>int num = 10;
+float fnum = num;  // Implicit conversion from int to float
+printf("%f", fnum);  // Output: 10.000000
+</code>
+
+**2.** Explicit Type Casting (Manual Conversion)
+
+Done manually using the cast operator (type).
+
+Useful when precise control over data conversion is needed.
+
+Example:<br>
+
+<code>float num = 5.7;
+int intNum = (int) num;  // Explicit conversion from float to int
+printf("%d", intNum);  // Output: 5 (decimal part is truncated)
+</code>
+
+Example of Type Casting:<br>
+
+<code>#include <stdio.h>
+int main() {
+    int a = 5, b = 2;
+    float result;
+
+    result = (float)a / b;  // Explicit casting to float
+    printf("Result: %.2f\n", result);  // Output: 2.50
 
     return 0;
 }
 </code>
 
->a is not equal to b
+>Implicit Casting is automatic and safe, but may lead to unintended results if not careful.
+>Explicit Casting allows precision but may result in loss of data (e.g., truncating decimal points).
+>Type Promotion happens <ins>automatically</ins> in expressions (e.g., integer division converts to float if one >operand is float).
+>Casting <ins>does not change</ins> the original data type, only how the value is interpreted in the expression.
+
+### Shift Operators
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
