@@ -1283,27 +1283,151 @@ Bitwise shifts are faster than multiplication and division by powers of 2.
 
 ### Bitwise Operators
 
+Bitwise operators in C are used to manipulate individual bits of data at the binary level. These operators are useful in low-level programming, such as working with hardware, encryption, and optimization.
+
+Types of Bitwise Operators:
+
+| Operator | Name         | Description                                      | Example (`a = 5`, `b = 3`) |
+|----------|--------------|--------------------------------------------------|---------------------------|
+| `&`      | Bitwise AND  | Sets bits to 1 if both bits are 1                | `a & b` (0101 & 0011 = 0001) → `1` |
+| `l`      | Bitwise OR   | Sets bits to 1 if either bit is 1                | `a l b` (0101 | 0011 = 0111) → `7` |
+| `^`      | Bitwise XOR  | Sets bits to 1 if bits are different             | `a ^ b` (0101 ^ 0011 = 0110) → `6` |
+| `~`      | Bitwise NOT  | Inverts all bits (1 to 0, 0 to 1)        | `~a` (~0101 = 1010) → `-6` (2's complement)|
+| `<<`     | Left Shift   | Shifts bits to the left, filling with zeros       | `a << 1` (0101 → 1010) → `10` |
+| `>>`     | Right Shift  | Shifts bits to the right, discarding right bits   | `a >> 1` (0101 → 0010) → `2` |
 
 
+1. Bitwise **AND (&)**
+
+Compares each bit of two numbers; result is 1 if both bits are 1.
+
+Example:<br>
+
+<code>int a = 5, b = 3;  // 5 = 0101, 3 = 0011
+int result = a & b; // 0001 (decimal 1)
+printf("%d", result);  // Output: 1
+</code>
+
+2. Bitwise **OR (|)**
+
+Compares each bit; result is 1 if either bit is 1.
+
+Example:<br>
+
+<code>int a = 5, b = 3;
+int result = a | b; // 0111 (decimal 7)
+printf("%d", result);  // Output: 7
+</code>
+
+3. Bitwise **XOR (^)**
+
+Compares each bit; result is 1 if the bits are different.
+
+Example:<br>
+
+<code>int a = 5, b = 3;
+int result = a ^ b; // 0110 (decimal 6)
+printf("%d", result);  // Output: 6
+</code>
+
+4. Bitwise **NOT (~)**
+
+Inverts all bits (1 → 0, 0 → 1). Uses two's complement, meaning the value becomes negative.
+
+Example:<br>
+
+<code>int a = 5;
+int result = ~a; // 1010 (decimal -6)
+printf("%d", result);  // Output: -6
+</code>
+
+5. Left Shift **(<<)**
+
+Moves bits to the left, filling right positions with zeros. Equivalent to multiplying by 2^n.
+
+Example:<br>
+
+<code>int a = 5;
+int result = a << 1; // 1010 (decimal 10)
+printf("%d", result);  // Output: 10
+</code>
+
+6. Right Shift **(>>)**
+
+Moves bits to the right, discarding the rightmost bits. Equivalent to dividing by 2^n.
+
+Example:<br>
+
+<code>int a = 5;
+int result = a >> 1; // 0010 (decimal 2)
+printf("%d", result);  // Output: 2
+</code>
+
+**Example Program Using Bitwise Operators**
+
+<code>#include <stdio.h>
+int main() {
+    int a = 5, b = 3;
+    printf("a & b = %d\n", a & b);  // Output: 1
+    printf("a | b = %d\n", a | b);  // Output: 7
+    printf("a ^ b = %d\n", a ^ b);  // Output: 6
+    printf("~a = %d\n", ~a);        // Output: -6
+    printf("a << 1 = %d\n", a << 1); // Output: 10
+    printf("a >> 1 = %d\n", a >> 1); // Output: 2
+    return 0;
+}</code>
+
+🗝️ **Key Points**
+
+**Efficiency:**
+
+Bitwise operations are **faster** than arithmetic operations for multiplication/division by powers of 2.
+
+**Use Cases:**
+
+Bit masking, setting/clearing specific bits, <ins>optimizing</ins> performance.
+
+⚠️ Caution:
+
+When working with signed numbers, right shifts may behave differently depending on the compiler (logical vs arithmetic shift).
+
+### Comma Operator
+
+The comma operator in C is used to separate multiple expressions where only the rightmost expression's value is returned. It is often used to write concise code, especially in loop constructs and complex expressions.
 
 
+1. Multiple Expressions in a Single Statement:<br>
 
+<code>#include <stdio.h>
+int main() {
+    int a, b;
+    a = (b = 10, b + 5);  // Assign b = 10, then a = b + 5
+    printf("a = %d, b = %d\n", a, b);  // Output: a = 15, b = 10
+    return 0;
+}
+</code>
 
+2. For loop:<br>
+<code>#include <stdio.h>
+int main() {
+    int i, j;
+    for (i = 0, j = 10; i < 5; i++, j--) {
+        printf("i = %d, j = %d\n", i, j);
+    }
+    return 0;
+}
+</code>
 
+3. Function Arguments
 
+The comma operator should not be confused with the comma used to separate function arguments, which serves a different purpose:<br>
 
+<code>void func(int x, int y);  // Comma here separates arguments, not the operator</code>
 
+Example of Misuse:<br>
 
-
-
-
-
-
-
-
-
-
-
+<code>int x = (5, 10, 15);  // Only 15 is assigned to x
+printf("%d", x);  // Output: 15</code>
 
 
 
