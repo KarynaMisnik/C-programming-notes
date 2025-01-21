@@ -70,7 +70,7 @@ Notes are based on following source material:
   - [Exponential and logarithmic functions](#exponential-and-logarithmic-functions)
   - [Power functions](#power-functions)
   - [Nearest integer, absolute value, and remainder functions](#nearest-integer-absolute-value-and-remainder-functions)
-  - 
+  - [Error and gamma functions](#error-and-gamma-functions)
 
 
 # Introduction
