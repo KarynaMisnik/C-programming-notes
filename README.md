@@ -1437,7 +1437,26 @@ Example of Misuse:<br>
 printf("%d", x);  // Output: 15</code>
 
 
+### Math libraries
 
+
+### Trigonometric functions
+
+
+### Hyperbolic functions
+
+
+
+### Exponential and logarithmic functions
+
+
+### Power functions
+
+
+### Nearest integer, absolute value, and remainder functions
+
+
+### Error and gamma functions
 
 
 
