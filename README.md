@@ -69,6 +69,8 @@ Notes are based on following source material:
   - [Hyperbolic functions](#hyperbolic-functions)
   - [Exponential and logarithmic functions](#exponential-and-logarithmic-functions)
   - [Power functions](#power-functions)
+  - [Nearest integer, absolute value, and remainder functions](#nearest-integer-absolute-value-and-remainder-functions)
+  - 
 
 
 # Introduction
