@@ -64,6 +64,11 @@ Notes are based on following source material:
   - [Shift Operators](#shift-operators)
   - [Bitwise Operators](#bitwise-operators)
   - [Comma Operator](#comma-operator)
+  - [Math libraries](#math-libraries)
+  - [Trigonometric functions](#trigonometric-functions)
+  - [Hyperbolic functions](#hyperbolic-functions)
+  - [Exponential and logarithmic functions](#exponential-and-logarithmic-functions)
+  - [Power functions](#power-functions)
 
 
 # Introduction
