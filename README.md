@@ -75,7 +75,8 @@ Notes are based on following source material:
   - [Conditionals](#conditionals)
   - [if else](#if-else)
   - [switch case](#switch-case)
-  - 
+  - [Loops](#loops)
+  - [goto](#goto)
 
 
 # Introduction
