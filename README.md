@@ -1465,7 +1465,22 @@ printf("%d", x);  // Output: 15</code>
 ### Error and gamma functions
 
 
+# Control
 
+
+### Conditionals
+
+
+### if else
+
+ 
+### switch case
+
+
+### Loops
+
+
+### goto
 
 
 
