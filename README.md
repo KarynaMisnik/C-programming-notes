@@ -71,6 +71,9 @@ Notes are based on following source material:
   - [Power functions](#power-functions)
   - [Nearest integer, absolute value, and remainder functions](#nearest-integer-absolute-value-and-remainder-functions)
   - [Error and gamma functions](#error-and-gamma-functions)
+* [Control](#control)
+  - [Conditionals](#conditionals)
+  - 
 
 
 # Introduction
