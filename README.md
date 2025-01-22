@@ -73,6 +73,8 @@ Notes are based on following source material:
   - [Error and gamma functions](#error-and-gamma-functions)
 * [Control](#control)
   - [Conditionals](#conditionals)
+  - [if else](#if-else)
+  - [switch case](#switch-case)
   - 
 
 
