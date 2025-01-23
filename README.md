@@ -244,7 +244,6 @@ The compiler ignores whitespace (except when it separates e.g. return from <code
 **Scopes** define the visibility of data or functions within a program. In C, there are two types of scopes: **local** and **global**. A global entity is accessible from anywhere in the program, while a local entity is limited to the block in which it is declared. Example: <br>
 
 <code>int num = 5; /* 'global' variable,can be accessed from anywhere in the program */
-
 /* function, all variables inside of it
 are "local" to the function. */
 int main(void)
@@ -480,15 +479,11 @@ The **const qualifier** in C is used to declare variables whose values <ins>cann
    Example:<br>
    
 <code>#include <stdio.h>
-
 int main() {
     const double pi = 3.14159;  // Declare and initialize a constant variable
-
     printf("The value of pi is: %f\n", pi);
-
     // Attempting to modify the value will cause a warning or error
     // pi = 3.14;  // Uncommenting this line will cause a compilation error or warning
-
     return 0;
 }</code>
     
