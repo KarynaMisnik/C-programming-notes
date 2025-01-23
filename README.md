@@ -944,7 +944,7 @@ Here are the most commonly used format specifiers in C:
 
 | Modifier          | Description                                   |                       
 |-------------------|-----------------------------------------------|
-|   %d or %i        |Signed decimal integer                         |                              
+|%d or %i           |Signed decimal integer                         |                              
 |%u                 |Unsigned decimal integer                       |                              
 |%o                 |Unsigned octal integer                         |                             
 |%x or %X           |Unsigned hexadecimal integer                   |                            
@@ -1069,7 +1069,7 @@ Arithmetic operators perform basic mathematical operations. Here are the key ope
 
 <ins>Modulus Operator (%)</ins>
 
- The modulus operator returns the remainder of a division. It's not the equivalent of the ~~mathematical
+The modulus operator returns the remainder of a division. It's not the equivalent of the ~~mathematical
 modulus~~ and works only with integer operands. Division of integers will return an integer, and the division
 of a negative integer by a positive integer((-5) / 3 = -1 [not -2]) will round towards zero instead of rounding down
 
