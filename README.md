@@ -1452,7 +1452,6 @@ printf("%d", x);  // Output: 15</code>
 ### Hyperbolic functions
 
 
-
 ### Exponential and logarithmic functions
 
 
