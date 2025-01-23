@@ -1148,14 +1148,14 @@ It is shorter way to write <code>if-statement</code>. Compare:
 
 Relational operators in C are used to compare two values. They return a boolean result: <code>1 (true)</code> if the condition is <ins>satisfied</ins>, and <code>0 (false)</code> otherwise.
 
-| Operator | Description                  | Example (`a = 10, b = 20`) | Result  |
-|----------|------------------------------|---------------------------|---------|
-| `==`     | Equal to                      | `a == b`                   | `0` (false) |
-| `!=`     | Not equal to                   | `a != b`                   | `1` (true)  |
-| `>`      | Greater than                   | `a > b`                     | `0` (false) |
-| `<`      | Less than                      | `a < b`                     | `1` (true)  |
-| `>=`     | Greater than or equal to        | `a >= b`                    | `0` (false) |
-| `<=`     | Less than or equal to           | `a <= b`                    | `1` (true)  |
+| Operator | Description                  | Example (`a = 10, b = 20`) | Result     |
+|----------|------------------------------|---------------------------|-------------|
+| `==`     | Equal to                     | `a == b`                  | `0` (false) |
+| `!=`     | Not equal to                 | `a != b`                  | `1` (true)  |
+| `>`      | Greater than                 | `a > b`                   | `0` (false) |
+| `<`      | Less than                    | `a < b`                   | `1` (true)  |
+| `>=`     | Greater than or equal to     | `a >= b`                  | `0` (false) |
+| `<=`     | Less than or equal to        | `a <= b`                  | `1` (true)  |
 
 >Note: **==** checks for equality, while **=** is used for assignment.
 >Avoid using **==** for floating-point values due to precision issues.
