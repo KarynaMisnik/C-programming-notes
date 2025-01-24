@@ -1513,6 +1513,23 @@ The atanh functions compute the inverse hyperbolic tangent of the argument.
 
 A domain error occurs if the argument is not in the interval <code>[-1, +1]</code>. A range error may occur if the argument equals <code>-1</code> or <code>+1</code>.
 
+|#include <math.h>|
+|-----------------|
+|float coshf(float x); /* C99 */|
+|float sinhf(float x); /* C99 */|
+|float tanhf(float x); /* C99 */|
+|double cosh(double x);|
+|double sinh(double x);|
+|double tanh(double x);|
+|long double coshl(long double x); /* C99 */|
+|long double sinhl(long double x); /* C99 */|
+|long double tanhl(long double x); /* C99 */|
+|float acoshf(float x); /* C99 */|
+|float asinhf(float x); /* C99 */|
+|float atanhf(float x); /* C99 */|
+|double acosh(double x); /* C99 */|
+
+
 ### Exponential and logarithmic functions
 
 
