@@ -1509,9 +1509,9 @@ The acosh functions compute the inverse hyperbolic cosine of the argument. A dom
 error occurs for arguments less than 1.
 
 The asinh functions compute the inverse hyperbolic sine of the argument.
-The atanh functions compute the inverse hyperbolic tangent of the argument. A domain
-error occurs if the argument is not in the interval [-1, +1]. A range error may occur if the
-argument equals -1 or +1.
+The atanh functions compute the inverse hyperbolic tangent of the argument. 
+
+A domain error occurs if the argument is not in the interval <code>[-1, +1]</code>. A range error may occur if the argument equals <code>-1</code> or <code>+1</code>.
 
 ### Exponential and logarithmic functions
 
