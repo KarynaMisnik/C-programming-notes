@@ -1504,6 +1504,14 @@ The **cos**, **sin**, and **tan** functions return the <ins>cosine</ins>, <ins>s
 
 ### Hyperbolic functions
 
+The **cosh**, **sinh** and **tanh** functions compute the hyperbolic cosine, the hyperbolic sine, and the hyperbolic tangent of the argument respectively. For the hyperbolic sine and cosine functions, a range error occurs if the magnitude of the argument is too large.
+The acosh functions compute the inverse hyperbolic cosine of the argument. A domain
+error occurs for arguments less than 1.
+
+The asinh functions compute the inverse hyperbolic sine of the argument.
+The atanh functions compute the inverse hyperbolic tangent of the argument. A domain
+error occurs if the argument is not in the interval [-1, +1]. A range error may occur if the
+argument equals -1 or +1.
 
 ### Exponential and logarithmic functions
 
