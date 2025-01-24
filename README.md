@@ -1440,9 +1440,67 @@ printf("%d", x);  // Output: 15</code>
 
 ### Math libraries
 
+The **math.h** header file in C contains declarations for various mathematical functions (like **sqrt**, **sin**, **cos**, **pow**, etc.).
+
+<ins>Historical Evolution:</ins>
+
+**1990 ISO Standard:** Only supported <code>double</code> precision for these functions.
+**1999 ISO Standard:** Added support for <code>float</float> and <code>long double</code> precision.
+
+<ins>Linking:</ins> To use these functions in your program, you must link it with the math library (usually by including a flag like 
+**-lm** during compilation).
+
+<ins>Error Handling:</ins>
+
+**Domain Errors:** Occur when the input values to a function are invalid (e.g., negative argument for <code>sqrt</code>).
+**Range Errors:** Occur when the result of the function cannot be accurately represented within the given floating-point type (e.g., <code>pow(1000.0, 1000.0)</code> might exceed the maximum representable value for a double).
+
 
 ### Trigonometric functions
 
+#### The acos and asin functions
+
+The **acos** functions return the <ins>arccosine</ins> of their arguments in radians, and the **asin** functions return the <ins>arcsine</ins> of their arguments in radians. All functions expect the argument in the range <code>[-1,+1]</code>. The arccosine returns a value in the range <code>[0,π]</code> the arcsine returns a value in the range <code>[-π/2,+π/2]</code>.
+
+|#include <math.h>|
+|-----------------|
+|float asinf(float x); /* C99 */|
+|float acosf(float x); /* C99 */|
+|double asin(double x);|
+|double acos(double x);|
+|long double asinl(long double x); /* C99 */|
+|long double acosl(long double x); /* C99 */|
+
+#### The atan and atan2 functions
+
+The **atan** functions return the <ins>arctangent</ins> of their arguments in radians, and the **atan2** function return the <ins>arctangent</ins> of y/x in radians. The **atan** functions return a value in the range <code>[-π/2,+π/2]</code> (the reason why ±π/2 are included in the range is because the ﬂoating-point value may represent inﬁnity, and atan(±∞) = ±π/2); the **atan2** functions
+return a value in the range <code>[-π,+π]</code>. For **atan2**, a domain error may occur if both arguments
+are zero.
+
+|#include <math.h>|
+|-----------------|
+|float atanf(float x); /* C99 */|
+|float atan2f(float y, float x); /* C99 */|
+|double atan(double x);|
+|double atan2(double y, double x);|
+|long double atanl(long double x); /* C99 */|
+|long double atan2l(long double y, long double x); /* C99 */|
+
+#### The cos, sin, and tan functions
+
+The **cos**, **sin**, and **tan** functions return the <ins>cosine</ins>, <ins>sine</ins>, and <ins>tangent</ins> of the argument, expressed in *radians*.
+
+|#include <math.h>|
+|-----------------|
+|float cosf(float x); /* C99 */|
+|float sinf(float x); /* C99 */|
+|float tanf(float x); /* C99 */|
+|double cos(double x);|
+|double sin(double x);|
+|double tan(double x);|
+|long double cosl(long double x); /* C99 */|
+|long double sinl(long double x); /* C99 */|
+|long double tanl(long double x); /* C99 */|
 
 ### Hyperbolic functions
 
