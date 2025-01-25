@@ -81,7 +81,7 @@ Notes are based on following source material:
 
 # Introduction
 
-### Why C
+### Why C ⁉️
 
 C is mostly used for writting OS. The first OS written in C was Unix(Linux is also written in C). Most high-level programming languages are written in C (PHP, Perl, Python, Ruby).
 
