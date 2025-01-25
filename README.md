@@ -539,13 +539,13 @@ Key Points:
   <li>Parentheses are important for macros: Always wrap macro parameters and expressions in parentheses to avoid precedence issues.</li>
 </ul>
     
-**Pros:**
+➕ **Pros:** 
 <ul>
   <li>Makes the code more readable.</li>
   <li>Easy to change values in one place without searching throughout the code.</li>
 </ul>
 
-**Cons:**
+➖ **Cons:**
 <ul>
   <li>No type checking (prone to errors in complex macros).</li>
   <li>Harder to debug as they are replaced during preprocessing.</li>
