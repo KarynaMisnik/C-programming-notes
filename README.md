@@ -91,9 +91,9 @@ C is compiled language, it is small: a C statement usually translates to a few a
 
 C is designed for portability, performance, and minimal resource usage, making it ideal for systems like operating systems and embedded systems. Its explicit coding style helps programmers understand what each line does. Known for its efficiency and low-level capabilities, C is the native language of UNIX, highly portable, stable, and widely used. It allows direct memory manipulation through constructs like pointers and arrays, giving programmers control over memory layout and dynamic allocation, though deallocation must be managed manually.
 
-### History
+### History ⌛
 
-⌛Programming languages timeline:
+Programming languages timeline:
 
 <dl>
   
@@ -152,7 +152,7 @@ C is designed for portability, performance, and minimal resource usage, making i
 
 </dl>
 
-# First Program
+# First Program 👾
 
 ### "Hello world!"
 
@@ -184,7 +184,7 @@ This line produces the actual output on the console(terminal in UNIX environment
 
 When ending a program, we use an exit status to inform the operating system whether the program ran successfully. An exit status of <code>0</code> signals success, while other integers can represent different types of errors. This practice of using exit codes is a long-standing convention.
 
-### Compiling
+### Compiling </> 
 
 For compiling in UNIX environment(GCC must be installed) the command is: <br>
 
@@ -277,7 +277,7 @@ Requesting a function to perform its task is called a **function call**. Functio
 
 Return value could be a result of computatyion or indication whether a function successfuly completed its work. 
 
-### Standard Library
+### Standard Library 📚
 
 In **1983**, as C was being standardized, the **American National Standards Institute (ANSI)** created a committee to define a standard version of C, known as **ANSI C**. This standard included a basic set of common functions, called the **Standard Library**, which provides tools for tasks like input/output, string manipulation, math, file handling, and memory management. However, it excludes hardware- or OS-specific functions, such as those for graphics, sound, or networking. 
 
