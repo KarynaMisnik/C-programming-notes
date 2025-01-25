@@ -93,7 +93,7 @@ C is designed for portability, performance, and minimal resource usage, making i
 
 ### History
 
-Programming languages timeline:
+⌛Programming languages timeline:
 
 <dl>
   
