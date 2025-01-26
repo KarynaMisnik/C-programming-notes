@@ -281,7 +281,7 @@ Return value could be a result of computatyion or indication whether a function 
 
 In **1983**, as C was being standardized, the **American National Standards Institute (ANSI)** created a committee to define a standard version of C, known as **ANSI C**. This standard included a basic set of common functions, called the **Standard Library**, which provides tools for tasks like input/output, string manipulation, math, file handling, and memory management. However, it excludes hardware- or OS-specific functions, such as those for graphics, sound, or networking. 
 
-# C Compilation
+# C Compilation 🧙‍♂️
 
 Compilation in C programming is the process of converting your written code into a program that the computer can run. Here's how it works, step by step:
 
