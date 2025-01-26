@@ -214,7 +214,7 @@ If you want the output to have a name other than **./a.out**. In this case it wi
 
 It indicates that gcc should generate warnings about various types of suspicious code that are likely to be incorrect. These warnings help identify potential issues in your code, such as logical errors, bad practices, or possible bugs, even if the code compiles successfully.
 
-# Basic Program Structure
+# Basic Program Structure 🏗️
 
 ### Block, Statement, Whitespace and Scope
 
