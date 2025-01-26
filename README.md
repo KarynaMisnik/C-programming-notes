@@ -303,7 +303,7 @@ Compilation in C programming is the process of converting your written code into
 | *C Compilation Scheme* |
 
 
-# Variables
+# Variables ⚡
 
 In C, variables are names that refer to memory locations where values are stored. We can think of a variable as a placeholder for a value. For example, if a variable i is set to *4*, then *i + 1* equals *5*.
 
