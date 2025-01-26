@@ -253,7 +253,7 @@ printf("%d\n", num); /* prints a '6' instead of the global variable of 'num',5 *
 return 0;
 }</code>
 
-### Basic Functions
+### Basic Functions 🌠
 
 A **function** is a block of reusable code that performs a specific task. 
 
