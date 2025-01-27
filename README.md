@@ -1052,7 +1052,7 @@ Can lead to undefined behavior if the input exceeds the buffer size.
 >Notes: Use **fgets()** for strings to handle spaces and prevent overflow.
 >Always validate the return value of **scanf()** to ensure input was correctly read.
 
-# Math
+# Math 👨‍🏫
 
 ### Arithmetic Operators
 
