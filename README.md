@@ -1560,9 +1560,23 @@ int main() {
 }
 </code>
 
+**Exponential Growth (Population Growth)**
 
+In real-life applications, exponential growth can model things like population growth or compound interest. This example shows how you might calculate population growth over time.
 
+<code>
+  #include <stdio.h>
+#include <math.h>
+int main() {
+    double initial_population = 1000.0;  // Initial population
+    double growth_rate = 0.05;           // Growth rate (5%)
+    double time = 10.0;                  // Time in years
+    double population = initial_population * exp(growth_rate * time);  // e^(growth_rate * time)
+    printf("Population after %.2f years: %.2f\n", time, population);
 
+    return 0;
+}
+</code>
 
 
 
