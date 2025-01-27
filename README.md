@@ -1578,11 +1578,21 @@ int main() {
 }
 </code>
 
+Although exp() computes e^x, you can raise any number to a power by using the **pow()** function from the math library.
 
+<code>
+#include <stdio.h>
+#include <math.h>
+int main() {
+    double base = 3.0;
+    double exponent = 4.0;
+    double result = pow(base, exponent);  // base^exponent
+    printf("%.2f^%.2f = %.2f\n", base, exponent, result);
+    return 0;
+}
+</code>
 
-
-
-
+>Note: Here, pow(base, exponent) computes the value of base raised to the power of exponent.
 
 
 
