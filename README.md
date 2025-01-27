@@ -1532,6 +1532,50 @@ A domain error occurs if the argument is not in the interval <code>[-1, +1]</cod
 
 ### Exponential and logarithmic functions
 
+An exponential function is a mathematical function of the form <code>f(x) = a * e^(bx)</code>, where e is Euler's number (approximately 2.71828), and a and b are constants. In C, you can use the **exp()** function to compute e raised to the power of a number.
+
+<code>#include <stdio.h>
+#include <math.h>  // Include math.h for exp() function
+int main() {
+    double x = 2.0;
+    double result = exp(x);  // exp(x) returns e raised to the power of x
+    printf("e^%.2f = %.5f\n", x, result);
+    return 0;
+}
+</code>
+
+>Note: Here, exp(x) returns e raised to the power of x, which is e^2 in this example.
+
+Logarithmic functions are the inverse of exponential functions. In C, you can use **log()** and **log10()** to compute natural and base-10 logarithms, respectively.
+
+
+<code>
+#include <stdio.h>
+#include <math.h>  // Include math.h for log() function
+int main() {
+    double x = 20.0;
+    double result = log(x);  // log(x) returns the natural log (base e) of x
+    printf("ln(%.2f) = %.5f\n", x, result);
+    return 0;
+}
+</code>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Power functions
 
