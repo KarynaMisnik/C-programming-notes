@@ -1624,6 +1624,24 @@ int main() {
 }
 </code>
 
+The **cbrt** functions compute the <ins>cube</ins> root of <code>x</code> and return the result.
+
+<code>
+  #include <stdio.h>
+#include <math.h>  // For cbrt() function
+int main() {
+    double number, result;
+    // Ask the user for input
+    printf("Enter a number: ");
+    scanf("%lf", &number);
+    // Calculate the cube root
+    result = cbrt(number);
+    // Output the result
+    printf("The cube root of %.2lf is %.2lf\n", number, result);
+    return 0;
+}
+</code>
+
 
 ### Nearest integer, absolute value, and remainder functions
 
