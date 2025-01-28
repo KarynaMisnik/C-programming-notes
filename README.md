@@ -1565,7 +1565,7 @@ int main() {
 In real-life applications, exponential growth can model things like population growth or compound interest. This example shows how you might calculate population growth over time.
 
 <code>
-  #include <stdio.h>
+#include <stdio.h>
 #include <math.h>
 int main() {
     double initial_population = 1000.0;  // Initial population
@@ -1573,7 +1573,6 @@ int main() {
     double time = 10.0;                  // Time in years
     double population = initial_population * exp(growth_rate * time);  // e^(growth_rate * time)
     printf("Population after %.2f years: %.2f\n", time, population);
-
     return 0;
 }
 </code>
@@ -1619,7 +1618,6 @@ int main() {
         // Output the result
         printf("The square root of %.2lf is %.2lf\n", number, result);
     }
-
     return 0;
 }
 </code>
@@ -1627,7 +1625,7 @@ int main() {
 The **cbrt** functions compute the <ins>cube</ins> root of <code>x</code> and return the result.
 
 <code>
-  #include <stdio.h>
+#include <stdio.h>
 #include <math.h>  // For cbrt() function
 int main() {
     double number, result;
@@ -1666,6 +1664,48 @@ int main() {
 
 
 ### Nearest integer, absolute value, and remainder functions
+
+The **ceil** functions compute the smallest integral value not less than <code>x</code> and return the result; the floor functions compute the largest integral value not greater than <code>x</code> and return the result.
+
+<code>
+#include <stdio.h>
+#include <math.h>  // For ceil() function
+int main() {
+    double number, result;
+    // Ask the user for input
+    printf("Enter a number: ");
+    scanf("%lf", &number);
+    // Calculate the ceiling value
+    result = ceil(number);
+    // Output the result
+    printf("The ceiling of %.2lf is %.0lf\n", number, result);
+    return 0;
+}
+</code>
+
+>Note: Enter a number: 3.14
+>The ceiling of 3.14 is 4
+
+
+The **fabs** functions compute the absolute value of a ﬂoating-point number x and return the result.
+
+#include <stdio.h>
+#include <math.h>  // For fabs() function
+int main() {
+    double number, result;
+    // Ask the user for input
+    printf("Enter a number: ");
+    scanf("%lf", &number);
+    // Calculate the absolute value
+    result = fabs(number);
+    // Output the result
+    printf("The absolute value of %.2lf is %.2lf\n", number, result);
+    return 0;
+}
+
+>Note: Enter a number: -7.25
+>The absolute value of -7.25 is 7.25
+
 
 
 ### Error and gamma functions
