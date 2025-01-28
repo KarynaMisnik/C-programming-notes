@@ -1643,6 +1643,28 @@ int main() {
 </code>
 
 
+The **hypot** functions compute the <ins>square</ins> root of the sums of the squares of <code>x</code> and <code>y</code>, without
+overﬂow or underﬂow, and return the result.
+
+<code>
+#include <stdio.h>
+#include <math.h>  // For hypot() function
+int main() {
+    double side1, side2, result;
+    // Ask the user for the lengths of the two sides
+    printf("Enter the length of the first side: ");
+    scanf("%lf", &side1);
+    printf("Enter the length of the second side: ");
+    scanf("%lf", &side2);
+    // Calculate the hypotenuse using the hypot() function
+    result = hypot(side1, side2);
+    // Output the result
+    printf("The length of the hypotenuse is %.2lf\n", result);
+    return 0;
+}
+</code>
+
+
 ### Nearest integer, absolute value, and remainder functions
 
 
