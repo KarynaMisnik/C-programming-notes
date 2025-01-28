@@ -1578,7 +1578,11 @@ int main() {
 }
 </code>
 
-Although exp() computes e^x, you can raise any number to a power by using the **pow()** function from the math library.
+
+### Power functions
+
+The **pow** functions compute x raised to the power y and return the result. A domain <ins>error</ins> occurs if <code>x</code> is negative and <code>y</code> is not an integral value. A domain error occurs if the result cannot be represented when **x** is zero and y is less than or equal to zero. A range error may
+occur.
 
 <code>
 #include <stdio.h>
@@ -1595,13 +1599,30 @@ int main() {
 >Note: Here, pow(base, exponent) computes the value of base raised to the power of exponent.
 
 
+The **sqrt** functions compute the positive square root of <code>x</code> and return the result. A domain error occurs if the argument is <ins>negative</ins>.
 
 
+<code>
+#include <stdio.h>
+#include <math.h>  // For sqrt() function
+int main() {
+    double number, result;
+    // Ask the user for input
+    printf("Enter a number: ");
+    scanf("%lf", &number);
+    // Check if the number is non-negative, as sqrt() only works with non-negative values
+    if (number < 0) {
+        printf("Error! Square root of a negative number is not defined.\n");
+    } else {
+        // Calculate the square root
+        result = sqrt(number);
+        // Output the result
+        printf("The square root of %.2lf is %.2lf\n", number, result);
+    }
 
-
-
-
-### Power functions
+    return 0;
+}
+</code>
 
 
 ### Nearest integer, absolute value, and remainder functions
