@@ -523,9 +523,7 @@ Creating Macros: Use **#define** to create macros, which are code snippets or ex
 Example:<br>
 
 <code>#include <stdio.h>
-
 #define SQUARE(x) ((x) * (x))  // Macro to calculate the square
-
 int main() {
     int num = 4;
     printf("Square of %d is %d\n", num, SQUARE(num));
@@ -551,7 +549,7 @@ Key Points:
   <li>Harder to debug as they are replaced during preprocessing.</li>
 </ul>
 
-   ### static
+### static
 
 The static keyword has two main purposes:
 
@@ -569,7 +567,6 @@ The static keyword has two main purposes:
 </ul>
         
 Example:<br>
-
 <code>#include <stdio.h>
 void increment() {
     static int value = 0;  // Retains its value between calls
