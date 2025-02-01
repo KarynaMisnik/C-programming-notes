@@ -414,8 +414,10 @@ sizeof(variable);</code>
 Example:<br>
 
 <code>int a = 10;
-printf("%zu\n", sizeof(int));     // Size of int type
-printf("%zu\n", sizeof(a));       // Size of variable a</code>
+printf("%zu\n", sizeof(int));
+// Size of int type
+printf("%zu\n", sizeof(a));      
+// Size of variable a</code>
 
 >Note: In C, **%zu** is a format specifier used with printf to print values of type **size_t**, which is an unsigned integer type used to represent the size of objects in bytes.
 >The sizeof operator returns a value of type **size_t**, so **%zu** is the correct way to print it.
