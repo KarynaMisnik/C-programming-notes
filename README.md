@@ -1400,7 +1400,6 @@ When working with signed numbers, right shifts may behave differently depending 
 
 The comma operator in C is used to separate multiple expressions where only the rightmost expression's value is returned. It is often used to write concise code, especially in loop constructs and complex expressions.
 
-
 1. Multiple Expressions in a Single Statement:<br>
 
 <code>#include <stdio.h>
@@ -1413,6 +1412,7 @@ int main() {
 </code>
 
 2. For loop:<br>
+
 <code>#include <stdio.h>
 int main() {
     int i, j;
