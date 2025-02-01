@@ -510,9 +510,7 @@ Defining Constants: Use **#define** to create symbolic constants to make your co
 Example:<br>
 
 <code>#include <stdio.h>
-
 #define PI 3.14159
-
 int main() {
     double area, radius = 5.0;
     area = PI * radius * radius;  // PI is replaced with 3.14159
