@@ -1717,6 +1717,16 @@ Programs rarely follow a single control path; they use conditionals and loops to
 
 Decision-making is fundamental to both human activities and programming. In C, conditionals allow programs to make decisions based on specific conditions. The **If-Else** statement is the most common conditional, with **Switch-Case** providing a shorthand alternative. In C, logic is treated as arithmetic: <code>0</code> represents <ins>false</ins>, and any <code>nonzero</code> value represents <ins>true</ins>. Using predefined values for "TRUE" can lead to errors. Logical and arithmetic operations are closely related, with specific operators commonly used for logic.
 
+| Expression | Result |
+|------------|--------|
+| a < b      | 1 if a is less than b, 0 otherwise. |
+| a > b      | 1 if a is greater than b, 0 otherwise. |
+| a <= b     | 1 if a is less than or equal to b, 0 otherwise. |
+| a >= b     | 1 if a is greater than or equal to b, 0 otherwise. |
+| a == b     | 1 if a is equal to b, 0 otherwise. |
+| a != b     | 1 if a is not equal to b, 0 otherwise. |
+
+
 ### if else
 
  
