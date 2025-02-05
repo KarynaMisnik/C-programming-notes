@@ -1707,6 +1707,7 @@ int main() {
 
 ### Error and gamma functions
 
+The **erf** functions compute the <ins>error function</ins>, while **erfc** computes its complement <code>(1 - erf(x))</code>, with possible range errors for large arguments. The **lgamma** functions return the natural logarithm of the absolute gamma function value, with range errors for negative integers or zero. The tgamma functions compute the gamma function, with domain errors for negative integers and potential range errors.
 
 # Control
 
