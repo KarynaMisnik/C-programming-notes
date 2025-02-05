@@ -1711,6 +1711,7 @@ The **erf** functions compute the <ins>error function</ins>, while **erfc** comp
 
 # Control
 
+Programs rarely follow a single control path; they use conditionals and loops to respond to input, repeat steps efficiently, and simulate logic. In C, a block is a grouped set of statements enclosed in **{}** and executed as a unit. Blocks can be empty, nested, and do not require a semicolon after the closing brace.
 
 ### Conditionals
 
