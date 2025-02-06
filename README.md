@@ -1745,6 +1745,10 @@ Decision-making is fundamental to both human activities and programming. In C, c
 | `!a` | When `a` is true, the result is `0`. When `a` is `0`, the result is `1`. |
 
 
+<code>e = ((a && b) || (c > d));</code>
+
+>e is set equal to 1 if a and b are non-zero, or if c is greater than d. In all other cases, e is set to 0.
+
 ### if else
 
  
