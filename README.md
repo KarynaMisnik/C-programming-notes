@@ -1738,6 +1738,13 @@ Decision-making is fundamental to both human activities and programming. In C, c
 
 ### Logical Expressions
 
+| Operator | Description |
+|----------|------------|
+| `a || b` | When EITHER `a` or `b` is true (or both), the result is `1`, otherwise the result is `0`. |
+| `a && b` | When BOTH `a` and `b` are true, the result is `1`, otherwise the result is `0`. |
+| `!a` | When `a` is true, the result is `0`. When `a` is `0`, the result is `1`. |
+
+
 ### if else
 
  
