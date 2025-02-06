@@ -73,6 +73,7 @@ Notes are based on following source material:
   - [Error and gamma functions](#error-and-gamma-functions)
 * [Control](#control)
   - [Conditionals](#conditionals)
+  - [Logical Expressions](#logical-expressions)
   - [if else](#if-else)
   - [switch case](#switch-case)
   - [Loops](#loops)
@@ -1732,6 +1733,10 @@ Decision-making is fundamental to both human activities and programming. In C, c
 >are valid but always evaluate as **true**.
 >A helpful trick to avoid this error is to place the constant first (e.g., <code>if (20 == c))</code> so that a mistaken **=** >would cause a compilation error.
 
+>Note: C does not have a dedicated boolean type as many other languages do. <code>0</code> means **false** and anything else
+>**true**.
+
+### Logical Expressions
 
 ### if else
 
