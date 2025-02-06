@@ -1726,6 +1726,12 @@ Decision-making is fundamental to both human activities and programming. In C, c
 | a == b     | 1 if a is equal to b, 0 otherwise. |
 | a != b     | 1 if a is not equal to b, 0 otherwise. |
 
+>Note: remember that the equality operator is <code>==</code>, not <code>=</code>. Mistaking <code>=</code> for <code>==</code> can >lead to hard-to-find bugs since <code>=</code> <ins>assigns</ins> a value instead of checking equality. The compiler may not catch >this mistake, as expressions like
+><code>if (c = 20) {
+>} </code>
+>are valid but always evaluate as **true**.
+>A helpful trick to avoid this error is to place the constant first (e.g., <code>if (20 == c))</code> so that a mistaken **=** >would cause a compilation error.
+
 
 ### if else
 
