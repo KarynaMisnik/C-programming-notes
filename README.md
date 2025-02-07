@@ -1765,6 +1765,96 @@ Numbers starting with **0x** are hexadecimal (base 16), using digits 0-9 and a-f
 
 ### if else
 
+The if-else statement in C is used for decision-making, allowing a program to execute different blocks of code based on conditions.<br>
+
+<code>
+if (condition) {
+    // Code executes if condition is true
+} else {
+    // Code executes if condition is false
+}
+</code>
+
+Example:<br>
+
+<code>
+  #include <stdio.h>
+
+int main() {
+    int num = 10;
+
+    if (num > 0) {
+        printf("Number is positive.\n");
+    } else {
+        printf("Number is non-positive.\n");
+    }
+
+    return 0;
+}
+</code>
+
+>Number is positive.
+
+if-else if-else Ladder
+
+Used when there are multiple conditions to check.<br>
+
+<code>
+  if (condition1) {
+    // Executes if condition1 is true
+} else if (condition2) {
+    // Executes if condition2 is true
+} else {
+    // Executes if none of the conditions are true
+}
+</code>
+
+Example:<br>
+
+<code>
+  int score = 85;
+
+if (score >= 90) {
+    printf("Grade: A\n");
+} else if (score >= 80) {
+    printf("Grade: B\n");
+} else if (score >= 70) {
+    printf("Grade: C\n");
+} else {
+    printf("Grade: F\n");
+}
+</code>
+
+Nested if-else
+
+An if-else statement inside another if-else.
+
+Example:<br>
+
+<code>
+  int num = 5;
+
+if (num > 0) {
+    if (num % 2 == 0)
+        printf("Positive even number\n");
+    else
+        printf("Positive odd number\n");
+} else {
+    printf("Non-positive number\n");
+}
+</code>
+
+Ternary Operator (?:) - Shorter Alternative
+
+<code>(condition) ? expression1 : expression2;</code>
+
+Example:<br>
+
+<code>int num = -5;
+printf("%s", (num > 0) ? "Positive" : "Non-positive");
+</code>
+
+
  
 ### switch case
 
