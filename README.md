@@ -1850,6 +1850,99 @@ printf("%s", (num > 0) ? "Positive" : "Non-positive");
  
 ### switch case
 
+The **switch-case** statement in C is a multi-way branching control structure used when a variable is compared against multiple possible values. It is often used as an alternative to long if-else if chains for better readability and efficiency.
+
+Syntax:<br>
+
+<code>switch (expression) {
+    case value1:
+        // Code to execute if expression == value1
+        break;
+    case value2:
+        // Code to execute if expression == value2
+        break;
+    ...
+    default:
+        // Code to execute if no case matches
+}</code>
+
+>**expression:** Must evaluate to an integer or character type.
+>**case value:**: Defines a block of code for a specific value.
+>**break;**: Prevents fall-through to the next case (optional but recommended).
+>**default:**: Executes if none of the cases match (optional).
+
+<code>#include <stdio.h>
+int main() {
+    int day = 3;
+    switch (day) {
+        case 1:
+            printf("Monday\n");
+            break;
+        case 2:
+            printf("Tuesday\n");
+            break;
+        case 3:
+            printf("Wednesday\n");
+            break;
+        case 4:
+            printf("Thursday\n");
+            break;
+        default:
+            printf("Invalid day\n");
+    }
+    return 0;
+}</code>
+
+Output: <code>Wednesday</code>
+
+⚠️ If **break;** is omitted, execution continues into the next case.
+
+<code>#include <stdio.h>
+int main() {
+    int num = 2;
+    switch (num) {
+        case 1:
+            printf("One\n");
+        case 2:
+            printf("Two\n");
+        case 3:
+            printf("Three\n");
+    }
+    return 0;
+}</code>
+
+Output: <code>Two
+Three</code>
+
+>Here, since case 2 doesn’t have a break;, execution falls through to case 3.
+
+**Using default Case**
+
+The default case executes if no other case matches.
+
+<code>int grade = 85;
+switch (grade / 10) {  // Checking the tens digit
+    case 10:
+    case 9:
+        printf("Grade: A\n");
+        break;
+    case 8:
+        printf("Grade: B\n");
+        break;
+    case 7:
+        printf("Grade: C\n");
+        break;
+    default:
+        printf("Grade: F\n");
+}</code>
+
+>The switch expression must be an **integer** or **character**.
+>Use **break;** to prevent fall-through behavior.
+>**default** is optional but recommended.
+>Cannot ~~use~~ floating-point numbers (float, double) as case values.
+>case values must be constant expressions (no variables).
+
+The switch-case is best suited when checking fixed values and improves code readability compared to long if-else if chains.
 
 ### Loops
 
