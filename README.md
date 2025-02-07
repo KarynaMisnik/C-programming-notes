@@ -1749,6 +1749,20 @@ Decision-making is fundamental to both human activities and programming. In C, c
 
 >e is set equal to 1 if a and b are non-zero, or if c is greater than d. In all other cases, e is set to 0.
 
+Bitwise operators operate on operands at the bit level and require integral types. The six operators are **& (AND)**, **| (OR)**, **^ (XOR)**, **~ (NOT)**, **<< (left shift)**, and **>> (right shift)**. The **NOT** operator is unary, while the others are binary. These operators have lower precedence than relational and equivalence operators, often requiring parentheses.
+
+Numbers starting with **0x** are hexadecimal (base 16), using digits 0-9 and a-f. Hex is commonly used in C because it easily converts to binary, which C does not natively support.
+
+| Operator  | Description | Example |
+|-----------|------------|---------|
+| `a & b`  | Bitwise AND of `a` and `b` | `0xc & 0xa` → `0x8` (Binary: `1100 & 1010` → `1000`) |
+| `a | b`  | Bitwise OR of `a` and `b`  | `0xc | 0xa` → `0xe` (Binary: `1100 | 1010` → `1110`) |
+| `a ^ b`  | Bitwise XOR of `a` and `b` | `0xc ^ 0xa` → `0x6` (Binary: `1100 ^ 1010` → `0110`) |
+| `~a`     | Bitwise complement of `a` | `~0xc` → `-1 - 0xc` (Binary: `~1100` → `...11110011`, where `...` are additional `1` bits) |
+| `a << b` | Shift `a` left by `b` (Multiply `a` by `2^b`) | `0xc << 1` → `0x18` (Binary: `1100 << 1` → `11000`) |
+| `a >> b` | Shift `a` right by `b` (Divide `a` by `2^b`) | `0xc >> 1` → `0x6` (Binary: `1100 >> 1` → `110`) |
+
+
 ### if else
 
  
