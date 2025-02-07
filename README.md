@@ -1772,31 +1772,25 @@ if (condition) {
     // Code executes if condition is true
 } else {
     // Code executes if condition is false
-}
-</code>
+}</code>
 
 Example:<br>
 
 <code>
   #include <stdio.h>
-
 int main() {
     int num = 10;
-
     if (num > 0) {
         printf("Number is positive.\n");
     } else {
         printf("Number is non-positive.\n");
     }
-
     return 0;
-}
-</code>
+}</code>
 
 >Number is positive.
 
-if-else if-else Ladder
-
+**if-else if-else Ladder**
 Used when there are multiple conditions to check.<br>
 
 <code>
@@ -1806,14 +1800,12 @@ Used when there are multiple conditions to check.<br>
     // Executes if condition2 is true
 } else {
     // Executes if none of the conditions are true
-}
-</code>
+}</code>
 
 Example:<br>
 
 <code>
   int score = 85;
-
 if (score >= 90) {
     printf("Grade: A\n");
 } else if (score >= 80) {
@@ -1822,18 +1814,15 @@ if (score >= 90) {
     printf("Grade: C\n");
 } else {
     printf("Grade: F\n");
-}
-</code>
+}</code>
 
-Nested if-else
-
+**Nested if-else**
 An if-else statement inside another if-else.
 
 Example:<br>
 
 <code>
   int num = 5;
-
 if (num > 0) {
     if (num % 2 == 0)
         printf("Positive even number\n");
@@ -1841,10 +1830,9 @@ if (num > 0) {
         printf("Positive odd number\n");
 } else {
     printf("Non-positive number\n");
-}
-</code>
+}</code>
 
-Ternary Operator (?:) - Shorter Alternative
+**Ternary Operator (?:) - Shorter Alternative**
 
 <code>(condition) ? expression1 : expression2;</code>
 
@@ -1854,7 +1842,11 @@ Example:<br>
 printf("%s", (num > 0) ? "Positive" : "Non-positive");
 </code>
 
-
+>**if** evaluates a condition; if true, it executes the corresponding block.
+>**else** runs when the if condition is <ins>false</ins>.
+>**else if** allows checking multiple conditions.
+>Always use braces **{}** for multiple statements in if blocks to avoid logic errors.
+>The <ins>ternary operator</ins> **(?:)** is a shorthand for simple if-else statements.
  
 ### switch case
 
