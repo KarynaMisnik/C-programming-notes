@@ -1962,8 +1962,11 @@ The switch-case is best suited when checking fixed values and improves code read
   scanf("%d", &value2);
   if(value1 > value2){
   printf("%d is bigger than %d\n", value1, value2);
-  }if else(value1 < value2){
+  }if(value1 < value2){
   printf("%d is bigger than %d\n", value2, value1);
+  }if(value1 == value2){
+      printf("%d is equal to %d\n", value1, value2);
+  }
   }
 </code>
 
