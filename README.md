@@ -1952,9 +1952,23 @@ The switch-case is best suited when checking fixed values and improves code read
 
 
 # My Examples
+<code>
+#include <stdio.h>
+  int main(){
+  int value1, value2;
+  printf("Type fisrt value:\n");
+  scanf("%d", &value1);
+  printf("Type second value:\n");
+  scanf("%d", &value2);
+  if(value1 > value2){
+  printf("%d is bigger than %d\n", value1, value2);
+  }if else(value1 < value2){
+  printf("%d is bigger than %d\n", value2, value1);
+  }
+</code>
 
-
-
+Exercise 3. The program accepts two integer values and prints (to the screen) the greater
+value. Use the if-statement (not if-else, only if
 
 
 
