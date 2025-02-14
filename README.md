@@ -78,7 +78,7 @@ Notes are based on following source material:
   - [switch case](#switch-case)
   - [Loops](#loops)
   - [goto](#goto)
-  * [My Examples](#my-examples)
+ * [My Examples](#my-examples)
 
 
 # Introduction
