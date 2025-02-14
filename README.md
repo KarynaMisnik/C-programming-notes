@@ -78,6 +78,7 @@ Notes are based on following source material:
   - [switch case](#switch-case)
   - [Loops](#loops)
   - [goto](#goto)
+  * [My Examples](#my-examples)
 
 
 # Introduction
@@ -1950,7 +1951,7 @@ The switch-case is best suited when checking fixed values and improves code read
 ### goto
 
 
-
+# My Examples
 
 
 
