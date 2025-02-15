@@ -1970,7 +1970,7 @@ The switch-case is best suited when checking fixed values and improves code read
   }
 </code>
 
-<code>#iclude <stdio.h>
+<code>#include <stdio.h>
 #define PI 3.14
 int main(){
 float radius, circleArea, base, height, triangleArea;
@@ -1978,13 +1978,24 @@ int choice;
 printf("Choose what area you want to find: zero(0) - find area of a circle, one(1) - find area of a triangle/n");
 scanf("%f", &choice);
 
+while(1){
+printf("To stop a program type -1\n");
 if(choice == 0){
 printf("You chose to find area of a circle. Type radius value:\n");
 scanf("%f", radius);
-}
-
 circleArea = PI * radius * radius;
+printf("The radius of a circle is %f, and its area is: %f\n", radius, circleArea);
+}if else(choice == 1){
+printf("You chose to find area of a triangle. Type base value:\n");
+scanf("%f", base);
+printf("Type height value:\n");
+scanf("%f", height);
 triangleArea = (1/2) * base * height;
+printf("The base of the triangle is %f, the height of the triangle is %f, and its area is: \n", base, height, triangleArea);
+}if else(choice == -1){
+break;
+}
+}
 }
 </code>
 
