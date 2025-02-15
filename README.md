@@ -1970,8 +1970,35 @@ The switch-case is best suited when checking fixed values and improves code read
   }
 </code>
 
-Exercise 3. The program accepts two integer values and prints (to the screen) the greater
-value. Use the if-statement (not if-else, only if
+<code>#iclude <stdio.h>
+#define PI 3.14
+int main(){
+int radius, circleArea, base, height, triangleArea;
+
+circleArea = 2 * PI * radius;
+}
+</code>
+
+
+
+
+
+
+
+
+
+
+
+
+
+The program calculates the area of either a circle or a triangle. The user selects
+what to do by entering a number. Zero => triangle, one => circle. The program then asks the
+necessary parameters. Use if-else and #define (i.e. define the value of PI, π)
+
+
+
+
+
 
 
 
