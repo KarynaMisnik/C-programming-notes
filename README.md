@@ -1973,9 +1973,11 @@ The switch-case is best suited when checking fixed values and improves code read
 <code>#iclude <stdio.h>
 #define PI 3.14
 int main(){
-int radius, circleArea, base, height, triangleArea;
+float radius, circleArea, base, height, triangleArea;
 
-circleArea = 2 * PI * radius;
+
+circleArea = PI * radius * radius;
+triangleArea = (1/2) * base * height;
 }
 </code>
 
