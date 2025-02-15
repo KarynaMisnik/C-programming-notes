@@ -1970,33 +1970,45 @@ The switch-case is best suited when checking fixed values and improves code read
   }
 </code>
 
-<code>#include <stdio.h>
+<code>
+#include <stdio.h>
 #define PI 3.14
-int main(){
-float radius, circleArea, base, height, triangleArea;
-int choice;
-printf("Choose what area you want to find: zero(0) - find area of a circle, one(1) - find area of a triangle/n");
-scanf("%f", &choice);
 
-while(1){
-printf("To stop a program type -1\n");
-if(choice == 0){
-printf("You chose to find area of a circle. Type radius value:\n");
-scanf("%f", radius);
-circleArea = PI * radius * radius;
-printf("The radius of a circle is %f, and its area is: %f\n", radius, circleArea);
-}if else(choice == 1){
-printf("You chose to find area of a triangle. Type base value:\n");
-scanf("%f", base);
-printf("Type height value:\n");
-scanf("%f", height);
-triangleArea = (1/2) * base * height;
-printf("The base of the triangle is %f, the height of the triangle is %f, and its area is: \n", base, height, triangleArea);
-}if else(choice == -1){
-break;
+int main(){
+    int radius, base, height;
+    float circleArea, triangleArea;
+    int choice;
+
+    while(1){
+        printf("Choose what area you want to find:\n");
+        printf("0 - to find area of a circle\n");
+        printf("1 - to find area of a triangle\n");
+        printf("-1 - Exit program\n");
+        scanf("%d", &choice);
+
+        if(choice == 0){
+            printf("You chose to find area of a circle. Type radius value:\n");
+            scanf("%d", &radius);
+            circleArea = PI * radius * radius;
+            printf("The radius of a circle is %d, and its area is: %f\n", radius, circleArea);
+        } else if(choice == 1){
+            printf("You chose to find area of a triangle. Type base value:\n");
+            scanf("%d", &base);
+            printf("Type height value:\n");
+            scanf("%d", &height);
+            triangleArea = 0.5 * base * height;
+            printf("The base of the triangle is %d, the height of the triangle is %d, and its area is: %f\n", base, height, triangleArea);
+        } else if(choice == -1){
+            printf("Exiting the program. Goodbye!\n");
+            break;
+        } else {
+            printf("Invalid choice. Please try again.\n");
+        }
+    }
+
+    return 0;
 }
-}
-}
+
 </code>
 
 
@@ -2011,9 +2023,7 @@ break;
 
 
 
-The program calculates the area of either a circle or a triangle. The user selects
-what to do by entering a number. Zero => triangle, one => circle. The program then asks the
-necessary parameters. Use if-else and #define (i.e. define the value of PI, π)
+
 
 
 
