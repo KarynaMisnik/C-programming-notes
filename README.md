@@ -1974,8 +1974,7 @@ The switch-case is best suited when checking fixed values and improves code read
 
 #### IF-ELSE-IF statements
 
-<code>
-#include <stdio.h>
+<code>#include <stdio.h>
 #define PI 3.14
 int main(){
     int radius, base, height;
@@ -2045,7 +2044,8 @@ int main() {
                 printf("Invalid choice. Please try again.\n");
                 }
 }
-}</code>
+}
+</code>
 
 
 
