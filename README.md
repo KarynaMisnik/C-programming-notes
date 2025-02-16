@@ -2011,6 +2011,15 @@ int main(){
 
 </code>
 
+<code>#include <stdio.h>
+int main(){
+ int radius, base, height;
+    float circleArea, triangleArea;
+    int choice;
+    
+}
+</code>
+
 
 
 
