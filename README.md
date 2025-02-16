@@ -2012,12 +2012,19 @@ int main(){
 </code>
 
 <code>#include <stdio.h>
-int main(){
- int radius, base, height;
+#define PI 3.14
+
+int main() {
+    int radius, base, height;
     float circleArea, triangleArea;
     int choice;
-    
-}
+
+    while(1) {
+        printf("Choose what area you want to find:\n");
+        printf("0 - to find area of a circle\n");
+        printf("1 - to find area of a triangle\n");
+        printf("-1 - Exit program\n");
+        scanf("%d", &choice);
 </code>
 
 
