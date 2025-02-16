@@ -1953,6 +1953,8 @@ The switch-case is best suited when checking fixed values and improves code read
 
 # My Examples
 
+#### IF-statements
+
 <code>#include <stdio.h>
   int main(){
   int value1, value2;
@@ -1969,6 +1971,8 @@ The switch-case is best suited when checking fixed values and improves code read
   }
   }
 </code>
+
+#### IF-ELSE-IF statements
 
 <code>
 #include <stdio.h>
@@ -2004,6 +2008,8 @@ int main(){
     }
     return 0;
 }</code>
+
+#### SWITCH-case
 
 <code>#include <stdio.h>
 #define PI 3.14
