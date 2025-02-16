@@ -2025,6 +2025,30 @@ int main() {
         printf("1 - to find area of a triangle\n");
         printf("-1 - Exit program\n");
         scanf("%d", &choice);
+         switch(choice) {
+            case 0:
+                printf("You chose to find area of a circle. Type radius value:\n");
+                scanf("%d", &radius);
+                circleArea = PI * radius * radius;
+                printf("The radius of a circle is %d, and its area is: %f\n", radius, circleArea);
+                break;
+            case 1:
+                printf("You chose to find area of a triangle. Type base value:\n");
+                scanf("%d", &base);
+                printf("Type height value:\n");
+                scanf("%d", &height);
+                triangleArea = 0.5 * base * height;
+                printf("The base of the triangle is %d, the height of the triangle is %d, and its area is: %f\n", base, height, triangleArea);
+                break;
+            case -1:
+                printf("Exiting the program. Goodbye!\n");
+                return 0;  // Exits the program
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+}
+
 </code>
 
 
