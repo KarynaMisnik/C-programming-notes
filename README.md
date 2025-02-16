@@ -1952,8 +1952,8 @@ The switch-case is best suited when checking fixed values and improves code read
 
 
 # My Examples
-<code>
-#include <stdio.h>
+
+<code>#include <stdio.h>
   int main(){
   int value1, value2;
   printf("Type fisrt value:\n");
@@ -1973,19 +1973,16 @@ The switch-case is best suited when checking fixed values and improves code read
 <code>
 #include <stdio.h>
 #define PI 3.14
-
 int main(){
     int radius, base, height;
     float circleArea, triangleArea;
     int choice;
-
     while(1){
         printf("Choose what area you want to find:\n");
         printf("0 - to find area of a circle\n");
         printf("1 - to find area of a triangle\n");
         printf("-1 - Exit program\n");
         scanf("%d", &choice);
-
         if(choice == 0){
             printf("You chose to find area of a circle. Type radius value:\n");
             scanf("%d", &radius);
@@ -2005,20 +2002,15 @@ int main(){
             printf("Invalid choice. Please try again.\n");
         }
     }
-
     return 0;
-}
-
-</code>
+}</code>
 
 <code>#include <stdio.h>
 #define PI 3.14
-
 int main() {
     int radius, base, height;
     float circleArea, triangleArea;
     int choice;
-
     while(1) {
         printf("Choose what area you want to find:\n");
         printf("0 - to find area of a circle\n");
@@ -2045,11 +2037,9 @@ int main() {
                 return 0;  // Exits the program
             default:
                 printf("Invalid choice. Please try again.\n");
-        }
-    }
+                }
 }
-
-</code>
+}</code>
 
 
 
