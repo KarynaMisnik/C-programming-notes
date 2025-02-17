@@ -2049,7 +2049,10 @@ int main() {
 
 #### Loops
 
-<code>
+<code>#include <stdio.h>
+int main(){
+
+}
 </code>
 
 Logical operators and the while-loop.The program calculates how many times the value 50
