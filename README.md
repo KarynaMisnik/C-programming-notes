@@ -2052,6 +2052,9 @@ int main() {
 <code>
 </code>
 
+Logical operators and the while-loop.The program calculates how many times the value 50
+appears in the input. The program reads integers from the keyboard, keeps track of the value
+50 and exits if the user enters 0.
 
 
 
