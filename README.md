@@ -2051,8 +2051,11 @@ int main() {
 
 <code>#include <stdio.h>
 int main(){
-int count;
+int count, input;
 while(1){
+if(input == 0){
+break;
+}
 }
 }
 </code>
