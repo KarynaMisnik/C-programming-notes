@@ -2051,7 +2051,9 @@ int main() {
 
 <code>#include <stdio.h>
 int main(){
-
+int count;
+while(1){
+}
 }
 </code>
 
