@@ -2139,6 +2139,10 @@ int main() {
 }
 </code>
 
+## Arrays
+
+#### One-dimensional array
+
 
 
 
