@@ -2088,18 +2088,20 @@ int main() {
 </code>
 
 <code>#include <stdio.h>
-int main(){
-int goal, savings;
-
-while(1){
-printf("What is your savings goal\n");
-scanf("%d", goal);
-printf("How much do you save every month? \n");
-scanf("%d", savings);
-}
-
-
-return 0;
+int main() {
+    int goal, savings, months = 0;
+    int total_savings = 0;
+    printf("What is your savings goal?\n");
+    scanf("%d", &goal);  // Added & to get the address of goal
+    printf("How much do you save every month? \n");
+    scanf("%d", &savings);  // Added & to get the address of savings
+    while (total_savings < goal) {
+        months++;
+        total_savings += savings;
+        printf("Months: %d \t Savings: %d\n", months, total_savings);  // Added \n for better output format
+    }
+    printf("Congratulations! You reached your savings goal in %d months!\n", months);
+    return 0;
 }
 </code>
 
