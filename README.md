@@ -2051,7 +2051,7 @@ int main() {
 
 ## Loops
 
-#### while loop
+#### while-loop
 
 <code>#include <stdio.h>
 #define SIZE 100
@@ -2105,7 +2105,17 @@ int main() {
 }
 </code>
 
+#### for-loop
 
+<code>#include <stdio.h>
+int main(){
+int count;
+for(count=0; count<=10; count++){
+printf("%d\t", count);
+}
+return 0;
+}
+</code>
 
 
 
