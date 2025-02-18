@@ -2105,8 +2105,7 @@ int main() {
 }
 </code>
 
-Write a program which calculates the number of months it takes reach a savings goal. The
-program printout shows how it works:
+
 
 
 
