@@ -2117,6 +2117,27 @@ return 0;
 }
 </code>
 
+<code>#include <stdio.h>
+int main() {
+    int first_value, second_value, result;
+    // Print the header row
+    printf("\t");
+    for (first_value = 1; first_value <= 10; first_value++) {
+        printf("%d\t", first_value);
+    }
+    printf("\n");
+    // Print the multiplication table
+    for (first_value = 1; first_value <= 10; first_value++) {
+        printf("%d\t", first_value);  // Print the first column
+        for (second_value = 1; second_value <= 10; second_value++) {
+            result = first_value * second_value;
+            printf("%d\t", result);
+        }
+        printf("\n");  // Move to the next line after each row
+    }
+    return 0;
+}
+</code>
 
 
 
