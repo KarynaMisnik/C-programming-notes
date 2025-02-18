@@ -2087,9 +2087,24 @@ int main() {
 }
 </code>
 
+<code>#include <stdio.h>
+int main(){
+int goal, savings;
+
+while(1){
+printf("What is your savings goal\n");
+scanf("%d", goal);
+printf("How much do you save every month? \n");
+scanf("%d", savings);
+}
 
 
+return 0;
+}
+</code>
 
+Write a program which calculates the number of months it takes reach a savings goal. The
+program printout shows how it works:
 
 
 
