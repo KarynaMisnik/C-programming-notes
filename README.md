@@ -1953,6 +1953,8 @@ The switch-case is best suited when checking fixed values and improves code read
 
 # My Examples
 
+## Control Statements
+
 #### IF-statements
 
 <code>#include <stdio.h>
@@ -2047,22 +2049,45 @@ int main() {
 }
 </code>
 
-#### Loops
+## Loops
+
+#### while loop
 
 <code>#include <stdio.h>
-int main(){
-int count, input;
-while(1){
-if(input == 0){
-break;
-}
-}
+#define SIZE 100
+int main() {
+    int count = 0, input;
+    int all_inputs[SIZE];
+    int index = 0;
+    printf("0 (zero) input will stop the program\n");
+    printf("Type your values:\n");
+    while (1) {
+        scanf("%d", &input);  
+        if (input == 50) {
+            count++;
+        }
+        if (input == 0) {
+            printf("All your inputs: ");
+            for (int i = 0; i < index; i++) {
+                printf("%d ", all_inputs[i]);
+            }
+            printf("\n50 was typed %d times\n", count);
+            printf("Good bye!\n");
+            break;
+        }
+        if (index < SIZE) {
+            all_inputs[index] = input;
+            index++;
+        } else {
+            printf("Input limit reached.\n");
+            break;
+        }
+    }
+    return 0;
 }
 </code>
 
-Logical operators and the while-loop.The program calculates how many times the value 50
-appears in the input. The program reads integers from the keyboard, keeps track of the value
-50 and exits if the user enters 0.
+
 
 
 
