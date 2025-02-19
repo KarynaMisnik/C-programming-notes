@@ -2143,15 +2143,221 @@ int main() {
 
 #### One-dimensional array
 
+<code>#include <stdio.h>
+#define SIZE 5
+int main() {
+    int nums[SIZE];  // Array to store values
+    int input, count;
+    printf("Enter your values:\n");
+    // Loop to read values into the array
+    for (count = 0; count < SIZE; count++) {
+        scanf("%d", &nums[count]);  // Store input in the array
+    }
+    printf("The array is printed:\n");
+    // Loop to print the values from the array
+    for (count = 0; count < SIZE; count++) {
+        printf("The value of element %d is %d\n", count, nums[count]);
+    }
+    return 0;
+}
+</code>
+
+#### Groups of arrays
+
+<code>#include <stdio.h>
+int main() {
+    int size;  
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    if (size <= 0) {  
+        printf("Invalid size. Exiting program.\n");
+        return 1;  
+    }
+    int nums[size];  // Dynamically create an array of user-defined size
+    int input, count = 0;
+    printf("Enter your values (0 to stop):\n");
+    while (count < size) {
+        scanf("%d", &input);
+        if (input == 0) {
+            printf("The program stops.\n");
+            break;
+        }
+        nums[count] = input;
+        count++;
+    }
+    printf("\nStored values: ");
+    for (int i = 0; i < count; i++) {
+        printf("%d ", nums[i]);
+    }
+    printf("\n");
+    // Grouping values in sets of 3 and calculating sums
+    printf("\nSum of groups of 3:\n");
+    for (int i = 0; i < count; i += 3) {
+        int sum = 0;
+        for (int j = 0; j < 3 && (i + j) < count; j++) {
+            sum += nums[i + j];
+        }
+        printf("Group starting at index %d: Sum = %d\n", i, sum);
+    }
+    return 0;
+}
+</code>
 
 
+<code>#include <stdio.h>
+int main(){
+int size, input;
+int count = 0;  
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    if (size <= 0) {  
+        printf("Invalid size. Exiting program.\n");
+        return 1;  
+    }
+     int nums[size];  // Dynamically create an array of user-defined size
+    int input, count = 0;
+    printf("Enter your values (0 to stop):\n");
+    while (count < size) {
+        scanf("%d", &input);
+        if (input == 0) {
+            printf("The program stops.\n");
+            break;
+        }
+        nums[count] = input;
+        count++;
+    }
+    printf("\nStored values: ");
+    for (int i = 0; i < count; i++) {
+        printf("%d ", nums[i]);
+    }
+    return 0;
+}
+</code>
 
+#### 2-dimensional matrix
 
+<code>#include <stdio.h>
+#define ROWS 2
+#define COLS 3
+int main() {
+    int matrix1[ROWS][COLS], matrix2[ROWS][COLS];
+    // Input for first matrix
+    printf("Enter values for the first 2x3 matrix:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+    // Input for second matrix
+    printf("Enter values for the second 2x3 matrix:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+    // Adding matrices and storing result in matrix1
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            matrix1[i][j] += matrix2[i][j];
+        }
+    }
+    // Printing the resulting matrix
+    printf("\nResulting matrix after addition:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("%d ", matrix1[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+</code>
 
+## Functions
 
+#### Addition
 
+<code>#include <stdio.h>
+int limit, result = 0;  // Initialize result to 0
+void addition() {  
+    printf("What is the limit: ");
+    scanf("%d", &limit);
+    printf("Sum calculation: ");
+    for (int count = 0; count <= limit; count++) {  
+        result += count;
+        if (count == limit) {
+            printf("%d = %d\n", count, result);  // No + after last number
+        } else {
+            printf("%d + ", count);  // Print + after every number except last
+        }
+    }
+}
+int main() {
+    addition();
+    return 0;
+}
+</code>
 
+#### Different Operations 
 
+<code>#include <stdio.h>
+// Function declarations
+void Intro();
+int Choice();
+void Addition();
+void Multiplication();
+int main() {
+    char continue_program = 'y';  // Variable to control whether to continue asking for operations
+    Intro();  // Print out what the program does
+    while (continue_program != 'q') {  // Keep looping until 'q' is pressed
+        int choice = Choice();  // Get user choice (0 for addition, 1 for multiplication)
+        // Based on choice, call the appropriate function
+        if (choice == 0) {
+            Addition();  // Perform addition
+        } else if (choice == 1) {
+            Multiplication();  // Perform multiplication
+        } else {
+            printf("Invalid choice. Please enter 0 for addition or 1 for multiplication.\n");
+        }
+        // Ask the user what to do next
+        printf("\nDo you want to perform a new operation?\n");
+        printf("Enter 0 for addition, 1 for multiplication, or 'q' to quit: ");
+        scanf(" %c", &continue_program);  // ' ' before %c is used to consume any leftover newline characters
+    }
+    printf("Exiting the program. Goodbye!\n");
+    return 0;
+}
+// Function to introduce the program
+void Intro() {
+    printf("Welcome to the calculator program!\n");
+    printf("You can either add or multiply numbers.\n");
+    printf("After each operation, you can choose the next operation.\n");
+}
+// Function to ask the user for their choice (0 for addition, 1 for multiplication)
+int Choice() {
+    int choice;
+    printf("\nWhat would you like to do? (0 for addition, 1 for multiplication): ");
+    scanf("%d", &choice);
+    return choice;
+}
+// Function for performing addition
+void Addition() {
+    int num1, num2;
+    printf("Enter two numbers to add: ");
+    scanf("%d %d", &num1, &num2);
+    printf("The sum is: %d\n", num1 + num2);
+}
+
+// Function for performing multiplication
+void Multiplication() {
+    int num1, num2;
+    printf("Enter two numbers to multiply: ");
+    scanf("%d %d", &num1, &num2);
+    printf("The result is: %d\n", num1 * num2);
+}
+</code>
 
 
 
