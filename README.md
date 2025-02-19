@@ -2051,7 +2051,7 @@ int main() {
 
 ## Loops
 
-#### while-loop
+#### while-loop: exampleone
 
 <code>#include <stdio.h>
 #define SIZE 100
@@ -2086,6 +2086,8 @@ int main() {
     return 0;
 }
 </code>
+
+#### while-loop: example two
 
 <code>#include <stdio.h>
 int main() {
@@ -2203,6 +2205,7 @@ int main() {
 }
 </code>
 
+#### Print array after each input
 
 <code>#include <stdio.h>
 int main(){
@@ -2234,7 +2237,7 @@ int count = 0;
 }
 </code>
 
-#### 2-dimensional matrix
+#### two-dimensional matrix
 
 <code>#include <stdio.h>
 #define ROWS 2
@@ -2683,6 +2686,271 @@ int main() {
     return 0;
 }
 </code>
+
+## Signal Generator
+
+#### Square wave
+
+<code>#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <sndfile.h>
+#ifndef M_PI
+#define M_PI 3.14159265358979323846264338
+#endif
+#define SAMPLE_RATE 44100
+#define SAMPLE_COUNT (SAMPLE_RATE * 4) /* 4 seconds */
+#define AMPLITUDE (1.0 * 0x7F000000)    /* Max amplitude */
+int main(void)
+{
+    SNDFILE *file;
+    SF_INFO sfinfo;
+    int k;
+    int buffer[SAMPLE_COUNT]; // FIXED THE ARRAY ALLOCATION
+    memset(&sfinfo, 0, sizeof(sfinfo));
+    sfinfo.samplerate = SAMPLE_RATE;
+    sfinfo.frames = SAMPLE_COUNT;
+    sfinfo.channels = 1;
+    sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
+    file = sf_open("square_wave.wav", SFM_WRITE, &sfinfo);
+    if (file == NULL)
+    {
+        printf("Error: Not able to open output file.\n");
+        return 1;
+    }
+    // GENERATE SQUARE WAVE: TWO SAMPLES HIGH, TWO SAMPLES LOW
+    for (k = 0; k < SAMPLE_COUNT; k++)
+    {
+        if ((k / 2) % 2 == 0) // Every two samples, toggle between high and low
+            buffer[k] = AMPLITUDE;
+        else
+            buffer[k] = 0;
+    }
+    if (sf_write_int(file, buffer, sfinfo.channels * SAMPLE_COUNT) != sfinfo.channels * SAMPLE_COUNT)
+    {
+        puts(sf_strerror(file));
+    }
+    sf_close(file);
+    return 0;
+}
+</code>
+
+####  Square Wave Using a Sum of Sine Waves
+
+<code>#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <sndfile.h>
+#ifndef M_PI
+#define M_PI 3.14159265358979323846264338
+#endif
+#define SAMPLE_RATE 44100
+#define SAMPLE_COUNT (SAMPLE_RATE * 4) /* 4 seconds */
+#define AMPLITUDE (0.7 * 0x7F000000)    /* Adjusted amplitude to prevent clipping */
+#define BASE_FREQ 344.0                 /* Base frequency of the square wave */
+int main(void)
+{
+    SNDFILE *file;
+    SF_INFO sfinfo;
+    int k;
+    double t;
+    int buffer[SAMPLE_COUNT]; 
+    memset(&sfinfo, 0, sizeof(sfinfo));
+    sfinfo.samplerate = SAMPLE_RATE;
+    sfinfo.frames = SAMPLE_COUNT;
+    sfinfo.channels = 1;
+    sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
+    file = sf_open("square_wave_fourier.wav", SFM_WRITE, &sfinfo);
+    if (file == NULL)
+    {
+        printf("Error: Not able to open output file.\n");
+        return 1;
+    }
+    // Generate square wave using Fourier series
+    for (k = 0; k < SAMPLE_COUNT; k++)
+    {
+        t = (double)k / SAMPLE_RATE;
+        // Fourier series: sin(ωt) + (1/3)sin(3ωt) + (1/5)sin(5ωt) + (1/7)sin(7ωt)
+        double sample = sin(2 * M_PI * BASE_FREQ * t)
+                        + (1.0 / 3.0) * sin(2 * M_PI * 3 * BASE_FREQ * t)
+                        + (1.0 / 5.0) * sin(2 * M_PI * 5 * BASE_FREQ * t)
+                        + (1.0 / 7.0) * sin(2 * M_PI * 7 * BASE_FREQ * t);
+        buffer[k] = (int)(AMPLITUDE * sample); // Scale and store in buffer
+    }
+    if (sf_write_int(file, buffer, sfinfo.channels * SAMPLE_COUNT) != sfinfo.channels * SAMPLE_COUNT)
+    {
+        puts(sf_strerror(file));
+    }
+    sf_close(file);
+    return 0;
+}
+</code>
+
+####  Splitting Sinal Generator program Up Into Functions
+
+<code>#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <sndfile.h>
+#ifndef M_PI
+#define M_PI 3.14159265358979323846264338
+#endif
+#define SAMPLE_RATE 44100
+#define SAMPLE_COUNT (SAMPLE_RATE * 4) /* 4 seconds */
+#define AMPLITUDE (0.7 * 0x7F000000)    /* Adjust amplitude to prevent clipping */
+#define BASE_FREQ 344.0                 /* Base frequency of the square wave */
+SNDFILE *file;     // Global file pointer
+SF_INFO sfinfo;    // Global structure for file info
+int buffer[SAMPLE_COUNT]; // Global buffer for audio samples
+// Function to set up the WAV file
+void setup(const char *filename)
+{
+    memset(&sfinfo, 0, sizeof(sfinfo));
+    sfinfo.samplerate = SAMPLE_RATE;
+    sfinfo.frames = SAMPLE_COUNT;
+    sfinfo.channels = 1;
+    sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
+    file = sf_open(filename, SFM_WRITE, &sfinfo);
+    if (file == NULL)
+    {
+        printf("Error: Unable to open output file.\n");
+        exit(1);
+    }
+}
+// Function to generate the square wave using Fourier series
+void generate()
+{
+    for (int k = 0; k < SAMPLE_COUNT; k++)
+    {
+        double t = (double)k / SAMPLE_RATE;
+        // Square wave approximation using Fourier series
+        double sample = sin(2 * M_PI * BASE_FREQ * t)
+                        + (1.0 / 3.0) * sin(2 * M_PI * 3 * BASE_FREQ * t)
+                        + (1.0 / 5.0) * sin(2 * M_PI * 5 * BASE_FREQ * t)
+                        + (1.0 / 7.0) * sin(2 * M_PI * 7 * BASE_FREQ * t);
+        buffer[k] = (int)(AMPLITUDE * sample); // Scale and store in buffer
+    }
+    if (sf_write_int(file, buffer, sfinfo.channels * SAMPLE_COUNT) != sfinfo.channels * SAMPLE_COUNT)
+    {
+        puts(sf_strerror(file));
+    }
+}
+// Function to close the WAV file
+void finish()
+{
+    sf_close(file);
+}
+// Main function
+int main(void)
+{
+    setup("square_wave_fourier.wav");
+    generate();
+    finish();
+    printf("WAV file successfully created!\n");
+    return 0;
+}
+</code>
+
+#### Signal Generator, User Input
+
+<code>#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <sndfile.h>
+#ifndef M_PI
+#define M_PI 3.14159265358979323846264338
+#endif
+#define SAMPLE_RATE 44100
+#define SAMPLE_COUNT (SAMPLE_RATE * 4) /* 4 seconds */
+#define AMPLITUDE (0.7 * 0x7F000000)    /* Prevent clipping */
+SNDFILE *file;     // Global file pointer
+SF_INFO sfinfo;    // Global structure for file info
+int buffer[SAMPLE_COUNT]; // Global buffer for audio samples
+int base_freq;     // User-defined frequency
+// Function to get user input for filename and frequency
+void get_user_input(char *filename)
+{
+    printf("Enter output filename (e.g., output.wav): ");
+    fgets(filename, 100, stdin); // Read filename input
+    filename[strcspn(filename, "\n")] = 0; // Remove newline character
+    printf("Enter base frequency in Hz (e.g., 440): ");
+    scanf("%d", &base_freq);
+}
+// Function to set up the WAV file
+void setup(const char *filename)
+{
+    memset(&sfinfo, 0, sizeof(sfinfo));
+    sfinfo.samplerate = SAMPLE_RATE;
+    sfinfo.frames = SAMPLE_COUNT;
+    sfinfo.channels = 1;
+    sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
+    file = sf_open(filename, SFM_WRITE, &sfinfo);
+    if (file == NULL)
+    {
+        printf("Error: Unable to open output file.\n");
+        exit(1);
+    }
+}
+// Function to generate the square wave using Fourier series
+void generate()
+{
+    for (int k = 0; k < SAMPLE_COUNT; k++)
+    {
+        double t = (double)k / SAMPLE_RATE;
+        // Square wave approximation using Fourier series
+        double sample = sin(2 * M_PI * base_freq * t)
+                        + (1.0 / 3.0) * sin(2 * M_PI * 3 * base_freq * t)
+                        + (1.0 / 5.0) * sin(2 * M_PI * 5 * base_freq * t)
+                        + (1.0 / 7.0) * sin(2 * M_PI * 7 * base_freq * t);
+        buffer[k] = (int)(AMPLITUDE * sample); // Scale and store in buffer
+    }
+    if (sf_write_int(file, buffer, sfinfo.channels * SAMPLE_COUNT) != sfinfo.channels * SAMPLE_COUNT)
+    {
+        puts(sf_strerror(file));
+    }
+}
+// Function to close the WAV file
+void finish()
+{
+    sf_close(file);
+}
+// Main function
+int main(void)
+{
+    char filename[100];
+    get_user_input(filename);
+    setup(filename);
+    generate();
+    finish();
+    printf("WAV file '%s' successfully created with frequency %d Hz!\n", filename, base_freq);
+    return 0;
+}
+</code>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
