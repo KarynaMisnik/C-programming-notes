@@ -2349,7 +2349,6 @@ void Addition() {
     scanf("%d %d", &num1, &num2);
     printf("The sum is: %d\n", num1 + num2);
 }
-
 // Function for performing multiplication
 void Multiplication() {
     int num1, num2;
@@ -2359,25 +2358,331 @@ void Multiplication() {
 }
 </code>
 
+#### Functions & global parameters
 
+<code>#include <stdio.h>
+// Global variables to store the values
+int num1, num2;
+// Function to read values into the global variables
+void Read() {
+    printf("Enter the first integer: ");
+    scanf("%d", &num1);
+    printf("Enter the second integer: ");
+    scanf("%d", &num2);
+}
+// Function to swap the values of num1 and num2
+void Switch() {
+    int temp;
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+}
+// Function to print the values of num1 and num2
+void Print() {
+    printf("After switching:\n");
+    printf("First integer: %d\n", num1);
+    printf("Second integer: %d\n", num2);
+}
+int main() {
+    // Calling the Read function to input values
+    Read();
+    // Calling the Switch function to swap the values
+    Switch();
+    // Calling the Print function to display the results
+    Print();
+    return 0;
+}
+</code>
 
+#### Functions & global parameters
 
+<code>#include <stdio.h>
+#define SIZE 10 // Maximum number of grades
+// Global variable to count the number of zeroes
+int zeroCount = 0;
+// Function to read grades into the array
+void Read(int grades[], int *numGrades) {
+    int grade;
+    *numGrades = 0; // Initialize the number of grades
+    printf("Enter grades (0-5). Enter 99 to stop:\n");
+    while (*numGrades < SIZE) {
+        scanf("%d", &grade);
+        // If a non-valid grade is entered, stop the input
+        if (grade == 99) {
+            break;
+        }
+        // Check if the grade is between 0 and 5
+        if (grade >= 0 && grade <= 5) {
+            grades[*numGrades] = grade;
+            // Count zero grades
+            if (grade == 0) {
+                zeroCount++;
+            }
+            (*numGrades)++; // Increment the number of grades entered
+        } else {
+            printf("Invalid grade. Please enter a grade between 0 and 5, or 99 to stop.\n");
+        }
+    }
+}
+// Function to calculate the average grade
+float Calculate(int grades[], int numGrades) {
+    int sum = 0;
+    // Calculate the sum of all grades
+    for (int i = 0; i < numGrades; i++) {
+        sum += grades[i];
+    }
+    // Return the average
+    return (numGrades > 0) ? (float)sum / numGrades : 0.0;
+}
+// Function to print the results
+void Print(float average) {
+    printf("\nThe average grade is: %.2f\n", average);
+    printf("The number of zeroes entered: %d\n", zeroCount);
+}
+int main() {
+    int grades[SIZE]; // Array to store grades
+    int numGrades;    // To store the actual number of grades entered
+    // Call the Read function to input the grades
+    Read(grades, &numGrades);
+    // Call the Calculate function to compute the average
+    float average = Calculate(grades, numGrades);
+    // Call the Print function to display the results
+    Print(average);
+    return 0;
+}
+</code>
 
+## Pointers
 
+#### Basic pointer operations
 
+<code>#include <stdio.h>
+int main() {
+    int var = 10;  // Declare an integer variable and assign it a value
+    int *ptr;      // Declare an integer pointer
+    ptr = &var;    // Assign the address of the variable to the pointer
+    // Print the value of the variable
+    printf("1. The value of the variable: %d\n", var);
+    // Print the address of the variable
+    printf("2. The address of the variable: %p\n", (void*)&var);
+    // Print the memory address the pointer is pointing to
+    printf("3. The memory address the pointer is pointing to: %p\n", (void*)ptr);
+    // Print the contents of the memory location the pointer points to
+    printf("4. The contents of the memory location the pointer points to: %d\n", *ptr);
+    return 0;
+}
+</code>
 
+#### Pointers and Arrays
 
+<code>#include <stdio.h>
+int main() {
+    int arr[5];      // Declare an array of 5 integers
+    int *ptr = arr;  // Declare a pointer and assign it to the array
+    // Writing values to the array using the pointer
+    printf("Enter 5 integer values:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Enter value for element %d: ", i+1);
+        scanf("%d", ptr);  // Use pointer to assign values to the array
+        ptr++;  // Move the pointer to the next element
+    }
+    // Reading and printing values starting from the last element using the pointer
+    printf("\nValues in reverse order:\n");
+    ptr--;  // Move the pointer to the last element in the array
+    for (int i = 4; i >= 0; i--) {
+        printf("Element %d: %d\n", i+1, *ptr);  // Dereference pointer to access value
+        ptr--;  // Move the pointer to the previous element
+    }
+    return 0;
+}
+</code>
 
+#### String length
 
+<code>#include <stdio.h>
+#include <string.h>  // Include for strlen function
+int main() {
+    char data[] = "Hello World";  // The string we are working with
+    int length = 0;  // To store length of string
+    // 1. Using a simple loop (without pointers)
+    for (int i = 0; data[i] != '\0'; i++) {
+        length++;
+    }
+    printf("Length using loop: %d\n", length);
+    // 2. Using a char pointer to loop through the array
+    char *ptr = data;  // Pointer to the first element of the string
+    int length_with_pointer = 0;
+    while (*ptr != '\0') {
+        length_with_pointer++;
+        ptr++;  // Move pointer to the next character
+    }
+    printf("Length using pointer: %d\n", length_with_pointer);
+    // 3. Using strlen function to find the length of the string
+    int length_with_strlen = strlen(data);
+    printf("Length using strlen: %d\n", length_with_strlen);
+    return 0;
+}
+</code>
 
+#### Char Arrays
 
+<code>#include <stdio.h>
+int main() {
+    char array1[50], array2[50], combined[100];  // Arrays for the two inputs and the combined result
+    char *ptr1, *ptr2, *ptr_combined;
+    // Get input from the user
+    printf("Enter the first string: ");
+    gets(array1);  // unsafe, used for this task per instruction
+    printf("Enter the second string: ");
+    gets(array2);  // unsafe, used for this task per instruction
+    // Pointers to the start of each array
+    ptr1 = array1;
+    ptr2 = array2;
+    ptr_combined = combined;
+    // Copy contents of array1 to combined array using pointer
+    while (*ptr1 != '\0') {
+        *ptr_combined = *ptr1;  // Copy character from array1 to combined
+        ptr_combined++;  // Move pointer in combined array
+        ptr1++;  // Move pointer in array1
+    }
+    // Copy contents of array2 to combined array using pointer
+    while (*ptr2 != '\0') {
+        *ptr_combined = *ptr2;  // Copy character from array2 to combined
+        ptr_combined++;  // Move pointer in combined array
+        ptr2++;  // Move pointer in array2
+    }
+    // Null-terminate the combined array
+    *ptr_combined = '\0';
+    // Print the combined string
+    printf("Combined string: ");
+    puts(combined);
+    return 0;
+}
+</code>
 
+#### Pointers and Functions
 
+<code>#include <stdio.h>
+#define SIZE 5  // Define the size of the arrays
+// Global array declaration
+int global_array[SIZE];
+// Function to read data into an array
+void Read_data(int *arr) {
+    printf("Enter %d integer values:\n", SIZE);
+    for (int i = 0; i < SIZE; i++) {
+        scanf("%d", &arr[i]);  // Read values into the local array
+    }
+}
+// Function to move data from the local array to the global array
+// Adding 20 to each element in the process
+void Move(int *arr) {
+    for (int i = 0; i < SIZE; i++) {
+        global_array[i] = arr[i] + 20;  // Copy and add 20 to each element
+    }
+}
+// Function to print an array passed by pointer
+void Print(int *arr) {
+    for (int i = 0; i < SIZE; i++) {
+        printf("%d ", arr[i]);  // Print the array element
+    }
+    printf("\n");
+}
+int main() {
+    int local_array[SIZE];  // Local array declared in main
+    // Read data into the local array
+    Read_data(local_array);
+    // Print the original local array
+    printf("\nOriginal array:\n");
+    Print(local_array);
+    // Move data from the local array to the global array with addition
+    Move(local_array);
+    // Print the modified global array
+    printf("\nModified global array (after adding 20 to each element):\n");
+    Print(global_array);
+    return 0;
+}
+</code>
 
+#### Stack
 
-
-
-
+<code>#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10  // Define the size of the stack
+// Function to push an element onto the stack
+int* Push(int* stack_ptr, int* stack_end) {
+    int value;
+    // Check if the stack is full
+    if (stack_ptr >= stack_end) {
+        printf("Stack is full! Cannot push more elements.\n");
+        return NULL;  // Stack is full, return NULL
+    }
+    // Ask user for an integer value to add to the stack
+    printf("Enter a number to push onto the stack: ");
+    scanf("%d", &value);
+    // Push the value and move the pointer to the next position
+    *stack_ptr = value;
+    stack_ptr++;
+    return stack_ptr;  // Return the new stack pointer
+}
+// Function to pop an element from the stack
+int* Pop(int* stack_ptr, int* stack_start) {
+    // Check if the stack is empty
+    if (stack_ptr == stack_start) {
+        printf("Stack is empty! Cannot pop any elements.\n");
+        return NULL;  // Stack is empty, return NULL
+    }
+    // Move the stack pointer one step back to remove the last element
+    stack_ptr--;
+    printf("Popped value: %d\n", *stack_ptr);  // Show the popped value
+    return stack_ptr;  // Return the new stack pointer
+}
+// Function to show the contents of the stack
+void Show(int* stack_ptr, int* stack_start) {
+    if (stack_ptr == stack_start) {
+        printf("Stack is empty!\n");
+        return;
+    }
+    // Print elements in the stack starting from the last added item
+    printf("Stack contents (top to bottom):\n");
+    for (int* ptr = stack_ptr - 1; ptr >= stack_start; ptr--) {
+        printf("%d\n", *ptr);
+    }
+}
+int main() {
+    int stack[SIZE];  // Define a stack array with a fixed size
+    int* stack_ptr = stack;  // Pointer to the top of the stack
+    int* stack_start = stack;  // Pointer to the bottom (start) of the stack
+    int* stack_end = stack + SIZE;  // Pointer to the end of the stack
+    int choice;
+    while (1) {
+        // Ask the user for an action
+        printf("\nStack Operations Menu:\n");
+        printf("1. Push an element onto the stack\n");
+        printf("2. Pop an element from the stack\n");
+        printf("3. Show the contents of the stack\n");
+        printf("4. Quit\n");
+        printf("Choose an option (1-4): ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                stack_ptr = Push(stack_ptr, stack_end);  // Push operation
+                break;
+            case 2:
+                stack_ptr = Pop(stack_ptr, stack_start);  // Pop operation
+                break;
+            case 3:
+                Show(stack_ptr, stack_start);  // Show stack contents
+                break;
+            case 4:
+                printf("Exiting program.\n");
+                return 0;  // Exit the program
+            default:
+                printf("Invalid choice! Please choose a valid option.\n");
+        }
+    }
+    return 0;
+}
+</code>
 
 
 
