@@ -81,6 +81,7 @@ Notes are based on following source material:
  * [My Examples](#my-examples)
    -[for-loop](#for-loop)
    -[switch case](#switch-case)
+   -[signal generator](#signal-generator)
 
 
 # Introduction
