@@ -80,6 +80,7 @@ Notes are based on following source material:
   - [goto](#goto)
  * [My Examples](#my-examples)
    -[for-loop](#for-loop)
+   -[switch case](#switch-case)
 
 
 # Introduction
