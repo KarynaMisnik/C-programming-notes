@@ -83,6 +83,7 @@ Notes are based on following source material:
    -[for-loop](#for-loop)
    -[switch case](#switch-case)
    -[Pointers](#pointers)
+   -[Pointers and Arrays](#pointers-and-arrays)
    -[signal generator](#signal-generator)
    
 
