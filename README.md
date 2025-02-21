@@ -84,6 +84,7 @@ Notes are based on following source material:
    -[switch case](#switch-case)
    -[Pointers](#pointers)
    -[Pointers and Arrays](#pointers-and-arrays)
+   -[Pointers and Functions](#Pointers-and-Functions)
    -[signal generator](#signal-generator)
    
 
