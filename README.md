@@ -85,7 +85,6 @@ Notes are based on following source material:
    -[signal generator](#signal-generator)
    
 
-
 # Introduction
 
 ### Why C ⁉️
