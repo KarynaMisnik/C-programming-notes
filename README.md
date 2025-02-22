@@ -79,7 +79,7 @@ Notes are based on following source material:
   - [Loops](#loops)
   - [goto](#goto)
  * [My Examples](#my-examples)
-   -[while-loop](#while-loop)
+   - [while-loop](#while-loop)
    -[for-loop](#for-loop)
    -[switch case](#switch-case)
    -[Pointers](#pointers)
