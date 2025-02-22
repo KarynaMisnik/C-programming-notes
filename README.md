@@ -82,7 +82,7 @@ Notes are based on following source material:
    - [while-loop](#while-loop)
    - [for-loop](#for-loop)
    - [switch case](#switch-case)
-   -[Pointers](#pointers)
+   - [Pointers](#pointers)
    -[Pointers and Arrays](#pointers-and-arrays)
    -[Pointers and Functions](#Pointers-and-Functions)
    -[signal generator](#signal-generator)
