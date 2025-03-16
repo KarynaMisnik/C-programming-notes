@@ -87,6 +87,7 @@ Notes are based on following source material:
    - [Pointers and Functions](#Pointers-and-Functions)
    - [signal generator](#signal-generator)
    
+   
 # Introduction
 
 ### Why C ⁉️
