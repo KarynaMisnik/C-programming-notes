@@ -2526,7 +2526,55 @@ return 0;
 char *p_one;
 ```
 >[!Warning]
->You declared a pointer, but it points to nowhere — it contains garbage.
+> A pointer is declared, but it points to nowhere — it contains garbage.
+
+🚨 Problem 2: <code>*p_one = 'A';</code>
+
+ 'A' has  an unknown memory location:
+
+ ```C
+*p_one = 'A';
+```
+
+>[!Warning]
+>This is undefined behavior and usually causes a segmentation fault or crash, because you're dereferencing a pointer that was never initialized or assigned a valid address.
+
+🚨 Problem 3: <code>*p_one = &abc;</code>
+
+```C
+*p_one = &abc;
+```
+
+<code>*p_one</code> is a char (a single byte), and you're trying to store a char * (a memory address) in that single byte. This:
+Makes no sense in terms of types
+Is almost guaranteed to corrupt memory
+Might trigger a compiler warning like:
+
+<code>warning: assignment makes integer from pointer without a cast</code>
+
+>[!Warning]
+>It doesn’t change where p_one points — it only writes garbage (the address of abc) into a single byte of memory that’s already invalid.
+
+Problem 4: <code>*p_one = 'b';</code>
+
+>[!Warning]
+>Random garbage location, undefined behavior.
+
+**How to fix**
+
+```C
+int main() {
+    char *p_one;
+    char abc;
+
+    p_one = &abc;   // ✅ Make p_one point to abc
+    *p_one = 'A';   // ✅ Now abc = 'A'
+    *p_one = 'b';   // ✅ abc = 'b'
+
+    printf("abc = %c\n", abc);  // Outputs: abc = b
+    return 0;
+}
+```
 
 #### String length
 
