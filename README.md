@@ -174,11 +174,11 @@ int main(void)
 printf("Hello, World!\n");
 return 0;
 }
-</code>
+```
 
 What does each line mean?<br>
-<code>#include <stdio.h>
-```
+<code>#include <stdio.h></code>
+
 
 This is a preprocessor directive. Preprocessor directives gives instructions to a part of the compiler to modify the code before it is compiled. 
 **#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. <br>
@@ -239,7 +239,8 @@ accessed with the *identiﬁer* 'num'.
 
 A block of code has opening brace <code>{</code> and closing <code>}</code> Blocks can contain other blocks and they can contain their blocks. Example:<br>
 
-<code>int main(void)
+```C
+int main(void)
 {
 /* this is a 'block' */
 int num = 5;
@@ -248,13 +249,15 @@ int num = 5;
 int numTwo = 6;
 }
 return 0;
-}</code>
+}
+```
 
 The compiler ignores whitespace (except when it separates e.g. return from <code>0</code>). To orginize code in more readable form it is common to use spaces (or tabs) to organize source code.
 
 **Scopes** define the visibility of data or functions within a program. In C, there are two types of scopes: **local** and **global**. A global entity is accessible from anywhere in the program, while a local entity is limited to the block in which it is declared. Example: <br>
 
-<code>int num = 5; /* 'global' variable,can be accessed from anywhere in the program */
+```C
+int num = 5; /* 'global' variable,can be accessed from anywhere in the program */
 /* function, all variables inside of it
 are "local" to the function. */
 int main(void)
@@ -262,7 +265,8 @@ int main(void)
 int num = 6; /* 'num' now equals 6 */
 printf("%d\n", num); /* prints a '6' instead of the global variable of 'num',5 */
 return 0;
-}</code>
+}
+```
 
 ### Basic Functions 🌠
 
