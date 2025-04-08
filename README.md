@@ -84,6 +84,7 @@ Notes are based on following source material:
    - [switch case](#switch-case)
    - [Pointers](#pointers)
    - [Pointers and Arrays](#pointers-and-arrays)
+   - [Bad example of pointers use](#bad-example-of-pointers-use)
    - [Pointers and Functions](#Pointers-and-Functions)
    - [signal generator](#signal-generator)
    
@@ -2506,6 +2507,26 @@ int main() {
     return 0;
 }
 </code>
+
+#### Bad example of pointers use
+
+```C
+int main(){
+char *p_one;
+char abc;
+*p_one = 'A';
+*p_one = &abc;
+*p_one = 'b';
+return 0;
+}
+```
+
+🚨 Problem 1: char *p_one; is uninitialized
+```C
+char *p_one;
+```
+>[!Warning]
+>You declared a pointer, but it points to nowhere — it contains garbage.
 
 #### String length
 
