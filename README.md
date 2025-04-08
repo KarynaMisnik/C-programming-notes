@@ -359,14 +359,15 @@ In C, all variables <ins>*must be assigned*<ins> a specific type when they are d
 
 **Summary:** <br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main() {
     int number;       // Step 1: Declare
     number = 10;      // Step 2: Initialize
     number = 20;      // Step 3: Assign a new value
     printf("The value of number is: %d\n", number); // Output: 20
     return 0;}
-</code>
+```
 
 ### Data Types
 
@@ -423,16 +424,20 @@ The **sizeof** ~~function~~ operator in C is used to determine the size (in byte
 
 Syntax:<br>
 
-<code>sizeof(type);
-sizeof(variable);</code>
+```C
+sizeof(type);
+sizeof(variable);
+```
 
 Example:<br>
 
-<code>int a = 10;
+```C
+int a = 10;
 printf("%zu\n", sizeof(int));
 // Size of int type
 printf("%zu\n", sizeof(a));      
-// Size of variable a</code>
+// Size of variable a
+```
 
 >Note: In C, **%zu** is a format specifier used with printf to print values of type **size_t**, which is an unsigned integer type used to represent the size of objects in bytes.
 >The sizeof operator returns a value of type **size_t**, so **%zu** is the correct way to print it.
