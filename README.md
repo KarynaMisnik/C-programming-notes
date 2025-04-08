@@ -167,7 +167,8 @@ Programming languages timeline:
 ### "Hello world!"
 
 File extension for programs written in C: eg.: **hello.c**<br>
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main(void)
 {
 printf("Hello, World!\n");
@@ -177,7 +178,7 @@ return 0;
 
 What does each line mean?<br>
 <code>#include <stdio.h>
-</code>
+```
 
 This is a preprocessor directive. Preprocessor directives gives instructions to a part of the compiler to modify the code before it is compiled. 
 **#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. <br>
