@@ -2938,9 +2938,75 @@ int main(void)
 }
 </code>
 
+> Provide a C source code file which has the following characteristics
+> filename make_sine.c
+> it can be  compiled with the command gcc -Wall make_sine.c -lsndfile -lm
+> When the program is run, it produces a .wav file which contains a 1000Hz sine signal.
 
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <sndfile.h>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 
+#define SAMPLE_RATE     44100
+#define DURATION        4
+#define SAMPLE_COUNT    (SAMPLE_RATE * DURATION)
+#define FREQUENCY       1000.0
+#define AMPLITUDE       (0.8 * 0x7FFFFF)  // Scaled to avoid clipping for 24-bit
+
+int main(void)
+{
+    SNDFILE *file;
+    SF_INFO sfinfo;
+    int buffer[SAMPLE_COUNT];
+    int k;
+
+    // Clear the SF_INFO struct
+    memset(&sfinfo, 0, sizeof(sfinfo));
+
+    // Set format details
+    sfinfo.samplerate = SAMPLE_RATE;
+    sfinfo.frames     = SAMPLE_COUNT;
+    sfinfo.channels   = 1;
+    sfinfo.format     = SF_FORMAT_WAV | SF_FORMAT_PCM_24;
+
+    // Open file for writing
+    file = sf_open("sine.wav", SFM_WRITE, &sfinfo);
+    if (file == NULL)
+    {
+        puts("Error: Could not open file for writing.");
+        puts(sf_strerror(NULL));
+        return 1;
+    }
+
+    // Generate sine wave samples
+    for (k = 0; k < SAMPLE_COUNT; k++)
+    {
+        double t = (double)k / SAMPLE_RATE;
+        buffer[k] = (int)(AMPLITUDE * sin(2.0 * M_PI * FREQUENCY * t));
+    }
+
+    // Write to file
+    if (sf_write_int(file, buffer, SAMPLE_COUNT) != SAMPLE_COUNT)
+    {
+        puts("Error writing to file.");
+        puts(sf_strerror(file));
+        sf_close(file);
+        return 1;
+    }
+
+    // Close file
+    sf_close(file);
+    puts("WAV file 'sine.wav' created successfully.");
+    return 0;
+}
+
+```
 
 
 
