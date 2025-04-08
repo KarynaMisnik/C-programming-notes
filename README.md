@@ -498,17 +498,18 @@ The **const qualifier** in C is used to declare variables whose values <ins>cann
   <li>Improve code clarity and safety by clearly indicating which values are constant.</li>
 </ul>
 
-   Example:<br>
+Example:<br>
    
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main() {
     const double pi = 3.14159;  // Declare and initialize a constant variable
     printf("The value of pi is: %f\n", pi);
     // Attempting to modify the value will cause a warning or error
     // pi = 3.14;  // Uncommenting this line will cause a compilation error or warning
     return 0;
-}</code>
-    
+}
+``` 
     
 ### #define
 
@@ -529,14 +530,16 @@ Defining Constants: Use **#define** to create symbolic constants to make your co
 
 Example:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define PI 3.14159
 int main() {
     double area, radius = 5.0;
     area = PI * radius * radius;  // PI is replaced with 3.14159
     printf("Area of the circle: %.2f\n", area);
     return 0;
-}</code>
+}
+```
 
 Creating Macros: Use **#define** to create macros, which are code snippets or expressions.
 
