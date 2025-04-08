@@ -86,7 +86,7 @@ Notes are based on following source material:
    - [Pointers and Arrays](#pointers-and-arrays)
    - [Bad example of pointers use](#bad-example-of-pointers-use)
    - [Pointers and Functions](#Pointers-and-Functions)
-   - [signal generator](#signal-generator)
+   - [Signal generator](#signal-generator)
    
    
 # Introduction
