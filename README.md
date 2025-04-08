@@ -592,7 +592,9 @@ The static keyword has two main purposes:
 </ul>
         
 Example:<br>
-<code>#include <stdio.h>
+
+```C
+#include <stdio.h>
 void increment() {
     static int value = 0;  // Retains its value between calls
     value++;
@@ -604,7 +606,7 @@ int main() {
     increment();  // Output: Value: 3
     return 0;
 }
-</code>
+```
 
 ### extern
 
