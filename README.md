@@ -545,13 +545,15 @@ Creating Macros: Use **#define** to create macros, which are code snippets or ex
 
 Example:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define SQUARE(x) ((x) * (x))  // Macro to calculate the square
 int main() {
     int num = 4;
     printf("Square of %d is %d\n", num, SQUARE(num));
     return 0;
-}</code>
+}
+```
 
 Key Points:
 <ul>
