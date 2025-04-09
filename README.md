@@ -1560,7 +1560,8 @@ A domain error occurs if the argument is not in the interval <code>[-1, +1]</cod
 
 An exponential function is a mathematical function of the form <code>f(x) = a * e^(bx)</code>, where e is Euler's number (approximately 2.71828), and a and b are constants. In C, you can use the **exp()** function to compute e raised to the power of a number.
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #include <math.h>  // Include math.h for exp() function
 int main() {
     double x = 2.0;
@@ -1568,7 +1569,7 @@ int main() {
     printf("e^%.2f = %.5f\n", x, result);
     return 0;
 }
-</code>
+``
 
 >Note: Here, exp(x) returns e raised to the power of x, which is e^2 in this example.
 
