@@ -1156,14 +1156,15 @@ condition: An expression that evaluates to <code>true</code> (non-zero) or <code
 
 Example:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main() {
     int a = 10, b = 20;
     int max = (a > b) ? a : b; // Checks which value is greater
     printf("The maximum is: %d\n", max); // Outputs: The maximum is: 20
     return 0;
 }
-</code>
+```
 
 >Note: It's called "ternary" because it involves three operands: condition, true value, false value.
 
