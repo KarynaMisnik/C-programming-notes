@@ -686,7 +686,8 @@ The <code>register</code> (redundant)keyword suggests to the compiler that a var
 
 Example:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main() {
     register int counter;  // Suggest storing in a CPU register
     for (counter = 0; counter < 5; counter++) {
@@ -694,7 +695,7 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 
 ### Modifiers summary
