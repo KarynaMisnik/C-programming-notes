@@ -783,27 +783,33 @@ C provides an external variable, <code>errno</code>, which is available after in
 
 Example:<br>
 
-<code>
+```C
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+
 int main() {
     // Request a huge amount of memory to simulate a failure
+
     size_t size = 1024L * 1024L * 1024L * 1024L; // 1 TB
     void *ptr = malloc(size);
+
     if (ptr == NULL) {
         // malloc failed, errno is set to ENOMEM (Out of memory)
         printf("Memory allocation failed: %s\n", strerror(errno));
         return 1; // Exit the program with an error code
     }
+
     printf("Memory allocation successful!\n");
+
     // Use the allocated memory...
     // Free the memory when done
     free(ptr);
+
     return 0;
 }
-</code>
+```
 
 >Note:
 >Use <code>malloc</code> for dynamic memory allocation.
