@@ -1192,7 +1192,8 @@ Relational operators in C are used to compare two values. They return a boolean 
 
 Example:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main() {
     int a = 10, b = 20;
     if (a == b) 
@@ -1200,7 +1201,8 @@ int main() {
     else 
         printf("a is not equal to b\n");
     return 0;
-}</code>
+}
+```
 
 >a is not equal to b
 
