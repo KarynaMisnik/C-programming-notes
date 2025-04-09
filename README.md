@@ -1102,9 +1102,10 @@ of a negative integer by a positive integer((-5) / 3 = -1 [not -2]) will round t
 
  Example:<br>
 
-<code>int a = 10, b = 3;
+```C
+int a = 10, b = 3;
 printf("%d", a % b); // Output: 1 (10 divided by 3 leaves a remainder of 1)
-</code>
+```
 
 >Note: For negative numbers, the sign of the result depends on the implementation (often follows the dividend).
 
