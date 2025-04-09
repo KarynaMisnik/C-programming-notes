@@ -1047,12 +1047,13 @@ The <code>uts()</code> function in C is used to output a string to the standard 
 
 Example: <br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main() {
     puts("Hello, World!");  // Outputs: Hello, World!
     return 0;
 }
-</code>
+```
 
 ### scanf function
 
