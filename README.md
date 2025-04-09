@@ -645,7 +645,8 @@ When to Use volatile:
     
  Example:<br>
 
- <code>#include <stdio.h>
+ ```C
+#include <stdio.h>
 #include <stdbool.h>
 // Simulated hardware flag
 volatile bool flag = false;
@@ -662,7 +663,7 @@ int main() {
     printf("Flag is set! Exiting.\n");
     return 0;
 }
-</code>
+```
     
 ### auto
 
@@ -670,13 +671,14 @@ The <code>auto</code> (redundant)keyword is used to declare automatic (local) va
 
 Example:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main() {
     auto int x = 10;  // Same as int x = 10;
     printf("Value of x: %d\n", x);
     return 0;
 }
-</code>
+```
 
 ### register
 
