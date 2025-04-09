@@ -1138,11 +1138,12 @@ Logical operators are used to perform logical operations, often in decision-maki
 
 Example:<br>
 
-<code>int a = 1, b = 0;
+```C
+int a = 1, b = 0;
 if (a && b) printf("Both true\n");  // Doesn't print
 if (a || b) printf("At least one true\n");  // Prints
 if (!a) printf("Not true\n");  // Doesn't print
-</code>
+```
 
 >Logical operators return 1 (true) or 0 (false) based on the evaluation of conditions.
 
