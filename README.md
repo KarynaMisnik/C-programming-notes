@@ -816,7 +816,7 @@ You must ensure that a divisor is never zero to avoid errors like division by ze
 
 Instead of letting your program crash when dividing by zero, you can check the divisor before performing the operation:<br>
 
-<code>
+```C
   #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
@@ -833,7 +833,7 @@ int main() {
     printf("Result: %d\n", result);
     return 0;
 }
-</code>
+```
 
 Check if a divisor is not zero using <code>if-statement</code>:<br>
 
