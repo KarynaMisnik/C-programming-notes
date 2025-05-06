@@ -1897,7 +1897,8 @@ The **switch-case** statement in C is a multi-way branching control structure us
 
 Syntax:<br>
 
-<code>switch (expression) {
+```C
+switch (expression) {
     case value1:
         // Code to execute if expression == value1
         break;
@@ -1907,7 +1908,8 @@ Syntax:<br>
     ...
     default:
         // Code to execute if no case matches
-}</code>
+}
+```
 
 >**expression:** Must evaluate to an integer or character type.
 >**case value:**: Defines a block of code for a specific value.
