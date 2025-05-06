@@ -1818,7 +1818,7 @@ if (condition) {
 
 Example:<br>
 
-<code>
+```C
   #include <stdio.h>
 int main() {
     int num = 10;
@@ -1828,7 +1828,8 @@ int main() {
         printf("Number is non-positive.\n");
     }
     return 0;
-}</code>
+}
+```
 
 >Number is positive.
 
