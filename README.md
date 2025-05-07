@@ -2021,26 +2021,33 @@ The switch-case is best suited when checking fixed values and improves code read
 
 #### IF-ELSE-IF statements
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define PI 3.14
+
 int main(){
-    int radius, base, height;
-    float circleArea, triangleArea;
-    int choice;
+int radius, base, height;
+float circleArea, triangleArea;
+int choice;
+
     while(1){
         printf("Choose what area you want to find:\n");
         printf("0 - to find area of a circle\n");
         printf("1 - to find area of a triangle\n");
         printf("-1 - Exit program\n");
         scanf("%d", &choice);
+
         if(choice == 0){
             printf("You chose to find area of a circle. Type radius value:\n");
             scanf("%d", &radius);
             circleArea = PI * radius * radius;
             printf("The radius of a circle is %d, and its area is: %f\n", radius, circleArea);
+
         } else if(choice == 1){
+
             printf("You chose to find area of a triangle. Type base value:\n");
             scanf("%d", &base);
+
             printf("Type height value:\n");
             scanf("%d", &height);
             triangleArea = 0.5 * base * height;
@@ -2092,7 +2099,7 @@ int main() {
                 }
 }
 }
-</code>
+```
 
 ## Loops
 
