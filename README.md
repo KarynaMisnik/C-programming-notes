@@ -2001,7 +2001,8 @@ The switch-case is best suited when checking fixed values and improves code read
 
 #### IF-statements
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
   int main(){
   int value1, value2;
   printf("Type fisrt value:\n");
@@ -2016,7 +2017,7 @@ The switch-case is best suited when checking fixed values and improves code read
       printf("%d is equal to %d\n", value1, value2);
   }
   }
-</code>
+```
 
 #### IF-ELSE-IF statements
 
