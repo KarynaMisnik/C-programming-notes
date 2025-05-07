@@ -2504,11 +2504,13 @@ int main() {
 
 #### Basic pointer operations
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main() {
     int var = 10;  // Declare an integer variable and assign it a value
     int *ptr;      // Declare an integer pointer
     ptr = &var;    // Assign the address of the variable to the pointer
+
     // Print the value of the variable
     printf("1. The value of the variable: %d\n", var);
     // Print the address of the variable
@@ -2519,7 +2521,7 @@ int main() {
     printf("4. The contents of the memory location the pointer points to: %d\n", *ptr);
     return 0;
 }
-</code>
+```
 
 #### Pointers and Arrays
 
