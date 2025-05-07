@@ -843,11 +843,13 @@ int main() {
 
 Check if a divisor is not zero using <code>if-statement</code>:<br>
 
-<code>
+```C
   #include <stdio.h>
+
 int main() {
     int numerator = 10;
     int divisor = 0; // Example of a zero divisor
+
     if (divisor == 0) {
         printf("Error: Division by zero is not allowed.\n");
     } else {
@@ -855,7 +857,7 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 ### Signals
 
