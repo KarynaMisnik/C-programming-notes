@@ -869,28 +869,34 @@ To handle signals, include the **<signal.h>** header, define a signal handler fu
 
 Example:<br>
 
-<code>
-  #include <stdio.h>
+```C
+#include <stdio.h>
 #include <signal.h>
 #include <stdlib.h>
+
 // Signal handler function
 void handle_signal(int signal) {
+
     if (signal == SIGFPE) {
         printf("Caught signal: Division by zero occurred!\n");
         exit(EXIT_FAILURE); // Cleanly terminate the program
     }
 }
+
 int main() {
     // Set up the signal handler for SIGFPE (Floating Point Exception)
     signal(SIGFPE, handle_signal);
+
     int numerator = 10;
     int divisor = 0;
+
     // This will trigger the SIGFPE signal
     int result = numerator / divisor;
     printf("Result: %d\n", result); // This line will not be reached
+
     return 0;
 }
-</code>
+```
 
 ### setjmp
 
