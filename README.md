@@ -2868,11 +2868,13 @@ int main(void)
 
 ####  Square Wave Using a Sum of Sine Waves
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <sndfile.h>
+
 #ifndef M_PI
 #define M_PI 3.14159265358979323846264338
 #endif
@@ -2880,6 +2882,7 @@ int main(void)
 #define SAMPLE_COUNT (SAMPLE_RATE * 4) /* 4 seconds */
 #define AMPLITUDE (0.7 * 0x7F000000)    /* Adjusted amplitude to prevent clipping */
 #define BASE_FREQ 344.0                 /* Base frequency of the square wave */
+
 int main(void)
 {
     SNDFILE *file;
@@ -2893,6 +2896,7 @@ int main(void)
     sfinfo.channels = 1;
     sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
     file = sf_open("square_wave_fourier.wav", SFM_WRITE, &sfinfo);
+
     if (file == NULL)
     {
         printf("Error: Not able to open output file.\n");
@@ -2916,7 +2920,7 @@ int main(void)
     sf_close(file);
     return 0;
 }
-</code>
+```
 
 ####  Splitting Sinal Generator program Up Into Functions
 
