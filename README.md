@@ -2986,21 +2986,25 @@ int main(void)
 
 #### Signal Generator, User Input
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <sndfile.h>
 #ifndef M_PI
+
 #define M_PI 3.14159265358979323846264338
 #endif
 #define SAMPLE_RATE 44100
 #define SAMPLE_COUNT (SAMPLE_RATE * 4) /* 4 seconds */
 #define AMPLITUDE (0.7 * 0x7F000000)    /* Prevent clipping */
+
 SNDFILE *file;     // Global file pointer
 SF_INFO sfinfo;    // Global structure for file info
 int buffer[SAMPLE_COUNT]; // Global buffer for audio samples
 int base_freq;     // User-defined frequency
+
 // Function to get user input for filename and frequency
 void get_user_input(char *filename)
 {
@@ -3019,6 +3023,7 @@ void setup(const char *filename)
     sfinfo.channels = 1;
     sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
     file = sf_open(filename, SFM_WRITE, &sfinfo);
+    
     if (file == NULL)
     {
         printf("Error: Unable to open output file.\n");
@@ -3050,6 +3055,7 @@ void finish()
 }
 // Main function
 int main(void)
+
 {
     char filename[100];
     get_user_input(filename);
@@ -3059,7 +3065,7 @@ int main(void)
     printf("WAV file '%s' successfully created with frequency %d Hz!\n", filename, base_freq);
     return 0;
 }
-</code>
+```
 
 > Provide a C source code file which has the following characteristics
 > filename make_sine.c
