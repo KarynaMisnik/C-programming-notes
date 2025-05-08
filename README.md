@@ -2920,11 +2920,13 @@ int main(void)
 
 ####  Splitting Sinal Generator program Up Into Functions
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <sndfile.h>
+
 #ifndef M_PI
 #define M_PI 3.14159265358979323846264338
 #endif
@@ -2932,9 +2934,11 @@ int main(void)
 #define SAMPLE_COUNT (SAMPLE_RATE * 4) /* 4 seconds */
 #define AMPLITUDE (0.7 * 0x7F000000)    /* Adjust amplitude to prevent clipping */
 #define BASE_FREQ 344.0                 /* Base frequency of the square wave */
+
 SNDFILE *file;     // Global file pointer
 SF_INFO sfinfo;    // Global structure for file info
 int buffer[SAMPLE_COUNT]; // Global buffer for audio samples
+
 // Function to set up the WAV file
 void setup(const char *filename)
 {
@@ -2944,6 +2948,7 @@ void setup(const char *filename)
     sfinfo.channels = 1;
     sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
     file = sf_open(filename, SFM_WRITE, &sfinfo);
+
     if (file == NULL)
     {
         printf("Error: Unable to open output file.\n");
@@ -2982,7 +2987,7 @@ int main(void)
     printf("WAV file successfully created!\n");
     return 0;
 }
-</code>
+```
 
 #### Signal Generator, User Input
 
