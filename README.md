@@ -2821,7 +2821,8 @@ int main() {
 
 #### Square wave
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -2832,6 +2833,7 @@ int main() {
 #define SAMPLE_RATE 44100
 #define SAMPLE_COUNT (SAMPLE_RATE * 4) /* 4 seconds */
 #define AMPLITUDE (1.0 * 0x7F000000)    /* Max amplitude */
+
 int main(void)
 {
     SNDFILE *file;
@@ -2844,6 +2846,7 @@ int main(void)
     sfinfo.channels = 1;
     sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
     file = sf_open("square_wave.wav", SFM_WRITE, &sfinfo);
+    
     if (file == NULL)
     {
         printf("Error: Not able to open output file.\n");
@@ -2864,7 +2867,7 @@ int main(void)
     sf_close(file);
     return 0;
 }
-</code>
+```
 
 ####  Square Wave Using a Sum of Sine Waves
 
