@@ -2738,11 +2738,14 @@ int main() {
 
 #### Stack
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #include <stdlib.h>
 #define SIZE 10  // Define the size of the stack
+
 // Function to push an element onto the stack
 int* Push(int* stack_ptr, int* stack_end) {
+
     int value;
     // Check if the stack is full
     if (stack_ptr >= stack_end) {
@@ -2781,13 +2784,16 @@ void Show(int* stack_ptr, int* stack_start) {
         printf("%d\n", *ptr);
     }
 }
+
 int main() {
     int stack[SIZE];  // Define a stack array with a fixed size
     int* stack_ptr = stack;  // Pointer to the top of the stack
     int* stack_start = stack;  // Pointer to the bottom (start) of the stack
     int* stack_end = stack + SIZE;  // Pointer to the end of the stack
     int choice;
+    
     while (1) {
+    
         // Ask the user for an action
         printf("\nStack Operations Menu:\n");
         printf("1. Push an element onto the stack\n");
@@ -2796,6 +2802,7 @@ int main() {
         printf("4. Quit\n");
         printf("Choose an option (1-4): ");
         scanf("%d", &choice);
+        
         switch (choice) {
             case 1:
                 stack_ptr = Push(stack_ptr, stack_end);  // Push operation
@@ -2815,7 +2822,7 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 ## Signal Generator
 
