@@ -1260,7 +1260,9 @@ printf("%d", intNum);  // Output: 5 (decimal part is truncated)
 
 Example of Type Casting:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+  
 int main() {
     int a = 5, b = 2;
     float result;
@@ -1268,7 +1270,7 @@ int main() {
     printf("Result: %.2f\n", result);  // Output: 2.50
     return 0;
 }
-</code>
+```
 
 >Implicit Casting is automatic and safe, but may lead to unintended results if not careful.
 >Explicit Casting allows precision but may result in loss of data (e.g., truncating decimal points).
