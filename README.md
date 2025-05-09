@@ -2695,10 +2695,12 @@ int main() {
 
 #### Pointers and Functions
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define SIZE 5  // Define the size of the arrays
 // Global array declaration
 int global_array[SIZE];
+
 // Function to read data into an array
 void Read_data(int *arr) {
     printf("Enter %d integer values:\n", SIZE);
@@ -2720,6 +2722,7 @@ void Print(int *arr) {
     }
     printf("\n");
 }
+
 int main() {
     int local_array[SIZE];  // Local array declared in main
     // Read data into the local array
@@ -2734,7 +2737,7 @@ int main() {
     Print(global_array);
     return 0;
 }
-</code>
+```
 
 #### Stack
 
