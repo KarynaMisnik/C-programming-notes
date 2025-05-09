@@ -1649,9 +1649,10 @@ int main() {
 The **sqrt** functions compute the positive square root of <code>x</code> and return the result. A domain error occurs if the argument is <ins>negative</ins>.
 
 
-<code>
+```C
 #include <stdio.h>
 #include <math.h>  // For sqrt() function
+
 int main() {
     double number, result;
     // Ask the user for input
@@ -1668,7 +1669,7 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 The **cbrt** functions compute the <ins>cube</ins> root of <code>x</code> and return the result.
 
