@@ -648,8 +648,10 @@ When to Use volatile:
  ```C
 #include <stdio.h>
 #include <stdbool.h>
+
 // Simulated hardware flag
 volatile bool flag = false;
+
 void hardwareInterrupt() {
     // Simulate hardware changing the flag
     flag = true;
@@ -917,10 +919,12 @@ They are commonly used for:
 
 Example:<br>
 
-<code>
+```C
 #include <stdio.h>
 #include <setjmp.h>
+
 jmp_buf env; // Declare a buffer to hold the environment
+
 void risky_function(int value) {
     if (value == 0) {
         printf("Error: Division by zero detected!\n");
@@ -943,7 +947,7 @@ int main() {
     printf("Program continues...\n");
     return 0;
 }
-</code>
+```
 
 **How It Works**
 
