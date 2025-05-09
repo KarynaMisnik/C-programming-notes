@@ -1426,7 +1426,9 @@ printf("%d", result);  // Output: 2
 
 **Example Program Using Bitwise Operators**
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+  
 int main() {
     int a = 5, b = 3;
     printf("a & b = %d\n", a & b);  // Output: 1
@@ -1436,7 +1438,8 @@ int main() {
     printf("a << 1 = %d\n", a << 1); // Output: 10
     printf("a >> 1 = %d\n", a >> 1); // Output: 2
     return 0;
-}</code>
+}
+```
 
 🗝️ **Key Points**
 
