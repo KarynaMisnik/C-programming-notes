@@ -973,10 +973,11 @@ Program continues...
 
 Input <code>2</code><br>
 
-<code>Enter a non-zero value: 2
+```C
+Enter a non-zero value: 2
 Result: 5
 Program continues...
-</code>
+```
 
 # Input and Output
 
@@ -1808,7 +1809,7 @@ Decision-making is fundamental to both human activities and programming. In C, c
 
 <code>e = ((a && b) || (c > d));</code>
 
->e is set equal to 1 if a and b are non-zero, or if c is greater than d. In all other cases, e is set to 0.
+><code>e</code> is set equal to 1 if a and b are non-zero, or if c is greater than d. In all other cases, e is set to 0.
 
 Bitwise operators operate on operands at the bit level and require integral types. The six operators are **& (AND)**, **| (OR)**, **^ (XOR)**, **~ (NOT)**, **<< (left shift)**, and **>> (right shift)**. The **NOT** operator is unary, while the others are binary. These operators have lower precedence than relational and equivalence operators, often requiring parentheses.
 
