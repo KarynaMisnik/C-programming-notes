@@ -1298,10 +1298,11 @@ Each shift left **multiplies** the number by 2^n (where n is the shift count).
     
 Example:<br>
 
-<code>int a = 8;       // Binary: 00001000
+```C
+int a = 8;       // Binary: 00001000
 int result = a << 2;  // Shift left by 2 (00001000 -> 00100000)
 printf("%d", result); // Output: 32
-</code>
+```
 
 
 **Right Shift Operator (>>)**
@@ -1314,20 +1315,26 @@ Each shift right divides the number by **2^n**.
 
 Example:<br>
 
-<code>int a = 8;       // Binary: 00001000
+```C
+int a = 8;       // Binary: 00001000
 int result = a >> 2;  // Shift right by 2 (00001000 -> 00000010)
+
 printf("%d", result); // Output: 2
-</code>
+```
 
 Example Program:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
+
     int num = 16; // Binary: 00010000
     printf("Left Shift by 1: %d\n", num << 1);  // Output: 32
     printf("Right Shift by 1: %d\n", num >> 1); // Output: 8
     return 0;
-}</code>
+}
+```
 
 ‼️Important Notes:
 
@@ -1364,12 +1371,14 @@ Types of Bitwise Operators:
 
 Compares each bit of two numbers; result is 1 if both bits are 1.
 
-Example:<br>
+Example:
 
-<code>int a = 5, b = 3;  // 5 = 0101, 3 = 0011
+```C
+int a = 5, b = 3;  // 5 = 0101, 3 = 0011
 int result = a & b; // 0001 (decimal 1)
+
 printf("%d", result);  // Output: 1
-</code>
+```
 
 2. Bitwise **OR (|)**
 
