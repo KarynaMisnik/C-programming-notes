@@ -1610,64 +1610,67 @@ int main() {
     printf("e^%.2f = %.5f\n", x, result);
     return 0;
 }
-``
+```
 
->Note: Here, exp(x) returns e raised to the power of x, which is e^2 in this example.
+> Note: Here, exp(x) returns e raised to the power of x, which is e^2 in this example.
 
 Logarithmic functions are the inverse of exponential functions. In C, you can use **log()** and **log10()** to compute natural and base-10 logarithms, respectively.
 
 
-<code>
+```
 #include <stdio.h>
 #include <math.h>  // Include math.h for log() function
+
 int main() {
     double x = 20.0;
     double result = log(x);  // log(x) returns the natural log (base e) of x
     printf("ln(%.2f) = %.5f\n", x, result);
     return 0;
 }
-</code>
+```
 
 **Exponential Growth (Population Growth)**
 
 In real-life applications, exponential growth can model things like population growth or compound interest. This example shows how you might calculate population growth over time.
 
-<code>
+```C
 #include <stdio.h>
 #include <math.h>
+
 int main() {
     double initial_population = 1000.0;  // Initial population
     double growth_rate = 0.05;           // Growth rate (5%)
     double time = 10.0;                  // Time in years
     double population = initial_population * exp(growth_rate * time);  // e^(growth_rate * time)
     printf("Population after %.2f years: %.2f\n", time, population);
+
     return 0;
 }
-</code>
-
+```
 
 ### Power functions
 
 The **pow** functions compute x raised to the power y and return the result. A domain <ins>error</ins> occurs if <code>x</code> is negative and <code>y</code> is not an integral value. A domain error occurs if the result cannot be represented when **x** is zero and y is less than or equal to zero. A range error may
 occur.
 
-<code>
+```C
 #include <stdio.h>
 #include <math.h>
+
 int main() {
     double base = 3.0;
     double exponent = 4.0;
     double result = pow(base, exponent);  // base^exponent
     printf("%.2f^%.2f = %.2f\n", base, exponent, result);
+
     return 0;
 }
-</code>
+```
 
->Note: Here, pow(base, exponent) computes the value of base raised to the power of exponent.
+> Note: Here, pow(base, exponent) computes the value of base raised to the power of exponent.
 
 
 The **sqrt** functions compute the positive square root of <code>x</code> and return the result. A domain error occurs if the argument is <ins>negative</ins>.
-
 
 ```C
 #include <stdio.h>
@@ -1687,15 +1690,17 @@ int main() {
         // Output the result
         printf("The square root of %.2lf is %.2lf\n", number, result);
     }
+
     return 0;
 }
 ```
 
 The **cbrt** functions compute the <ins>cube</ins> root of <code>x</code> and return the result.
 
-<code>
+```C
 #include <stdio.h>
 #include <math.h>  // For cbrt() function
+  
 int main() {
     double number, result;
     // Ask the user for input
@@ -1705,9 +1710,10 @@ int main() {
     result = cbrt(number);
     // Output the result
     printf("The cube root of %.2lf is %.2lf\n", number, result);
+    
     return 0;
 }
-</code>
+```
 
 
 The **hypot** functions compute the <ins>square</ins> root of the sums of the squares of <code>x</code> and <code>y</code>, without
