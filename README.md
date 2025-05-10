@@ -963,11 +963,12 @@ Output Example:
 
 Input <code>0</code><br>
 
-<code>Enter a non-zero value: 0
+```C
+Enter a non-zero value: 0
 Error: Division by zero detected!
 Recovered from an error. Please fix your input.
 Program continues...
-</code>
+```
 
 
 Input <code>2</code><br>
