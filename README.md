@@ -464,7 +464,6 @@ In C, long and short are modifiers that adjust the memory size of a data type:
   
 Modern compilers also support **long long**, which is typically 8 bytes.
 
-
 **Unsigned and Signed Modifiers:**
 <ul>
   <li><b>unsigned:</b> Makes a variable store only <i>positive</i> values, doubling its range.</li>
@@ -487,7 +486,6 @@ Example: For signed int, the range is <code>-2,147,483,648</code> to <code>2,147
     
 ### Const Qualiﬁer
 
-
 The **const qualifier** in C is used to declare variables whose values <ins>cannot be changed</ins> after they are initialized. This ensures the variable remains constant throughout the program.
 
 **Why use const?**
@@ -498,7 +496,7 @@ The **const qualifier** in C is used to declare variables whose values <ins>cann
   <li>Improve code clarity and safety by clearly indicating which values are constant.</li>
 </ul>
 
-Example:<br>
+Example:
    
 ```C
 #include <stdio.h>
@@ -528,7 +526,7 @@ How to Use <code>#define</code>
 
 Defining Constants: Use **#define** to create symbolic constants to make your code more readable and maintainable.
 
-Example:<br>
+Example:
 
 ```C
 #include <stdio.h>
@@ -540,10 +538,9 @@ int main() {
     return 0;
 }
 ```
-
 Creating Macros: Use **#define** to create macros, which are code snippets or expressions.
 
-Example:<br>
+Example:
 
 ```C
 #include <stdio.h>
@@ -612,8 +609,7 @@ int main() {
 
 The <code>extern</code> keyword is used to declare a variable that is defined in another file. It does not allocate memory for the variable but tells the compiler that the variable exists somewhere else in the program.
 
-
-Example:<br>
+Example:
 
 |file 1: <code>main.c</code>|file 2: <code>data.c</code>|
 |----|----|
