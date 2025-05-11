@@ -2655,8 +2655,10 @@ int main() {
 
 #### String length
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #include <string.h>  // Include for strlen function
+
 int main() {
     char data[] = "Hello World";  // The string we are working with
     int length = 0;  // To store length of string
@@ -2676,25 +2678,31 @@ int main() {
     // 3. Using strlen function to find the length of the string
     int length_with_strlen = strlen(data);
     printf("Length using strlen: %d\n", length_with_strlen);
+
     return 0;
 }
-</code>
+```
 
 #### Char Arrays
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
-    char array1[50], array2[50], combined[100];  // Arrays for the two inputs and the combined result
-    char *ptr1, *ptr2, *ptr_combined;
-    // Get input from the user
-    printf("Enter the first string: ");
-    gets(array1);  // unsafe, used for this task per instruction
-    printf("Enter the second string: ");
-    gets(array2);  // unsafe, used for this task per instruction
-    // Pointers to the start of each array
-    ptr1 = array1;
-    ptr2 = array2;
-    ptr_combined = combined;
+
+char array1[50], array2[50], combined[100];  // Arrays for the two inputs and the combined result
+char *ptr1, *ptr2, *ptr_combined;
+// Get input from the user
+printf("Enter the first string: ");
+gets(array1);  // unsafe, used for this task per instruction
+printf("Enter the second string: ");
+gets(array2);  // unsafe, used for this task per instruction
+
+// Pointers to the start of each array
+ptr1 = array1;
+ptr2 = array2;
+ptr_combined = combined;
+
     // Copy contents of array1 to combined array using pointer
     while (*ptr1 != '\0') {
         *ptr_combined = *ptr1;  // Copy character from array1 to combined
@@ -2712,9 +2720,10 @@ int main() {
     // Print the combined string
     printf("Combined string: ");
     puts(combined);
+
     return 0;
 }
-</code>
+```
 
 #### Pointers and Functions
 
@@ -3179,7 +3188,6 @@ int main(void)
     puts("WAV file 'sine.wav' created successfully.");
     return 0;
 }
-
 ```
 
 
