@@ -639,8 +639,7 @@ When to Use volatile:
   <li><b>Interrupt Handlers:</b> When a variable is modified inside an interrupt routine.</li>
 </ul>
     
- Example:<br>
-
+ Example:
  ```C
 #include <stdio.h>
 #include <stdbool.h>
@@ -667,8 +666,7 @@ int main() {
 
 The <code>auto</code> (redundant)keyword is used to declare automatic (local) variables. These variables are created when the program enters their scope and destroyed when it exits. However, since all variables declared inside a block are automatically treated as auto, the keyword is rarely used and is considered unnecessary.
 
-Example:<br>
-
+Example:
 ```C
 #include <stdio.h>
 int main() {
@@ -682,8 +680,7 @@ int main() {
 
 The <code>register</code> (redundant)keyword suggests to the compiler that a variable should be stored in the CPU's register instead of RAM for faster access. However, modern compilers optimize this automatically, making the use of register unnecessary in most cases.
 
-Example:<br>
-
+Example:
 ```C
 #include <stdio.h>
 int main() {
@@ -779,8 +776,7 @@ C provides an external variable, <code>errno</code>, which is available after in
   <li><b>Use case:</b> Ensuring code quality and preventing bugs during the compilation stage.</li>
 </ul>
 
-Example:<br>
-
+Example:
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -865,8 +861,7 @@ Signals are not meant to catch errors like exceptions in other languages. Instea
 
 To handle signals, include the **<signal.h>** header, define a signal handler function, and use the <code>signal()</code> function to specify how the program should respond to specific signals.
 
-Example:<br>
-
+Example:
 ```C
 #include <stdio.h>
 #include <signal.h>
@@ -913,8 +908,7 @@ They are commonly used for:
 
 ⚠️ Caution: These functions can make code harder to read and debug. Use them sparingly and only when necessary.
 
-Example:<br>
-
+Example:
 ```C
 #include <stdio.h>
 #include <setjmp.h>
@@ -957,7 +951,7 @@ int main() {
 
 Output Example: 
 
-Input <code>0</code><br>
+Input <code>0</code>
 
 ```C
 Enter a non-zero value: 0
@@ -965,7 +959,6 @@ Error: Division by zero detected!
 Recovered from an error. Please fix your input.
 Program continues...
 ```
-
 
 Input <code>2</code><br>
 
@@ -1064,8 +1057,7 @@ The <code>uts()</code> function in C is used to output a string to the standard 
 2. **Output:** Prints the string followed by a newline.
 3. **Return Value:** Returns a <ins>non-negative</ins> value on success or **EOF** on <ins>failure.</ins>
 
-Example: <br>
-
+Example: 
 ```C
 #include <stdio.h>
 int main() {
@@ -1119,8 +1111,7 @@ of a negative integer by a positive integer((-5) / 3 = -1 [not -2]) will round t
 
 >Note: Modulus is not deﬁned for ﬂoating-point numbers, but the **math.h** library has an **fmod** function.
 
- Example:<br>
-
+ Example:
 ```C
 int a = 10, b = 3;
 printf("%d", a % b); // Output: 1 (10 divided by 3 leaves a remainder of 1)
@@ -1152,8 +1143,7 @@ Logical operators are used to perform logical operations, often in decision-maki
 | `!`      | Logical NOT (negates a condition)  | `!a`                     | `0` (false) |
 
 
-Example:<br>
-
+Example:
 ```C
 int a = 1, b = 0;
 if (a && b) printf("Both true\n");  // Doesn't print
@@ -1171,8 +1161,7 @@ condition: An expression that evaluates to <code>true</code> (non-zero) or <code
 <code>value_if_true</code>: The value returned if the condition is <ins>true</ins>.
 <code>value_if_false</code>: The value returned if the condition is <ins>false</ins>.
 
-Example:<br>
-
+Example:
 ```C
 #include <stdio.h>
 int main() {
@@ -1182,7 +1171,6 @@ int main() {
     return 0;
 }
 ```
-
 >Note: It's called "ternary" because it involves three operands: condition, true value, false value.
 
 It is shorter way to write <code>if-statement</code>. Compare:
@@ -1207,8 +1195,7 @@ Relational operators in C are used to compare two values. They return a boolean 
 >Note: **==** checks for equality, while **=** is used for assignment.
 >Avoid using **==** for floating-point values due to precision issues.
 
-Example:<br>
-
+Example:
 ```C
 #include <stdio.h>
 int main() {
@@ -1220,7 +1207,6 @@ int main() {
     return 0;
 }
 ```
-
 >a is not equal to b
 
 ### Type Casting
@@ -1236,7 +1222,7 @@ Automatically performed by the compiler when assigning values of smaller data ty
 <code>int</code> → <code>float</code><br>
 <code>char</code> → <code>t</code><br>
 
-Example:<br>
+Example:
 
 <code>int num = 10;
 float fnum = num;  // Implicit conversion from int to float
@@ -1249,14 +1235,14 @@ Done manually using the cast operator (type).
 
 Useful when precise control over data conversion is needed.
 
-Example:<br>
+Example:
 
 <code>float num = 5.7;
 int intNum = (int) num;  // Explicit conversion from float to int
 printf("%d", intNum);  // Output: 5 (decimal part is truncated)
 </code>
 
-Example of Type Casting:<br>
+Example of Type Casting:
 
 ```C
 #include <stdio.h>
