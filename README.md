@@ -355,18 +355,21 @@ In C, all variables <ins>*must be assigned*<ins> a specific type when they are d
 <code>number = 20;</code>
 <br>
 
->Now, the value of number is updated to 20.
+> Now, the value of number is updated to 20.
 
-**Summary:** <br>
+**Summary:** 
 
 ```C
 #include <stdio.h>
+
 int main() {
-    int number;       // Step 1: Declare
-    number = 10;      // Step 2: Initialize
-    number = 20;      // Step 3: Assign a new value
-    printf("The value of number is: %d\n", number); // Output: 20
-    return 0;}
+int number;       // Step 1: Declare
+number = 10;      // Step 2: Initialize
+number = 20;      // Step 3: Assign a new value
+printf("The value of number is: %d\n", number); // Output: 20
+
+return 0;
+}
 ```
 
 ### Data Types
@@ -379,7 +382,7 @@ They are four basic data types: **int**, **char**, **float**, and **double**.
   <li>Size: Typically 4 bytes (varies by system).</li>
   <li>Range: Usually -2,147,483,648 to 2,147,483,647.</li>
 </ul>
-  Example:<br>
+  Example:
 
   <code>int age = 25;</code>
 
@@ -390,7 +393,8 @@ They are four basic data types: **int**, **char**, **float**, and **double**.
     <li>Size: 1 byte.</li>
     <li>Range: -128 to 127 or 0 to 255 (depending on system).</li>
   </ul>
-Example:<br>
+  
+Example:
 
 <code>char grade = 'A';</code>
 
@@ -404,7 +408,7 @@ Example:<br>
     <li>Range: Approximately ±3.4e−38 to ±3.4e38.</li>
   </ul>
 
-  Example<br>
+  Example:
 
   <code>float temperature = 36.5;</code>
 
@@ -415,21 +419,21 @@ Example:<br>
     <li>Size: Typically 8 bytes.</li>
     <li>Range: Approximately ±1.7e−308 to ±1.7e308.</li>
   </ul>
-Example:<br>
+  
+Example:
 
 <code>double pi = 3.141592653589;</code>
 
-
 The **sizeof** ~~function~~ operator in C is used to determine the size (in bytes) of a data type or a variable in memory. It is a compile-time operator that returns an unsigned integer representing the size.
 
-Syntax:<br>
+Syntax:
 
 ```C
 sizeof(type);
 sizeof(variable);
 ```
 
-Example:<br>
+Example:
 
 ```C
 int a = 10;
@@ -439,8 +443,8 @@ printf("%zu\n", sizeof(a));
 // Size of variable a
 ```
 
->Note: In C, **%zu** is a format specifier used with printf to print values of type **size_t**, which is an unsigned integer type used to represent the size of objects in bytes.
->The sizeof operator returns a value of type **size_t**, so **%zu** is the correct way to print it.
+> Note: In C, **%zu** is a format specifier used with printf to print values of type **size_t**, which is an unsigned integer type used to represent the size of objects in bytes.
+> The sizeof operator returns a value of type **size_t**, so **%zu** is the correct way to print it.
 **%zu** ensures portability and avoids warnings or errors when printing the result of sizeof on different platforms.
 
 **Key Points:**
@@ -500,11 +504,13 @@ Example:
    
 ```C
 #include <stdio.h>
+
 int main() {
     const double pi = 3.14159;  // Declare and initialize a constant variable
     printf("The value of pi is: %f\n", pi);
     // Attempting to modify the value will cause a warning or error
     // pi = 3.14;  // Uncommenting this line will cause a compilation error or warning
+
     return 0;
 }
 ``` 
