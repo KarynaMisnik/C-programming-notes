@@ -594,10 +594,10 @@ The static keyword has two main purposes:
   <li>Unlike global variables, it can only be accessed within its defined scope.</li>
 </ul>
         
-Example:<br>
-
+Example:
 ```C
 #include <stdio.h>
+
 void increment() {
     static int value = 0;  // Retains its value between calls
     value++;
@@ -607,6 +607,7 @@ int main() {
     increment();  // Output: Value: 1
     increment();  // Output: Value: 2
     increment();  // Output: Value: 3
+
     return 0;
 }
 ```
@@ -633,7 +634,6 @@ How It Works:
 </ul>
 This approach allows variables to be shared across multiple files without duplication.
 
-
 ### volatile
 
 The <code>volatile</code> keyword tells the compiler that a variable's value can change at any time, even outside the program's control (e.g., by hardware or another thread). Without volatile, the compiler might optimize code by assuming the variable doesn't change, leading to incorrect behavior.
@@ -646,6 +646,7 @@ When to Use volatile:
 </ul>
     
  Example:
+ 
  ```C
 #include <stdio.h>
 #include <stdbool.h>
@@ -673,6 +674,7 @@ int main() {
 The <code>auto</code> (redundant)keyword is used to declare automatic (local) variables. These variables are created when the program enters their scope and destroyed when it exits. However, since all variables declared inside a block are automatically treated as auto, the keyword is rarely used and is considered unnecessary.
 
 Example:
+
 ```C
 #include <stdio.h>
 int main() {
@@ -687,6 +689,7 @@ int main() {
 The <code>register</code> (redundant)keyword suggests to the compiler that a variable should be stored in the CPU's register instead of RAM for faster access. However, modern compilers optimize this automatically, making the use of register unnecessary in most cases.
 
 Example:
+
 ```C
 #include <stdio.h>
 int main() {
@@ -783,6 +786,7 @@ C provides an external variable, <code>errno</code>, which is available after in
 </ul>
 
 Example:
+
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -915,6 +919,7 @@ They are commonly used for:
 ⚠️ Caution: These functions can make code harder to read and debug. Use them sparingly and only when necessary.
 
 Example:
+
 ```C
 #include <stdio.h>
 #include <setjmp.h>
@@ -941,6 +946,7 @@ int main() {
         printf("Recovered from an error. Please fix your input.\n");
     }
     printf("Program continues...\n");
+
     return 0;
 }
 ```
@@ -1064,6 +1070,7 @@ The <code>uts()</code> function in C is used to output a string to the standard 
 3. **Return Value:** Returns a <ins>non-negative</ins> value on success or **EOF** on <ins>failure.</ins>
 
 Example: 
+
 ```C
 #include <stdio.h>
 int main() {
@@ -1115,9 +1122,10 @@ The modulus operator returns the remainder of a division. It's not the equivalen
 modulus~~ and works only with integer operands. Division of integers will return an integer, and the division
 of a negative integer by a positive integer((-5) / 3 = -1 [not -2]) will round towards zero instead of rounding down
 
->Note: Modulus is not deﬁned for ﬂoating-point numbers, but the **math.h** library has an **fmod** function.
+> Note: Modulus is not deﬁned for ﬂoating-point numbers, but the **math.h** library has an **fmod** function.
 
- Example:
+Example:
+ 
 ```C
 int a = 10, b = 3;
 printf("%d", a % b); // Output: 1 (10 divided by 3 leaves a remainder of 1)
@@ -1148,8 +1156,8 @@ Logical operators are used to perform logical operations, often in decision-maki
 | `ll`    | Logical OR (true if at least one is true) | `a ll b`          | `1` (true)  |
 | `!`      | Logical NOT (negates a condition)  | `!a`                     | `0` (false) |
 
-
 Example:
+
 ```C
 int a = 1, b = 0;
 if (a && b) printf("Both true\n");  // Doesn't print
@@ -1157,7 +1165,7 @@ if (a || b) printf("At least one true\n");  // Prints
 if (!a) printf("Not true\n");  // Doesn't print
 ```
 
->Logical operators return 1 (true) or 0 (false) based on the evaluation of conditions.
+> Logical operators return 1 (true) or 0 (false) based on the evaluation of conditions.
 
 The **conditional operator**, also known as the **ternary operator**, is a shorthand for an **if-else** statement in C. It evaluates a condition and returns one of two values based on the result.
 
@@ -1168,6 +1176,7 @@ condition: An expression that evaluates to <code>true</code> (non-zero) or <code
 <code>value_if_false</code>: The value returned if the condition is <ins>false</ins>.
 
 Example:
+
 ```C
 #include <stdio.h>
 int main() {
@@ -1177,7 +1186,7 @@ int main() {
     return 0;
 }
 ```
->Note: It's called "ternary" because it involves three operands: condition, true value, false value.
+> Note: It's called "ternary" because it involves three operands: condition, true value, false value.
 
 It is shorter way to write <code>if-statement</code>. Compare:
 
@@ -1202,18 +1211,21 @@ Relational operators in C are used to compare two values. They return a boolean 
 >Avoid using **==** for floating-point values due to precision issues.
 
 Example:
+
 ```C
 #include <stdio.h>
+
 int main() {
-    int a = 10, b = 20;
-    if (a == b) 
-        printf("a is equal to b\n");
-    else 
-        printf("a is not equal to b\n");
-    return 0;
+int a = 10, b = 20;
+if (a == b) 
+printf("a is equal to b\n");
+else 
+printf("a is not equal to b\n");
+
+return 0;
 }
 ```
->a is not equal to b
+> 'a' is not equal to 'b'
 
 ### Type Casting
 
@@ -1230,10 +1242,11 @@ Automatically performed by the compiler when assigning values of smaller data ty
 
 Example:
 
-<code>int num = 10;
+```C
+int num = 10;
 float fnum = num;  // Implicit conversion from int to float
 printf("%f", fnum);  // Output: 10.000000
-</code>
+```
 
 **2.** Explicit Type Casting (Manual Conversion)
 
@@ -1243,10 +1256,11 @@ Useful when precise control over data conversion is needed.
 
 Example:
 
-<code>float num = 5.7;
+```C
+float num = 5.7;
 int intNum = (int) num;  // Explicit conversion from float to int
 printf("%d", intNum);  // Output: 5 (decimal part is truncated)
-</code>
+```
 
 Example of Type Casting:
 
@@ -1258,14 +1272,15 @@ int main() {
     float result;
     result = (float)a / b;  // Explicit casting to float
     printf("Result: %.2f\n", result);  // Output: 2.50
+
     return 0;
 }
 ```
 
->Implicit Casting is automatic and safe, but may lead to unintended results if not careful.
->Explicit Casting allows precision but may result in loss of data (e.g., truncating decimal points).
->Type Promotion happens <ins>automatically</ins> in expressions (e.g., integer division converts to float if one >operand is float).
->Casting <ins>does not change</ins> the original data type, only how the value is interpreted in the expression.
+> Implicit Casting is automatic and safe, but may lead to unintended results if not careful.
+> Explicit Casting allows precision but may result in loss of data (e.g., truncating decimal points).
+> Type Promotion happens <ins>automatically</ins> in expressions (e.g., integer division converts to float if one >operand is float).
+> Casting <ins>does not change</ins> the original data type, only how the value is interpreted in the expression.
 
 ### Shift Operators
 
@@ -1278,20 +1293,18 @@ Types of Shift Operators:
 | `<<`      | Left shift                    | `a << 2`              | `00100000`       | `32`            |
 | `>>`      | Right shift                    | `a >> 2`              | `00000010`       | `2`             |
 
-
 **Left Shift Operator (<<)**
 
 Shifts bits to the **left**, filling with **zeros** on the **right**.
 Each shift left **multiplies** the number by 2^n (where n is the shift count).
     
-Example:<br>
+Example:
 
 ```C
 int a = 8;       // Binary: 00001000
 int result = a << 2;  // Shift left by 2 (00001000 -> 00100000)
 printf("%d", result); // Output: 32
 ```
-
 
 **Right Shift Operator (>>)**
 
@@ -1301,7 +1314,7 @@ For <ins>unsigned</ins> numbers, zeroes are shifted in.
 For <ins>signed numbers</ins>, it depends on the compiler (could fill with zeros or sign bits).
 Each shift right divides the number by **2^n**.
 
-Example:<br>
+Example:
 
 ```C
 int a = 8;       // Binary: 00001000
@@ -1310,7 +1323,7 @@ int result = a >> 2;  // Shift right by 2 (00001000 -> 00000010)
 printf("%d", result); // Output: 2
 ```
 
-Example Program:<br>
+Example Program:
 
 ```C
 #include <stdio.h>
@@ -1320,6 +1333,7 @@ int main() {
     int num = 16; // Binary: 00010000
     printf("Left Shift by 1: %d\n", num << 1);  // Output: 32
     printf("Right Shift by 1: %d\n", num >> 1); // Output: 8
+
     return 0;
 }
 ```
@@ -1372,56 +1386,61 @@ printf("%d", result);  // Output: 1
 
 Compares each bit; result is 1 if either bit is 1.
 
-Example:<br>
+Example:
 
-<code>int a = 5, b = 3;
+```C
+int a = 5, b = 3;
 int result = a | b; // 0111 (decimal 7)
 printf("%d", result);  // Output: 7
-</code>
+```
 
 3. Bitwise **XOR (^)**
 
 Compares each bit; result is 1 if the bits are different.
 
-Example:<br>
+Example:
 
-<code>int a = 5, b = 3;
+```C
+int a = 5, b = 3;
 int result = a ^ b; // 0110 (decimal 6)
 printf("%d", result);  // Output: 6
-</code>
+```
 
 4. Bitwise **NOT (~)**
 
 Inverts all bits (1 → 0, 0 → 1). Uses two's complement, meaning the value becomes negative.
 
-Example:<br>
+Example:
 
-<code>int a = 5;
+```C
+int a = 5;
 int result = ~a; // 1010 (decimal -6)
 printf("%d", result);  // Output: -6
-</code>
+```
 
 5. Left Shift **(<<)**
 
 Moves bits to the left, filling right positions with zeros. Equivalent to multiplying by 2^n.
 
-Example:<br>
+Example:
 
-<code>int a = 5;
+```C
+int a = 5;
 int result = a << 1; // 1010 (decimal 10)
 printf("%d", result);  // Output: 10
-</code>
+```
 
 6. Right Shift **(>>)**
 
 Moves bits to the right, discarding the rightmost bits. Equivalent to dividing by 2^n.
 
-Example:<br>
+Example:
 
-<code>int a = 5;
+```C
+int a = 5;
 int result = a >> 1; // 0010 (decimal 2)
 printf("%d", result);  // Output: 2
-</code>
+```
 
 **Example Program Using Bitwise Operators**
 
@@ -1436,6 +1455,7 @@ int main() {
     printf("~a = %d\n", ~a);        // Output: -6
     printf("a << 1 = %d\n", a << 1); // Output: 10
     printf("a >> 1 = %d\n", a >> 1); // Output: 2
+
     return 0;
 }
 ```
@@ -1460,18 +1480,23 @@ The comma operator in C is used to separate multiple expressions where only the 
 
 1. Multiple Expressions in a Single Statement:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
     int a, b;
     a = (b = 10, b + 5);  // Assign b = 10, then a = b + 5
     printf("a = %d, b = %d\n", a, b);  // Output: a = 15, b = 10
+
     return 0;
 }
-</code>
+```
 
 2. For loop:<br>
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+  
 int main() {
     int i, j;
     for (i = 0, j = 10; i < 5; i++, j--) {
@@ -1479,7 +1504,7 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 3. Function Arguments
 
@@ -1487,7 +1512,7 @@ The comma operator should not be confused with the comma used to separate functi
 
 <code>void func(int x, int y);  // Comma here separates arguments, not the operator</code>
 
-Example of Misuse:<br>
+Example of Misuse:
 
 <code>int x = (5, 10, 15);  // Only 15 is assigned to x
 printf("%d", x);  // Output: 15</code>
@@ -1509,7 +1534,6 @@ The **math.h** header file in C contains declarations for various mathematical f
 
 **Domain Errors:** Occur when the input values to a function are invalid (e.g., negative argument for <code>sqrt</code>).
 **Range Errors:** Occur when the result of the function cannot be accurately represented within the given floating-point type (e.g., <code>pow(1000.0, 1000.0)</code> might exceed the maximum representable value for a double).
-
 
 ### Trigonometric functions
 
@@ -1592,10 +1616,12 @@ An exponential function is a mathematical function of the form <code>f(x) = a * 
 ```C
 #include <stdio.h>
 #include <math.h>  // Include math.h for exp() function
+
 int main() {
     double x = 2.0;
     double result = exp(x);  // exp(x) returns e raised to the power of x
     printf("e^%.2f = %.5f\n", x, result);
+
     return 0;
 }
 ```
@@ -1604,8 +1630,7 @@ int main() {
 
 Logarithmic functions are the inverse of exponential functions. In C, you can use **log()** and **log10()** to compute natural and base-10 logarithms, respectively.
 
-
-```
+```C
 #include <stdio.h>
 #include <math.h>  // Include math.h for log() function
 
@@ -1613,6 +1638,7 @@ int main() {
     double x = 20.0;
     double result = log(x);  // log(x) returns the natural log (base e) of x
     printf("ln(%.2f) = %.5f\n", x, result);
+
     return 0;
 }
 ```
@@ -1656,7 +1682,6 @@ int main() {
 ```
 
 > Note: Here, pow(base, exponent) computes the value of base raised to the power of exponent.
-
 
 The **sqrt** functions compute the positive square root of <code>x</code> and return the result. A domain error occurs if the argument is <ins>negative</ins>.
 
@@ -1707,9 +1732,10 @@ int main() {
 The **hypot** functions compute the <ins>square</ins> root of the sums of the squares of <code>x</code> and <code>y</code>, without
 overﬂow or underﬂow, and return the result.
 
-<code>
+```C
 #include <stdio.h>
 #include <math.h>  // For hypot() function
+
 int main() {
     double side1, side2, result;
     // Ask the user for the lengths of the two sides
@@ -1721,18 +1747,19 @@ int main() {
     result = hypot(side1, side2);
     // Output the result
     printf("The length of the hypotenuse is %.2lf\n", result);
+
     return 0;
 }
-</code>
-
+```
 
 ### Nearest integer, absolute value, and remainder functions
 
 The **ceil** functions compute the smallest integral value not less than <code>x</code> and return the result; the floor functions compute the largest integral value not greater than <code>x</code> and return the result.
 
-<code>
+```C
 #include <stdio.h>
 #include <math.h>  // For ceil() function
+  
 int main() {
     double number, result;
     // Ask the user for input
@@ -1742,18 +1769,21 @@ int main() {
     result = ceil(number);
     // Output the result
     printf("The ceiling of %.2lf is %.0lf\n", number, result);
+    
     return 0;
 }
-</code>
+```
 
->Note: Enter a number: 3.14
->The ceiling of 3.14 is 4
+> Note: Enter a number: 3.14
+> The ceiling of 3.14 is 4
 
 
 The **fabs** functions compute the absolute value of a ﬂoating-point number x and return the result.
 
+```C
 #include <stdio.h>
 #include <math.h>  // For fabs() function
+
 int main() {
     double number, result;
     // Ask the user for input
@@ -1763,12 +1793,13 @@ int main() {
     result = fabs(number);
     // Output the result
     printf("The absolute value of %.2lf is %.2lf\n", number, result);
+
     return 0;
 }
+```
 
 >Note: Enter a number: -7.25
 >The absolute value of -7.25 is 7.25
-
 
 
 ### Error and gamma functions
@@ -1809,7 +1840,6 @@ Decision-making is fundamental to both human activities and programming. In C, c
 | `a && b` | When BOTH `a` and `b` are true, the result is `1`, otherwise the result is `0`. |
 | `!a` | When `a` is true, the result is `0`. When `a` is `0`, the result is `1`. |
 
-
 <code>e = ((a && b) || (c > d));</code>
 
 ><code>e</code> is set equal to 1 if a and b are non-zero, or if c is greater than d. In all other cases, e is set to 0.
@@ -1827,22 +1857,23 @@ Numbers starting with **0x** are hexadecimal (base 16), using digits 0-9 and a-f
 | `a << b` | Shift `a` left by `b` (Multiply `a` by `2^b`) | `0xc << 1` → `0x18` (Binary: `1100 << 1` → `11000`) |
 | `a >> b` | Shift `a` right by `b` (Divide `a` by `2^b`) | `0xc >> 1` → `0x6` (Binary: `1100 >> 1` → `110`) |
 
-
 ### if else
 
 The if-else statement in C is used for decision-making, allowing a program to execute different blocks of code based on conditions.<br>
 
-<code>
+```C
 if (condition) {
     // Code executes if condition is true
 } else {
     // Code executes if condition is false
-}</code>
+}
+```
 
-Example:<br>
+Example:
 
 ```C
-  #include <stdio.h>
+#include <stdio.h>
+
 int main() {
     int num = 10;
     if (num > 0) {
@@ -1854,7 +1885,7 @@ int main() {
 }
 ```
 
->Number is positive.
+> Number is positive.
 
 **if-else if-else Ladder**
 Used when there are multiple conditions to check.<br>
