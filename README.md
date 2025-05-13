@@ -1367,7 +1367,6 @@ Types of Bitwise Operators:
 | `<<`     | Left Shift   | Shifts bits to the left, filling with zeros       | `a << 1` (0101 → 1010) → `10` |
 | `>>`     | Right Shift  | Shifts bits to the right, discarding right bits   | `a >> 1` (0101 → 0010) → `2` |
 
-
 1. Bitwise **AND (&)**
 
 Compares each bit of two numbers; result is 1 if both bits are 1.
@@ -1419,7 +1418,7 @@ printf("%d", result);  // Output: -6
 
 5. Left Shift **(<<)**
 
-Moves bits to the left, filling right positions with zeros. Equivalent to multiplying by 2^n.
+Moves bits to the left, filling right positions with zeros. Equivalent to multiplying by **2^n**.
 
 Example:
 
@@ -1431,7 +1430,7 @@ printf("%d", result);  // Output: 10
 
 6. Right Shift **(>>)**
 
-Moves bits to the right, discarding the rightmost bits. Equivalent to dividing by 2^n.
+Moves bits to the right, discarding the rightmost bits. Equivalent to dividing **by 2^n**.
 
 Example:
 
@@ -1477,7 +1476,7 @@ When working with signed numbers, right shifts may behave differently depending 
 
 The comma operator in C is used to separate multiple expressions where only the rightmost expression's value is returned. It is often used to write concise code, especially in loop constructs and complex expressions.
 
-1. Multiple Expressions in a Single Statement:<br>
+1. Multiple Expressions in a Single Statement:
 
 ```C
 #include <stdio.h>
@@ -1491,7 +1490,7 @@ int main() {
 }
 ```
 
-2. For loop:<br>
+2. For loop:
 
 ```C
 #include <stdio.h>
@@ -1513,9 +1512,10 @@ The comma operator should not be confused with the comma used to separate functi
 
 Example of Misuse:
 
-<code>int x = (5, 10, 15);  // Only 15 is assigned to x
-printf("%d", x);  // Output: 15</code>
-
+```C
+int x = (5, 10, 15);  // Only 15 is assigned to x
+printf("%d", x);  // Output: 15
+```
 
 ### Math libraries
 
@@ -1625,7 +1625,7 @@ int main() {
 }
 ```
 
-> Note: Here, exp(x) returns e raised to the power of x, which is e^2 in this example.
+> Note: Here, **exp(x)** returns **e** raised to the power of **x**, which is **e^2** in this example.
 
 Logarithmic functions are the inverse of exponential functions. In C, you can use **log()** and **log10()** to compute natural and base-10 logarithms, respectively.
 
@@ -1727,7 +1727,6 @@ int main() {
 }
 ```
 
-
 The **hypot** functions compute the <ins>square</ins> root of the sums of the squares of <code>x</code> and <code>y</code>, without
 overﬂow or underﬂow, and return the result.
 
@@ -1776,7 +1775,6 @@ int main() {
 > Note: Enter a number: 3.14
 > The ceiling of 3.14 is 4
 
-
 The **fabs** functions compute the absolute value of a ﬂoating-point number x and return the result.
 
 ```C
@@ -1799,7 +1797,6 @@ int main() {
 
 >Note: Enter a number: -7.25
 >The absolute value of -7.25 is 7.25
-
 
 ### Error and gamma functions
 
@@ -1828,8 +1825,8 @@ Decision-making is fundamental to both human activities and programming. In C, c
 >are valid but always evaluate as **true**.
 >A helpful trick to avoid this error is to place the constant first (e.g., <code>if (20 == c))</code> so that a mistaken **=** >would cause a compilation error.
 
->Note: C does not have a dedicated boolean type as many other languages do. <code>0</code> means **false** and anything else
->**true**.
+> Note: C does not have a dedicated boolean type as many other languages do. <code>0</code> means **false** and anything else
+> **true**.
 
 ### Logical Expressions
 
@@ -1841,7 +1838,7 @@ Decision-making is fundamental to both human activities and programming. In C, c
 
 <code>e = ((a && b) || (c > d));</code>
 
-><code>e</code> is set equal to 1 if a and b are non-zero, or if c is greater than d. In all other cases, e is set to 0.
+<code>e</code> is set equal to 1 if a and b are non-zero, or if c is greater than d. In all other cases, **e** is set to **0**.
 
 Bitwise operators operate on operands at the bit level and require integral types. The six operators are **& (AND)**, **| (OR)**, **^ (XOR)**, **~ (NOT)**, **<< (left shift)**, and **>> (right shift)**. The **NOT** operator is unary, while the others are binary. These operators have lower precedence than relational and equivalence operators, often requiring parentheses.
 
@@ -1887,21 +1884,22 @@ int main() {
 > Number is positive.
 
 **if-else if-else Ladder**
-Used when there are multiple conditions to check.<br>
+Used when there are multiple conditions to check.
 
-<code>
+```C
   if (condition1) {
     // Executes if condition1 is true
 } else if (condition2) {
     // Executes if condition2 is true
 } else {
     // Executes if none of the conditions are true
-}</code>
+}
+```
+Example:
 
-Example:<br>
+```C
+int score = 85;
 
-<code>
-  int score = 85;
 if (score >= 90) {
     printf("Grade: A\n");
 } else if (score >= 80) {
@@ -1910,15 +1908,18 @@ if (score >= 90) {
     printf("Grade: C\n");
 } else {
     printf("Grade: F\n");
-}</code>
+}
+```
 
 **Nested if-else**
+
 An if-else statement inside another if-else.
 
-Example:<br>
+Example:
 
-<code>
-  int num = 5;
+```C
+int num = 5;
+
 if (num > 0) {
     if (num % 2 == 0)
         printf("Positive even number\n");
@@ -1926,7 +1927,9 @@ if (num > 0) {
         printf("Positive odd number\n");
 } else {
     printf("Non-positive number\n");
-}</code>
+}
+```
+
 
 **Ternary Operator (?:) - Shorter Alternative**
 
