@@ -2173,8 +2173,10 @@ int main() {
 
 #### while-loop: exampleone
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define SIZE 100
+
 int main() {
     int count = 0, input;
     int all_inputs[SIZE];
@@ -2205,11 +2207,13 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 #### while-loop: example two
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
     int goal, savings, months = 0;
     int total_savings = 0;
@@ -2223,13 +2227,15 @@ int main() {
         printf("Months: %d \t Savings: %d\n", months, total_savings);  // Added \n for better output format
     }
     printf("Congratulations! You reached your savings goal in %d months!\n", months);
+
     return 0;
 }
-</code>
+```
 
 #### for-loop
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int main(){
 int count;
 for(count=0; count<=10; count++){
@@ -2237,9 +2243,11 @@ printf("%d\t", count);
 }
 return 0;
 }
-</code>
+```
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
     int first_value, second_value, result;
     // Print the header row
@@ -2259,14 +2267,16 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 ## Arrays
 
 #### One-dimensional array
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define SIZE 5
+
 int main() {
     int nums[SIZE];  // Array to store values
     int input, count;
@@ -2282,7 +2292,7 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 #### Groups of arrays
 
