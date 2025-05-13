@@ -1930,28 +1930,28 @@ if (num > 0) {
 }
 ```
 
-
 **Ternary Operator (?:) - Shorter Alternative**
 
 <code>(condition) ? expression1 : expression2;</code>
 
-Example:<br>
+Example:
 
-<code>int num = -5;
+```C
+int num = -5;
 printf("%s", (num > 0) ? "Positive" : "Non-positive");
-</code>
+```
 
->**if** evaluates a condition; if true, it executes the corresponding block.
->**else** runs when the if condition is <ins>false</ins>.
->**else if** allows checking multiple conditions.
->Always use braces **{}** for multiple statements in if blocks to avoid logic errors.
->The <ins>ternary operator</ins> **(?:)** is a shorthand for simple if-else statements.
+> **if** evaluates a condition; if true, it executes the corresponding block.
+> **else** runs when the if condition is <ins>false</ins>.
+> **else if** allows checking multiple conditions.
+> Always use braces **{}** for multiple statements in if blocks to avoid logic errors.
+> The <ins>ternary operator</ins> **(?:)** is a shorthand for simple if-else statements.
  
 ### switch case
 
 The **switch-case** statement in C is a multi-way branching control structure used when a variable is compared against multiple possible values. It is often used as an alternative to long if-else if chains for better readability and efficiency.
 
-Syntax:<br>
+Syntax:
 
 ```C
 switch (expression) {
@@ -1967,12 +1967,14 @@ switch (expression) {
 }
 ```
 
->**expression:** Must evaluate to an integer or character type.
->**case value:**: Defines a block of code for a specific value.
->**break;**: Prevents fall-through to the next case (optional but recommended).
->**default:**: Executes if none of the cases match (optional).
+> **expression:** Must evaluate to an integer or character type.
+> **case value:**: Defines a block of code for a specific value.
+> **break;**: Prevents fall-through to the next case (optional but recommended).
+> **default:**: Executes if none of the cases match (optional).
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
     int day = 3;
     switch (day) {
@@ -1992,13 +1994,16 @@ int main() {
             printf("Invalid day\n");
     }
     return 0;
-}</code>
+}
+```
 
 Output: <code>Wednesday</code>
 
 ⚠️ If **break;** is omitted, execution continues into the next case.
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
     int num = 2;
     switch (num) {
@@ -2010,12 +2015,12 @@ int main() {
             printf("Three\n");
     }
     return 0;
-}</code>
-
+}
+```
 Output: <code>Two
 Three</code>
 
->Here, since case 2 doesn’t have a break;, execution falls through to case 3.
+> Here, since case 2 doesn’t have a break;, execution falls through to case 3.
 
 **Using default Case**
 
