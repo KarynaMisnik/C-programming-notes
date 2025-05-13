@@ -398,7 +398,7 @@ Example:
 
 <code>char grade = 'A';</code>
 
->**Note:** For characters **' '** are used. 
+> **Note:** For characters **' '** are used. 
 
 **float (Floating Point):**
 
@@ -665,6 +665,7 @@ int main() {
         // Without volatile, this loop might be optimized into an infinite loop
     }
     printf("Flag is set! Exiting.\n");
+
     return 0;
 }
 ```
@@ -680,6 +681,7 @@ Example:
 int main() {
     auto int x = 10;  // Same as int x = 10;
     printf("Value of x: %d\n", x);
+
     return 0;
 }
 ```
@@ -815,10 +817,10 @@ int main() {
 }
 ```
 
->Note:
->Use <code>malloc</code> for dynamic memory allocation.
->Check <code>errno</code> if <code>malloc</code> (or other functions) fail to diagnose and handle runtime errors.
->Use <code>-Wall</code> to detect and fix issues during <ins>compilation</ins>, improving code quality and reducing runtime errors.  
+> Note:
+> Use <code>malloc</code> for dynamic memory allocation.
+> Check <code>errno</code> if <code>malloc</code> (or other functions) fail to diagnose and handle runtime errors.
+> Use <code>-Wall</code> to detect and fix issues during <ins>compilation</ins>, improving code quality and reducing runtime errors.  
     
 ### Division by zero
 
@@ -841,6 +843,7 @@ int main() {
     // This will trigger SIGFPE, but the handler will manage it
     int result = numerator / divisor;
     printf("Result: %d\n", result);
+
     return 0;
 }
 ```
@@ -848,7 +851,7 @@ int main() {
 Check if a divisor is not zero using <code>if-statement</code>:<br>
 
 ```C
-  #include <stdio.h>
+#include <stdio.h>
 
 int main() {
     int numerator = 10;
@@ -908,7 +911,6 @@ The <code>setjmp</code> and <code>longjmp</code> functions in C are used to perf
 **setjmp:** Saves the current environment (program state) in a jmp_buf structure for later use by longjmp.
 
 **longjmp:** Restores the saved environment, effectively jumping back to the point where setjmp was called.
-
 
 They are commonly used for:
 
@@ -1016,13 +1018,11 @@ Here are the most commonly used format specifiers in C:
 | %c                |Single character                               |                             
 | %s                |String of characters                                               
 
-
 <ins>Pointer</ins>
 
 | Modifier          | Description                                   | 
 |-------------------|-----------------------------------------------|
 | %p                | Memory address (pointer)                      |                              
-
 
 <ins>Modifiers for Size</ins>
 
@@ -1035,7 +1035,6 @@ To handle specific sizes, you can use modifiers before the format specifier:
 |%ll                |Long long                                      |%lld for long long integers   |
 |%z                 |Size type (used for size_t)                    |                              |
 
- 
 <ins>Special Formats</ins>
 
 | Modifier          | Description                                   | 
@@ -1075,6 +1074,7 @@ Example:
 #include <stdio.h>
 int main() {
     puts("Hello, World!");  // Outputs: Hello, World!
+
     return 0;
 }
 ```
@@ -1083,7 +1083,7 @@ int main() {
 
 The <code>scanf()</code> function in C is used for formatted input. It reads data from the standard input (usually the keyboard) and stores it in the variables specified by the arguments.
 
-Example:<br>
+Example:
 
 <code>int scanf(const char *format, ...);</code>
 
@@ -1098,8 +1098,8 @@ Does not handle invalid input well (e.g., entering letters instead of numbers).
 **Buffer Overflow:**
 Can lead to undefined behavior if the input exceeds the buffer size.
 
->Notes: Use **fgets()** for strings to handle spaces and prevent overflow.
->Always validate the return value of **scanf()** to ensure input was correctly read.
+> Notes: Use **fgets()** for strings to handle spaces and prevent overflow.
+> Always validate the return value of **scanf()** to ensure input was correctly read.
 
 # Math 👨‍🏫
 
@@ -1114,7 +1114,6 @@ Arithmetic operators perform basic mathematical operations. Here are the key ope
 | `*`      | Multiplication            | `a * b = 30`              |
 | `/`      | Division                  | `a / b = 3` (integer division) |
 | `%`      | Modulus (remainder)       | `a % b = 1`               |
-
 
 <ins>Modulus Operator (%)</ins>
 
@@ -1131,7 +1130,7 @@ int a = 10, b = 3;
 printf("%d", a % b); // Output: 1 (10 divided by 3 leaves a remainder of 1)
 ```
 
->Note: For negative numbers, the sign of the result depends on the implementation (often follows the dividend).
+> Note: For negative numbers, the sign of the result depends on the implementation (often follows the dividend).
 
 ### Assignment Operators
 
@@ -1207,8 +1206,8 @@ Relational operators in C are used to compare two values. They return a boolean 
 | `>=`     | Greater than or equal to     | `a >= b`                  | `0` (false) |
 | `<=`     | Less than or equal to        | `a <= b`                  | `1` (true)  |
 
->Note: **==** checks for equality, while **=** is used for assignment.
->Avoid using **==** for floating-point values due to precision issues.
+> Note: **==** checks for equality, while **=** is used for assignment.
+> Avoid using **==** for floating-point values due to precision issues.
 
 Example:
 
@@ -1237,8 +1236,8 @@ Type casting in C is the process of converting a variable from one data type to 
 
 Automatically performed by the compiler when assigning values of smaller data types to larger ones:
 
-<code>int</code> → <code>float</code><br>
-<code>char</code> → <code>t</code><br>
+<code>int</code> → <code>float</code>
+<code>char</code> → <code>t</code>
 
 Example:
 
