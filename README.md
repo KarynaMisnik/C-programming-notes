@@ -2026,7 +2026,9 @@ Three</code>
 
 The default case executes if no other case matches.
 
-<code>int grade = 85;
+```C
+int grade = 85;
+
 switch (grade / 10) {  // Checking the tens digit
     case 10:
     case 9:
@@ -2040,13 +2042,14 @@ switch (grade / 10) {  // Checking the tens digit
         break;
     default:
         printf("Grade: F\n");
-}</code>
+}
+```
 
->The switch expression must be an **integer** or **character**.
->Use **break;** to prevent fall-through behavior.
->**default** is optional but recommended.
->Cannot ~~use~~ floating-point numbers (float, double) as case values.
->case values must be constant expressions (no variables).
+> The switch expression must be an **integer** or **character**.
+> Use **break;** to prevent fall-through behavior.
+> **default** is optional but recommended.
+> Cannot ~~use~~ floating-point numbers (float, double) as case values.
+> case values must be constant expressions (no variables).
 
 The switch-case is best suited when checking fixed values and improves code readability compared to long if-else if chains.
 
@@ -2121,12 +2124,15 @@ int choice;
         }
     }
     return 0;
-}</code>
+}
+```
 
 #### SWITCH-case
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define PI 3.14
+
 int main() {
     int radius, base, height;
     float circleArea, triangleArea;
@@ -2137,6 +2143,7 @@ int main() {
         printf("1 - to find area of a triangle\n");
         printf("-1 - Exit program\n");
         scanf("%d", &choice);
+
          switch(choice) {
             case 0:
                 printf("You chose to find area of a circle. Type radius value:\n");
