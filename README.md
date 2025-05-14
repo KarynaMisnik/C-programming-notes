@@ -2373,9 +2373,11 @@ int count = 0;
 
 #### two-dimensional matrix
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define ROWS 2
 #define COLS 3
+
 int main() {
     int matrix1[ROWS][COLS], matrix2[ROWS][COLS];
     // Input for first matrix
@@ -2410,7 +2412,7 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 ## Functions
 
