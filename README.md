@@ -2418,8 +2418,10 @@ int main() {
 
 #### Addition
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 int limit, result = 0;  // Initialize result to 0
+
 void addition() {  
     printf("What is the limit: ");
     scanf("%d", &limit);
@@ -2435,13 +2437,16 @@ void addition() {
 }
 int main() {
     addition();
+
     return 0;
 }
-</code>
+```
 
 #### Different Operations 
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 // Function declarations
 void Intro();
 int Choice();
@@ -2466,6 +2471,7 @@ int main() {
         scanf(" %c", &continue_program);  // ' ' before %c is used to consume any leftover newline characters
     }
     printf("Exiting the program. Goodbye!\n");
+
     return 0;
 }
 // Function to introduce the program
@@ -2479,6 +2485,7 @@ int Choice() {
     int choice;
     printf("\nWhat would you like to do? (0 for addition, 1 for multiplication): ");
     scanf("%d", &choice);
+
     return choice;
 }
 // Function for performing addition
@@ -2495,11 +2502,13 @@ void Multiplication() {
     scanf("%d %d", &num1, &num2);
     printf("The result is: %d\n", num1 * num2);
 }
-</code>
+```
 
 #### Functions & global parameters
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 // Global variables to store the values
 int num1, num2;
 // Function to read values into the global variables
@@ -2529,9 +2538,10 @@ int main() {
     Switch();
     // Calling the Print function to display the results
     Print();
+
     return 0;
 }
-</code>
+```
 
 #### Functions & global parameters
 
