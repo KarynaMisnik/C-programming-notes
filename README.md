@@ -2545,10 +2545,12 @@ int main() {
 
 #### Functions & global parameters
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
 #define SIZE 10 // Maximum number of grades
 // Global variable to count the number of zeroes
 int zeroCount = 0;
+
 // Function to read grades into the array
 void Read(int grades[], int *numGrades) {
     int grade;
@@ -2597,9 +2599,10 @@ int main() {
     float average = Calculate(grades, numGrades);
     // Call the Print function to display the results
     Print(average);
+
     return 0;
 }
-</code>
+```
 
 ## Pointers
 
@@ -2607,6 +2610,7 @@ int main() {
 
 ```C
 #include <stdio.h>
+
 int main() {
     int var = 10;  // Declare an integer variable and assign it a value
     int *ptr;      // Declare an integer pointer
@@ -2620,13 +2624,16 @@ int main() {
     printf("3. The memory address the pointer is pointing to: %p\n", (void*)ptr);
     // Print the contents of the memory location the pointer points to
     printf("4. The contents of the memory location the pointer points to: %d\n", *ptr);
+
     return 0;
 }
 ```
 
 #### Pointers and Arrays
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
     int arr[5];      // Declare an array of 5 integers
     int *ptr = arr;  // Declare a pointer and assign it to the array
@@ -2646,7 +2653,7 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 #### Bad example of pointers use
 
@@ -2697,8 +2704,8 @@ Might trigger a compiler warning like:
 
 Problem 4: <code>*p_one = 'b';</code>
 
->[!Warning]
->Random garbage location, undefined behavior.
+> [!Warning]
+> Random garbage location, undefined behavior.
 
 **How to fix**
 
@@ -3249,6 +3256,7 @@ int main(void)
     // Close file
     sf_close(file);
     puts("WAV file 'sine.wav' created successfully.");
+
     return 0;
 }
 ```
