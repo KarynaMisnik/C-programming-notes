@@ -2296,7 +2296,9 @@ int main() {
 
 #### Groups of arrays
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main() {
     int size;  
     printf("Enter the size of the array: ");
@@ -2333,11 +2335,13 @@ int main() {
     }
     return 0;
 }
-</code>
+```
 
 #### Print array after each input
 
-<code>#include <stdio.h>
+```C
+#include <stdio.h>
+
 int main(){
 int size, input;
 int count = 0;  
@@ -2347,7 +2351,7 @@ int count = 0;
         printf("Invalid size. Exiting program.\n");
         return 1;  
     }
-     int nums[size];  // Dynamically create an array of user-defined size
+    int nums[size];  // Dynamically create an array of user-defined size
     int input, count = 0;
     printf("Enter your values (0 to stop):\n");
     while (count < size) {
@@ -2365,7 +2369,7 @@ int count = 0;
     }
     return 0;
 }
-</code>
+```
 
 #### two-dimensional matrix
 
