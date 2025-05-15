@@ -166,7 +166,7 @@ Programming languages timeline:
 
 ### "Hello world!"
 
-File extension for programs written in C: eg.: **hello.c**<br>
+File extension for programs written in C: eg.: **hello.c**
 ```C
 #include <stdio.h>
 int main(void)
@@ -176,25 +176,25 @@ return 0;
 }
 ```
 
-What does each line mean?<br>
+What does each line mean?
 ```C
 #include <stdio.h>
 ```
 
 This is a preprocessor directive. Preprocessor directives gives instructions to a part of the compiler to modify the code before it is compiled. 
-**#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. <br>
+**#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. 
 
 ```C
 int main(void)
 ```
 
-It could be only one **main()** function because it acts as the starting point of all C programs.<br>
+It could be only one **main()** function because it acts as the starting point of all C programs.
 
 ```C
 printf("Hello World!\n");
 ```
 
-This line produces the actual output on the console(terminal in UNIX environment).<br>
+This line produces the actual output on the console(terminal in UNIX environment).
 
 <code>return 0;</code>
 
