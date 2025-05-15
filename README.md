@@ -184,11 +184,15 @@ What does each line mean?<br>
 This is a preprocessor directive. Preprocessor directives gives instructions to a part of the compiler to modify the code before it is compiled. 
 **#include** directive retrieves C code from the standard **stdio.h** file(header files, which have **.h** extension). It works like library. From that library we need only function **printf**. <br>
 
-<code>int main(void)</code>
+```C
+int main(void)
+```
 
 It could be only one **main()** function because it acts as the starting point of all C programs.<br>
 
-<code>printf("Hello World!\n");</code>
+```C
+printf("Hello World!\n");
+```
 
 This line produces the actual output on the console(terminal in UNIX environment).<br>
 
