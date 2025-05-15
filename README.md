@@ -196,7 +196,9 @@ printf("Hello World!\n");
 
 This line produces the actual output on the console(terminal in UNIX environment).
 
-<code>return 0;</code>
+```C
+return 0;
+```
 
 When ending a program, we use an exit status to inform the operating system whether the program ran successfully. An exit status of <code>0</code> signals success, while other integers can represent different types of errors. This practice of using exit codes is a long-standing convention.
 
@@ -204,11 +206,15 @@ When ending a program, we use an exit status to inform the operating system whet
 
 For compiling in UNIX environment(GCC must be installed) the command is: <br>
 
-<code>gcc example.c</code>
+```C
+gcc example.c
+```
 
 To run the program:<br>
 
-<code>./a.out</code>
+```C
+./a.out
+```
 
 The result will be **Hello, World!**. 
 To show the exit status of the last program, run:<br>
@@ -218,7 +224,9 @@ This shows the value the main function has returned, which is 0 in the above exa
 
 One more way to compile and run the program is:<br>
 
-<code>gcc -o -Wall testing example.c</code>
+```C
+gcc -o -Wall testing example.c
+```
 
 <code>-o</code>
 
