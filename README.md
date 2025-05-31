@@ -169,6 +169,7 @@ Programming languages timeline:
 ### "Hello world!"
 
 File extension for programs written in C: eg.: **hello.c**
+
 ```C
 #include <stdio.h>
 int main(void)
@@ -219,12 +220,12 @@ To run the program:
 ```
 
 The result will be **Hello, World!**. 
-To show the exit status of the last program, run:<br>
+To show the exit status of the last program, run:
 
 <code>echo $</code>
 This shows the value the main function has returned, which is 0 in the above example.
 
-One more way to compile and run the program is:<br>
+One more way to compile and run the program is:
 
 ```C
 gcc -o -Wall testing example.c
