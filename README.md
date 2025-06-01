@@ -246,14 +246,14 @@ It indicates that gcc should generate warnings about various types of suspicious
 ### Block, Statement, Whitespace and Scope
 
 
-C does not have complete block structure but it's still important to understand what block is. A **block** consists of executable statements. **Statements** are the pieces of text that the compiler translates into executable instructions, along with the surrounding **whitespace**:<br>
+C does not have complete block structure but it's still important to understand what block is. A **block** consists of executable statements. **Statements** are the pieces of text that the compiler translates into executable instructions, along with the surrounding **whitespace**:
 
 <code>int num = 5;</code>
 
 This declares a variable of type *integer*, initializes it to the *value* 5, which can be later
 accessed with the *identiﬁer* 'num'.
 
-A block of code has opening brace <code>{</code> and closing <code>}</code> Blocks can contain other blocks and they can contain their blocks. Example:<br>
+A block of code has opening brace <code>{</code> and closing <code>}</code> Blocks can contain other blocks and they can contain their blocks. Example:
 
 ```C
 int main(void)
@@ -398,8 +398,8 @@ They are four basic data types: **int**, **char**, **float**, and **double**.
   <li>Size: Typically 4 bytes (varies by system).</li>
   <li>Range: Usually -2,147,483,648 to 2,147,483,647.</li>
 </ul>
-  Example:
 
+  Example:
   <code>int age = 25;</code>
 
   **char (Character):**
@@ -411,7 +411,6 @@ They are four basic data types: **int**, **char**, **float**, and **double**.
   </ul>
   
 Example:
-
 <code>char grade = 'A';</code>
 
 > **Note:** For characters **' '** are used. 
