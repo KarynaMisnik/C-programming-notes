@@ -420,7 +420,7 @@ Example:
 <ul>
     <li>Stores decimal numbers with single precision</li>
     <li>Size: Typically 4 bytes.</li>
-    <li>Range: Approximately ±3.4e−38 to ±3.4e38.</li>
+    <li>Range: Approximatly ±3.4e−38 to ±3.4e38.</li>
   </ul>
 
   Example:
@@ -436,7 +436,6 @@ Example:
   </ul>
   
 Example:
-
 <code>double pi = 3.141592653589;</code>
 
 The **sizeof** ~~function~~ operator in C is used to determine the size (in bytes) of a data type or a variable in memory. It is a compile-time operator that returns an unsigned integer representing the size.
