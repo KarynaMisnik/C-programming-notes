@@ -233,9 +233,9 @@ gcc -o -Wall testing example.c
 
 <code>-o</code>
 
-If you want the output to have a name other than **./a.out**. In this case it will get a new name **testing**. So, for runninng the program command will be: <br>
+If you want the output to have a name other than **./a.out**. In this case it will get a new name **testing**. So, for runninng the program command will be: 
 
-<code>./testing</code><br>
+<code>./testing</code>
 
 <code>-Wall</code>
 
