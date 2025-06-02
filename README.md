@@ -422,7 +422,6 @@ Example:
   </ul>
 
   Example:
-
   <code>float temperature = 36.5;</code>
 
 **double (Double Precision Floating Point):**
@@ -485,7 +484,8 @@ Modern compilers also support **long long**, which is typically 8 bytes.
   <li><b>unsigned:</b> Makes a variable store only <i>positive</i> values, doubling its range.</li>
 </ul>
 
-Example: For unsigned short, the range is <code>0</code> to <code>65,535</code>.
+Example:
+For unsigned short, the range is <code>0</code> to <code>65,535</code>.
 
 <ul>
   <li><b>signed:</b> Allows both <i>positive</i> and <i>negative</i> values (default for most types except char).</li>
