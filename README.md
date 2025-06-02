@@ -245,7 +245,6 @@ It indicates that gcc should generate warnings about various types of suspicious
 
 ### Block, Statement, Whitespace and Scope
 
-
 C does not have complete block structure but it's still important to understand what block is. A **block** consists of executable statements. **Statements** are the pieces of text that the compiler translates into executable instructions, along with the surrounding **whitespace**:
 
 <code>int num = 5;</code>
@@ -332,7 +331,6 @@ Compilation in C programming is the process of converting your written code into
 |<img src='https://github.com/user-attachments/assets/4f75d0ca-59e9-4483-b71e-3c961016b048' alt="c compiler process scheme">|
 |:--:|
 | *C Compilation Scheme* |
-
 
 # Variables ⚡
 
