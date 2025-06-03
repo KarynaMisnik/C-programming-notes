@@ -533,7 +533,7 @@ What is <code>#define</code> in C?
 
 **#define** is a <ins>preprocessor directive</ins> in C used to define *constants* or *macros*. It allows you to assign a name to a value or code snippet, which the compiler replaces throughout the program during preprocessing (before compilation).
 
-Syntax:<br>
+Syntax:
 
 <code>#define NAME value</code>
 
@@ -684,7 +684,8 @@ int main() {
     
 ### auto
 
-The <code>auto</code> (redundant)keyword is used to declare automatic (local) variables. These variables are created when the program enters their scope and destroyed when it exits. However, since all variables declared inside a block are automatically treated as auto, the keyword is rarely used and is considered unnecessary.
+The <code>auto</code> (redundant)keyword is used to declare automatic (local) variables. These variables are created when the program enters their scope and destroyed when it exits.
+However, since all variables declared inside a block are automatically treated as auto, the keyword is rarely used and is considered unnecessary.
 
 Example:
 
