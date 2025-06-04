@@ -549,6 +549,7 @@ Example:
 ```C
 #include <stdio.h>
 #define PI 3.14159
+
 int main() {
     double area, radius = 5.0;
     area = PI * radius * radius;  // PI is replaced with 3.14159
@@ -563,6 +564,7 @@ Example:
 ```C
 #include <stdio.h>
 #define SQUARE(x) ((x) * (x))  // Macro to calculate the square
+
 int main() {
     int num = 4;
     printf("Square of %d is %d\n", num, SQUARE(num));
