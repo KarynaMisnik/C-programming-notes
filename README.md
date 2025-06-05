@@ -608,6 +608,7 @@ The static keyword has two main purposes:
 </ul>
         
 Example:
+
 ```C
 #include <stdio.h>
 
