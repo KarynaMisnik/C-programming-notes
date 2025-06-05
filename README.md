@@ -358,9 +358,8 @@ In C, all variables <ins>*must be assigned*<ins> a specific type when they are d
   Assign an initial value to the variable when you declare it.
 </dl>
 <code>int number = 10;</code>
-<br>
 
->This combines declaration and initialization, giving the variable a value of <code>10</code>.
+> This combines declaration and initialization, giving the variable a value of <code>10</code>.
 
 <dl>
   <dt><h3>Step 3:</h3> Assign a new value to the variable</dt>
