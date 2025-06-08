@@ -703,7 +703,8 @@ int main() {
 
 ### register
 
-The <code>register</code> (redundant)keyword suggests to the compiler that a variable should be stored in the CPU's register instead of RAM for faster access. However, modern compilers optimize this automatically, making the use of register unnecessary in most cases.
+The <code>register</code> (redundant)keyword suggests to the compiler that a variable should be stored in the CPU's register instead of RAM for faster access. 
+However, modern compilers optimize this automatically, making the use of register unnecessary in most cases.
 
 Example:
 
@@ -717,7 +718,6 @@ int main() {
     return 0;
 }
 ```
-
 
 ### Modifiers summary
 
