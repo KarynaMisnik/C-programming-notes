@@ -625,7 +625,6 @@ int main() {
     return 0;
 }
 ```
-
 ### extern
 
 The <code>extern</code> keyword is used to declare a variable that is defined in another file. It does not allocate memory for the variable but tells the compiler that the variable exists somewhere else in the program.
@@ -774,9 +773,11 @@ int main() {
 
 # Error handling
 
-C does not have built-in support for error handling (like exceptions). Instead, programmers are responsible for preventing errors and checking function return values. For instance, <code>-1</code> or <code>NULL</code> are returned by functions like <code>socket()</code> or <code>malloc()</code> to indicate errors. If an error cannot be avoided or recovered, the programmer typically logs the error and terminates the program.
+C does not have built-in support for error handling (like exceptions). Instead, programmers are responsible for preventing errors and checking function return values. For instance, <code>-1</code> or <code>NULL</code> are returned by functions like <code>socket()</code> or <code>malloc()</code> to indicate errors. 
+If an error cannot be avoided or recovered, the programmer typically logs the error and terminates the program.
 
-C provides an external variable, <code>errno</code>, which is available after including **<errno.h>**. This variable stores error codes defined by the operating system (e.g., Linux) when resources cannot be allocated. These error codes can be converted to readable messages using the strerror(errno) function.
+C provides an external variable, <code>errno</code>, which is available after including **<errno.h>**. This variable stores error codes defined by the operating system (e.g., Linux) when resources cannot be allocated. 
+These error codes can be converted to readable messages using the strerror(errno) function.
 
 ### errno, malloc, -Wall
 
