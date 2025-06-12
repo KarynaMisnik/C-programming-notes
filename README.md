@@ -2709,9 +2709,9 @@ char *p_one;
 ```
 
 <code>*p_one</code> is a char (a single byte), and you're trying to store a char * (a memory address) in that single byte. This:
-Makes no sense in terms of types
-Is almost guaranteed to corrupt memory
-Might trigger a compiler warning like:
+- Makes no sense in terms of types
+- Is almost guaranteed to corrupt memory
+- Might trigger a compiler warning like:
 
 <code>warning: assignment makes integer from pointer without a cast</code>
 
