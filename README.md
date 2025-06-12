@@ -2993,6 +2993,7 @@ int main(void)
         puts(sf_strerror(file));
     }
     sf_close(file);
+
     return 0;
 }
 ```
